@@ -1,34 +1,23 @@
-import tornado.web, tornado.ioloop, tornado.websocket  
-from picamera import PiCamera, PiVideoFrameType
+import io
+import os
+import socket
 from string import Template
-import io, os, socket
+from threading import Condition
+
+import tornado.ioloop
+import tornado.web
+import tornado.websocket
+from picamera2 import Picamera2
+from picamera2.encoders import H264Encoder
+from picamera2.outputs import Output
 
 # start configuration
 serverPort = 8000
 
-camera = PiCamera(sensor_mode=2, resolution='1920x1080', framerate=30)
-camera.video_denoise = False
+picam2 = Picamera2()
+picam2.configure(picam2.create_video_configuration(main={"size": (1920, 1080)}))
 
-recordingOptions = {
-    'format' : 'h264', 
-    'quality' : 20, 
-    'profile' : 'high', 
-    'level' : '4.2', 
-    'intra_period' : 15, 
-    'intra_refresh' : 'both', 
-    'inline_headers' : True, 
-    'sps_timing' : True
-}
-
-focusPeakingColor = '1.0, 0.0, 0.0, 1.0'
-focusPeakingthreshold = 0.055
-
-centerColor = '255, 0, 0, 1.0'
-centerThickness = 2
-
-gridColor = '255, 0, 0, 1.0'
-gridThickness = 2
-# end configuration
+framerate = 30
 
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.connect(('8.8.8.8', 0))
@@ -38,41 +27,39 @@ abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
 os.chdir(dname)
 
+
 def getFile(filePath):
-    file = open(filePath,'r')
+    file = open(filePath, 'r')
     content = file.read()
     file.close()
     return content
+
 
 def templatize(content, replacements):
     tmpl = Template(content)
     return tmpl.substitute(replacements)
 
-indexHtml = templatize(getFile('index.html'), {'ip':serverIp, 'port':serverPort, 'fps':camera.framerate})
-centerHtml = templatize(getFile('center.html'), {'ip':serverIp, 'port':serverPort, 'fps':camera.framerate,'color':centerColor, 'thickness':centerThickness})
-gridHtml = templatize(getFile('grid.html'), {'ip':serverIp, 'port':serverPort, 'fps':camera.framerate,'color':gridColor, 'thickness':gridThickness})
-focusHtml = templatize(getFile('focus.html'), {'ip':serverIp, 'port':serverPort, 'fps':camera.framerate, 'color':focusPeakingColor, 'threshold':focusPeakingthreshold})
+
+indexHtml = templatize(getFile('index.html'), {'ip': serverIp, 'port': serverPort, 'fps': framerate})
 jmuxerJs = getFile('jmuxer.min.js')
 
-class StreamBuffer(object):
-    def __init__(self,camera):
-        self.frameTypes = PiVideoFrameType()
+
+class StreamingOutput(Output):
+    def __init__(self):
+        super().__init__()
         self.loop = None
         self.buffer = io.BytesIO()
-        self.camera = camera
 
     def setLoop(self, loop):
         self.loop = loop
 
-    def write(self, buf):
-        if self.camera.frame.complete and self.camera.frame.frame_type != self.frameTypes.sps_header:
-            self.buffer.write(buf)
-            if self.loop is not None and wsHandler.hasConnections():
-                self.loop.add_callback(callback=wsHandler.broadcast, message=self.buffer.getvalue())
-            self.buffer.seek(0)
-            self.buffer.truncate()
-        else:
-            self.buffer.write(buf)
+    def outputframe(self, frame, keyframe=True, timestamp=None):
+        self.buffer.write(frame)
+        if self.loop is not None and wsHandler.hasConnections():
+            self.loop.add_callback(callback=wsHandler.broadcast, message=self.buffer.getvalue())
+        self.buffer.seek(0)
+        self.buffer.truncate()
+
 
 class wsHandler(tornado.websocket.WebSocketHandler):
     connections = []
@@ -105,45 +92,35 @@ class wsHandler(tornado.websocket.WebSocketHandler):
     def check_origin(self, origin):
         return True
 
+
 class indexHandler(tornado.web.RequestHandler):
     def get(self):
         self.write(indexHtml)
 
-class centerHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.write(centerHtml)
-
-class gridHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.write(gridHtml)
-
-class focusHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.write(focusHtml)
 
 class jmuxerHandler(tornado.web.RequestHandler):
     def get(self):
         self.set_header('Content-Type', 'text/javascript')
         self.write(jmuxerJs)
 
+
 requestHandlers = [
     (r"/ws/", wsHandler),
     (r"/", indexHandler),
-    (r"/center/", centerHandler),
-    (r"/grid/", gridHandler),
-    (r"/focus/", focusHandler),
     (r"/jmuxer.min.js", jmuxerHandler)
 ]
 
 try:
-    streamBuffer = StreamBuffer(camera)
-    camera.start_recording(streamBuffer, **recordingOptions) 
+    output = StreamingOutput()
+    encoder = H264Encoder(repeat=True, framerate=framerate, qp=23)
+    encoder.output = output
+    picam2.start_recording(encoder, output)
+
     application = tornado.web.Application(requestHandlers)
     application.listen(serverPort)
     loop = tornado.ioloop.IOLoop.current()
-    streamBuffer.setLoop(loop)
+    output.setLoop(loop)
     loop.start()
 except KeyboardInterrupt:
-    camera.stop_recording()
-    camera.close()
+    picam2.stop_recording()
     loop.stop()
