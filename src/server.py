@@ -13,11 +13,11 @@ from picamera2.outputs import Output
 
 # start configuration
 serverPort = 8000
+wsURL = "ws://my_ip/ws/"
+framerate = 30
 
 picam2 = Picamera2()
 picam2.configure(picam2.create_video_configuration(main={"size": (1920, 1080)}))
-
-framerate = 30
 
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
@@ -36,7 +36,7 @@ def templatize(content, replacements):
     return tmpl.substitute(replacements)
 
 
-indexHtml = templatize(getFile('index.html'), {'port': serverPort, 'fps': framerate})
+indexHtml = templatize(getFile('index.html'), {'wsurl': wsURL, 'fps': framerate})
 jmuxerJs = getFile('jmuxer.min.js')
 
 
