@@ -19,10 +19,6 @@ picam2.configure(picam2.create_video_configuration(main={"size": (1920, 1080)}))
 
 framerate = 30
 
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-s.connect(('8.8.8.8', 0))
-serverIp = s.getsockname()[0]
-
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
 os.chdir(dname)
@@ -40,7 +36,7 @@ def templatize(content, replacements):
     return tmpl.substitute(replacements)
 
 
-indexHtml = templatize(getFile('index.html'), {'ip': serverIp, 'port': serverPort, 'fps': framerate})
+indexHtml = templatize(getFile('index.html'), {'port': serverPort, 'fps': framerate})
 jmuxerJs = getFile('jmuxer.min.js')
 
 
