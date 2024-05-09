@@ -25,7 +25,7 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
    - add ```WebSocket``` listeners for visualization of both camera streams
 
 # Problems not solved for now:
- * dublication of S```StreamingOutput``` and ```wsHandler``` classes
+ * dublication of ```StreamingOutput``` and ```wsHandler``` classes
  * using of ```offsetX``` and ```offsetY``` variables calculated by independent process
 
 # Basic changes usage
@@ -33,7 +33,7 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
  * browse: ```http://RPi-IP:8000/```
  * watch moving image in X direction of both RPi 5 cameras streams
 
-![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/09.05.2024_15.04.41_REC.png)
+![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/09.05.2024_15.36.44_REC.png)
 
 Note that streaming of both RPi 5 cameras 960x1080px@30fps hardware encodded h264 video streams takes:
  * less than 50% usage all 4 CPU cores; 
