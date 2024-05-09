@@ -32,6 +32,8 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
  * browse: http://RPi-IP:8000/
  * watch moving image in X direction of both RPi 5 cameras streams
 
+![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/09.05.2024_14.25.03_REC.png)
+
 # Motivation of the original project
 
 Fork of [dans98/pi-h264-to-browser](https://github.com/dans98/pi-h264-to-browser/) that supports the new picamera2 Python library.
