@@ -32,7 +32,12 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
  * browse: http://RPi-IP:8000/
  * watch moving image in X direction of both RPi 5 cameras streams
 
-![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/09.05.2024_14.25.03_REC.png)
+![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/09.05.2024_15.04.41_REC.png)
+
+Note that streaming of both RPi 5 cameras 960x1080px@30fps hardware encodded h264 video streams takes:
+ * less than 50% usage all 4 CPU cores; 
+ * less than 7% additional memory usage;
+ * while total memory usage (incl. all running precess) is less than 20% 
 
 # Motivation of the original project
 
