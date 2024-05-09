@@ -14,6 +14,22 @@ from picamera2.outputs import Output
 
 from libcamera import Transform
 
+# use sudo apt install python3-opencv
+import cv2
+import time
+from picamera2 import MappedArray
+
+colour = (0, 255, 0)
+origin = (0, 30)
+font = cv2.FONT_HERSHEY_SIMPLEX
+scale = 1
+thickness = 2
+
+def apply_timestamp(request):
+    timestamp = time.strftime("%Y-%m-%d %X")
+    with MappedArray(request, "main") as m:
+        cv2.putText(m.array, timestamp, origin, font, scale, colour, thickness)
+
 # start configuration
 serverPort = 8000
 frameRate = 30
@@ -26,6 +42,9 @@ picam21 = Picamera2(1)
 
 picam20.configure(picam20.create_video_configuration(main={"size": (frameWidth, frameHeight)}, transform=Transform(frameTransform) ))
 picam21.configure(picam21.create_video_configuration(main={"size": (frameWidth, frameHeight)}, transform=Transform(frameTransform) ))
+
+picam20.pre_callback = apply_timestamp
+picam21.pre_callback = apply_timestamp
 
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
