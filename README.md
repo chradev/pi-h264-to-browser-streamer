@@ -8,28 +8,29 @@ The main reasons for extending the project are:
   * Extremely low latency is a main reason for choosing the project for stereo vision of a robot.
 
 Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.com/chradev/rpi5-h264-live-stereo-streamer/) but include following one:
- * The streaming server has to be able to change picamera2 properties like "ScalerCrop" for implementing pan & tilt eye movements.
+ * The streaming server has to be able to change picamera2 properties like ```ScalerCrop``` for implementing pan & tilt eye movements.
 
 # Basic changes in:
  * src/server.py
-   - changes to send to web page: {'port': serverPort, 'width': frameWidth, 'height': frameHeight, 'fps': frameRate}
-   - create 2x rpicamera2 instances
-   - dublicate: StreamingOutput and wsHandler classes for bulding two video paths
-   - add logic to move range-of-interest for both cameras in StreamingOutput objects
-   - adding requestHandlers for both cam0 and cam1 streams
+   - changes to send to web page: ```{'port': serverPort, 'width': frameWidth, 'height': frameHeight, 'fps': frameRate}```
+   - create two rpicamera2 instances for both RPi 5 CSI cameras
+   - dublicate: ```StreamingOutput``` and ```wsHandler``` classes for bulding two video paths
+   - add logic to move range-of-interest for both cameras in ```StreamingOutput``` objects (for testing)
+   - adding ```requestHandlers``` for both ```cam0``` and ```cam1``` streams
    - initialize classes, build video paths and start cameras
  * src/index.html
    - define two ```<video></video>``` elements
-   - instantiate two JMuxer classes
-   - create and connect two WebSocket for visualization of both camera streams
+   - instantiate and initialize two ```JMuxer``` classes
+   - create two ```WebSocket``` instances with right URLs
+   - add ```WebSocket``` listeners for visualization of both camera streams
 
 # Problems not solved for now:
- * dublication of StreamingOutput and wsHandler classes
- * using of offsetX and offsetY variables calculated by independent process
+ * dublication of S```StreamingOutput``` and ```wsHandler``` classes
+ * using of ```offsetX``` and ```offsetY``` variables calculated by independent process
 
 # Basic changes usage
- * run in src: python3 server.py
- * browse: http://RPi-IP:8000/
+ * run in src: ```python3 server.py```
+ * browse: ```http://RPi-IP:8000/```
  * watch moving image in X direction of both RPi 5 cameras streams
 
 ![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/09.05.2024_15.04.41_REC.png)
