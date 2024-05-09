@@ -14,9 +14,9 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
  * src/server.py
    - changes to send to web page: ```{'port': serverPort, 'width': frameWidth, 'height': frameHeight, 'fps': frameRate}```
    - create two rpicamera2 instances for both RPi 5 CSI cameras
-   - dublicate: ```StreamingOutput``` and ```wsHandler``` classes for bulding two video paths
+   - dublicate ```StreamingOutput``` and ```wsHandler``` classes for bulding two video paths
    - add logic to move range-of-interest for both cameras in ```StreamingOutput``` objects (for testing)
-   - adding ```requestHandlers``` for both ```cam0``` and ```cam1``` streams
+   - add ```requestHandlers``` for both ```cam0``` and ```cam1``` streams
    - initialize classes, build video paths and start cameras
  * src/index.html
    - define two ```<video></video>``` elements
@@ -36,9 +36,8 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
 ![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/09.05.2024_15.36.44_REC.png)
 
 Note that streaming of both RPi 5 cameras 960x1080px@30fps hardware encodded h264 video streams takes:
- * less than 50% usage all 4 CPU cores; 
- * less than 7% additional memory usage;
- * while total memory usage (incl. all running precess) is less than 20% 
+ * less than 50% usage for all 4 CPU cores (incl. all running precess); 
+ * less than 7% additional memory usage while total memory usage (incl. all running precess) is less than 20% 
 
 # Motivation of the original project
 

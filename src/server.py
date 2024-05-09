@@ -2,7 +2,7 @@ import io
 import os
 import socket
 from string import Template
-from threading import Condition
+#from threading import Condition
 
 import tornado.ioloop
 import tornado.web
@@ -52,6 +52,8 @@ class StreamingOutput0(Output):
         super().__init__()
         self.loop = None
         self.buffer = io.BytesIO()
+
+        # Test camera "movement"
         self.offsetX = 0
         self.offmaxX = 2320
         self.crop = (1160, 692, 960, 1080)
@@ -65,6 +67,8 @@ class StreamingOutput0(Output):
             self.loop.add_callback(callback=ws0Handler.broadcast, message=self.buffer.getvalue())
         self.buffer.seek(0)
         self.buffer.truncate()
+
+        # Test camera "movement"
         if self.offsetX == self.offmaxX:
             self.offsetX = 0
         else:
@@ -77,6 +81,8 @@ class StreamingOutput1(Output):
         super().__init__()
         self.loop = None
         self.buffer = io.BytesIO()
+
+        # Test camera "movement"
         self.offsetX = 620
         self.offmaxX = 2320
         self.crop = (1160, 692, 960, 1080)
@@ -90,6 +96,8 @@ class StreamingOutput1(Output):
             self.loop.add_callback(callback=ws1Handler.broadcast, message=self.buffer.getvalue())
         self.buffer.seek(0)
         self.buffer.truncate()
+
+        # Test camera "movement"
         if self.offsetX == self.offmaxX:
             self.offsetX = 0
         else:
