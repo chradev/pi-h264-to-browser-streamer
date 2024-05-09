@@ -17,9 +17,9 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
    - dublicate: StreamingOutput and wsHandler classes for bulding two video paths
    - add logic to move range-of-interest for both cameras in StreamingOutput objects
    - adding requestHandlers for both cam0 and cam1 streams
-   - initialize classs, build videf paths and start cameras
+   - initialize classes, build video paths and start cameras
  * src/index.html
-   - define two <video></video> elements
+   - define two ```<video></video>``` elements
    - instantiate two JMuxer classes
    - create and connect two WebSocket for visualization of both camera streams
 
