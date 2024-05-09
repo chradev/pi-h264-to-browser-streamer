@@ -32,7 +32,7 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
 # Basic changes usage
  * run in src: ```python3 server.py```
  * browse: ```http://RPi-IP:8000/```
- * watch moving image in X direction of both RPi 5 cameras streams
+ * watch moving image in X direction of both RPi 5 camera streams
 
 ![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/09.05.2024_23.10.33_REC.png)
 

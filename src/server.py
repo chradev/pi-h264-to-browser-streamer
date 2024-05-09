@@ -50,18 +50,15 @@ abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
 os.chdir(dname)
 
-
 def getFile(filePath):
     file = open(filePath, 'r')
     content = file.read()
     file.close()
     return content
 
-
 def templatize(content, replacements):
     tmpl = Template(content)
     return tmpl.substitute(replacements)
-
 
 indexHtml  = templatize(getFile('index.html'), {'port': serverPort, 'width': frameWidth, 'height': frameHeight, 'fps': frameRate})
 jmuxerJs = getFile('jmuxer.min.js')
@@ -124,7 +121,6 @@ class StreamingOutput1(Output):
         self.crop = (self.offsetX, 360, 960, 1080)
         picam21.set_controls({"ScalerCrop": self.crop})
 
-
 class ws0Handler(tornado.websocket.WebSocketHandler):
     connections = []
 
@@ -155,7 +151,6 @@ class ws0Handler(tornado.websocket.WebSocketHandler):
 
     def check_origin(self, origin):
         return True
-
 
 class ws1Handler(tornado.websocket.WebSocketHandler):
     connections = []
@@ -188,11 +183,9 @@ class ws1Handler(tornado.websocket.WebSocketHandler):
     def check_origin(self, origin):
         return True
 
-
 class indexHandler(tornado.web.RequestHandler):
     def get(self):
         self.write(indexHtml)
-
 
 class jmuxerHandler(tornado.web.RequestHandler):
     def get(self):
