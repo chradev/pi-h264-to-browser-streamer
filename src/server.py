@@ -25,8 +25,13 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 scale = 1
 thickness = 2
 
-def apply_timestamp(request):
-    timestamp = time.strftime("%Y-%m-%d %X")
+def apply_timestamp0(request):
+    timestamp = time.strftime("%Y-%m-%d %X") + " - Camera: 0"
+    with MappedArray(request, "main") as m:
+        cv2.putText(m.array, timestamp, origin, font, scale, colour, thickness)
+
+def apply_timestamp1(request):
+    timestamp = time.strftime("%Y-%m-%d %X") + " - Camera: 1"
     with MappedArray(request, "main") as m:
         cv2.putText(m.array, timestamp, origin, font, scale, colour, thickness)
 
@@ -37,14 +42,20 @@ frameWidth = 960
 frameHeight = 1080
 frameTransform = 180
 
+from subprocess import check_output
+hostIPAddr = check_output(['hostname', '-I'], text=True).split()[0]
+
+print("Camera 0/1 at flip(1/1), size(%rx%r), offset(0-2320/360) -> h264 video stream at %rfps -> frame by frame over WebSocket -> http://%s:%r/" % 
+     (frameWidth, frameHeight, frameRate, hostIPAddr, serverPort))
+
 picam20 = Picamera2(0)
 picam21 = Picamera2(1)
 
 picam20.configure(picam20.create_video_configuration(main={"size": (frameWidth, frameHeight)}, transform=Transform(frameTransform) ))
 picam21.configure(picam21.create_video_configuration(main={"size": (frameWidth, frameHeight)}, transform=Transform(frameTransform) ))
 
-picam20.pre_callback = apply_timestamp
-picam21.pre_callback = apply_timestamp
+picam20.pre_callback = apply_timestamp0
+picam21.pre_callback = apply_timestamp1
 
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)

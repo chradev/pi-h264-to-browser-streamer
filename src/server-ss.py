@@ -44,7 +44,7 @@ cropChanged = False
 from subprocess import check_output
 hostIPAddr = check_output(['hostname', '-I'], text=True).split()[0]
 
-print("Camera %r at flip(%r/%r), size(%r.%r), offset(%r/%r) -> h264 video stream at %rfps -> frame by frame over WebSocket -> http://%s:%r/" % 
+print("Camera %r at flip(%r/%r), size(%rx%r), offset(%r/%r) -> h264 video stream at %rfps -> frame by frame over WebSocket -> http://%s:%r/" % 
      (picam2Numb, framehFlip, framevFlip, frameWidth, frameHeight, frameOffsetX, frameOffsetY, frameRate, hostIPAddr, serverPort))
 
 # use sudo apt install python3-opencv
