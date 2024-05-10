@@ -66,6 +66,10 @@ options:
   -f FLIP FLIP, --Flip FLIP FLIP
 ```
 
+Notes:
+ * Two server application can be run for both RPi 5 cameras (0/1) on different ports (8000/8001);
+ * To make X/Y offset available use none standard resolutions like 1200x1200 (for now).
+
 ![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/11.05.2024_01.19.55_REC.png)
 
 
