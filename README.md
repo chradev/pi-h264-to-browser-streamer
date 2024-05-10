@@ -42,9 +42,13 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
  * watch stream from choosen RPi 5 camera
 
 Default parameters:
-  * Arguments Namespace(preView=False, cameraNumb=0, serverPort=8000, frameRate=30, Xoffset=950, Yoffset=350, Width=1000, Height=1000, Flip=(1, 1))
-  * Camera 0 at flip(1/1), size(1000.1000), offset(950/350) -> h264 video stream at 30fps -> frame by frame over WebSocket -> http://192.168.1.111:8000/
+```
+Arguments Namespace(preView=False, cameraNumb=0, serverPort=8000, frameRate=30, Xoffset=950, Yoffset=350, Width=1000, Height=1000, Flip=(1, 1))
+Camera 0 at flip(1/1), size(1000.1000), offset(950/350) -> h264 video stream at 30fps -> frame by frame over WebSocket -> http://192.168.1.111:8000/
+```
 
+Available options:
+```
 python3 server-ss.py -h
 usage: server-ss.py [-h] [-v] [-n CAMERANUMB] [-p SERVERPORT] [-r FRAMERATE] [-X XOFFSET] [-Y YOFFSET] [-W WIDTH]
                     [-H HEIGHT] [-f FLIP FLIP]
@@ -60,6 +64,7 @@ options:
   -W WIDTH, --Width WIDTH
   -H HEIGHT, --Height HEIGHT
   -f FLIP FLIP, --Flip FLIP FLIP
+```
 
 ![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/11.05.2024_01.19.55_REC.png)
 
