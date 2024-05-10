@@ -63,9 +63,6 @@ options:
 
 ![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/11.05.2024_01.19.55_REC.png)
 
-Note that streaming of both RPi 5 cameras 960x1080px@30fps hardware encodded h264 video streams takes:
- * less than 50% usage for all 4 CPU cores (incl. all running precess); 
- * less than 7% additional memory usage while total memory usage (incl. all running precess) is less than 20% 
 
 # Motivation of the original project
 
