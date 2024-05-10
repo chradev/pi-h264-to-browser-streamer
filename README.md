@@ -50,8 +50,8 @@ Camera 0 at flip(1/1), size(1000.1000), offset(950/350) -> h264 video stream at 
 Available options:
 ```
 python3 server-ss.py -h
-usage: server-ss.py [-h] [-v] [-n CAMERANUMB] [-p SERVERPORT] [-r FRAMERATE] [-X XOFFSET] [-Y YOFFSET] [-W WIDTH]
-                    [-H HEIGHT] [-f FLIP FLIP]
+usage: server-ss.py [-h] [-v] [-n CAMERANUMB] [-p SERVERPORT] [-r FRAMERATE]
+                    [-X XOFFSET] [-Y YOFFSET] [-W WIDTH] [-H HEIGHT] [-f FLIP FLIP]
 
 options:
   -h, --help            show this help message and exit
