@@ -1,64 +1,45 @@
 <!doctype html>
-
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<title></title>
-<link rel="icon" href="data:;base64,iVBORw0KGgo=">
-<style>
-body{
-margin:0;
-padding:0;
-background-color:#303030;
-}
-</style>
-<script src="/jmuxer.min.js"></script>
-</head>
-<body>
-	<div id="streamStage">
-		 <video autoplay muted id="stream0"></video>	
-		 <video autoplay muted id="stream1"></video>	
-	</div>
-</body>
-    <script>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <style>
+      body{
+        margin:0;
+        padding:0;
+        background-color:#303030;
+      }
+    </style>
+    <script src="/jmuxer.min.js"></script>
+  </head>
+  <body>
+  	<div id="streamStage">
+      <video autoplay muted id="stream0"></video>	
+      <video autoplay muted id="stream1"></video>	
+  	</div>
+  </body>
+  <script>
 	window.onload = function(){	
-		var jmuxer0 = new JMuxer({
-			node: 'stream0',
-			mode: 'video',
-			flushingTime: 0,
-			fps: $fps,
-			width: $width,
-			height: $height,
-			debug: false
-		 });
-		var jmuxer1 = new JMuxer({
-			node: 'stream1',
-			mode: 'video',
-			flushingTime: 0,
-			fps: $fps,
-			width: $width,
-			height: $height,
-			debug: false
-		 });
-        var ws0 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/cam0/");
-		ws0.binaryType = 'arraybuffer';
-		ws0.addEventListener('message',function(event){
-			if (!document.hidden){
-				jmuxer0.feed({
-					video: new Uint8Array(event.data)
-				});				
-			}
-		});
-        var ws1 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/cam1/");
-		ws1.binaryType = 'arraybuffer';
-		ws1.addEventListener('message',function(event){
-			if (!document.hidden){
-				jmuxer1.feed({
-					video: new Uint8Array(event.data)
-				});				
-			}
-		});
+      var jmuxer0 = new JMuxer({
+      	node: 'stream0', mode: 'video', flushingTime: 0,
+              fps: $fps, width: $width, height: $height, debug: false
+       });
+      var jmuxer1 = new JMuxer({
+      	node: 'stream1', mode: 'video', flushingTime: 0,
+              fps: $fps, width: $width, height: $height, debug: false
+       });
+          var ws0 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/cam0/");
+      ws0.binaryType = 'arraybuffer';
+      ws0.addEventListener('message',function(event){
+      	if (!document.hidden){ jmuxer0.feed({ video: new Uint8Array(event.data) }); }
+      });
+          var ws1 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/cam1/");
+      ws1.binaryType = 'arraybuffer';
+      ws1.addEventListener('message',function(event){
+      	if (!document.hidden){ jmuxer1.feed({ video: new Uint8Array(event.data) }); }
+      });
 	}     
-    </script>
+  </script>
 </html>
 
