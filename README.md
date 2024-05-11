@@ -27,7 +27,7 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
 
 # Problems not solved for now:
  * dublication of ```StreamingOutput``` and ```wsHandler``` classes
- * using of ```offsetX``` and ```offsetY``` variables calculated by independent process
+ * using of ```offsetX``` and ```offsetY``` variables calculated by independent process - **solved**
 
 # Basic changes usage
  * run in src: ```python3 server.py```
@@ -36,7 +36,7 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
 
 ![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/09.05.2024_23.10.33_REC.png)
 
-# Added streaming from a single camera with pan/tilt/zoom
+# Streaming from a single camera with PTZ control
  * run in src: ```python3 server-ss.py```
  * browse: ```http://RPi-IP:8000/```
  * watch stream from choosen RPi 5 camera
