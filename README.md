@@ -1,4 +1,14 @@
-# Motivation for extension
+### Dual camera near-real-time h.264 video streamer from RPi 5 directly to a browser
+
+Current status of [pi-h264-to-browser-stramer](https://github.com/chradev/pi-h264-to-browser-stramer) - single and dual camera support with PTZ control
+ * Fork of [kroketio/pi-h264-to-browser](https://github.com/kroketio/pi-h264-to-browser) by [chradev](https://github.com/chradev) Apr 2024 - dual camera supports on RPi 5 and more
+   * Fork of [dans98/pi-h264-to-browser](https://github.com/dans98/pi-h264-to-browser/)  by [nikola-j](https://github.com/nikola-j) Jan 2024 - supports the new picamera2 Python library
+     * Initial staff published by [dans98](https://github.com/dans98) Nov 2021 and based on:
+       * [Picamera](https://picamera.readthedocs.io/en/release-1.13/) handles all the video related tasks.
+       * [Tornado](https://www.tornadoweb.org/en/stable/) handles serving out the html and js assets via http, and the h264 stream via websockets.
+       * [jMuxer](https://github.com/samirkumardas/jmuxer) handles muxing the h264 stream (in browser) and playing it via Media Source extensions. 
+
+### Motivation for extension
 
 The parent project is an excellent solution for near-real-time video capturing, encoding and streaming. Extending it to reach the robot's stereo vision requirements is a challenge that could be solved thanks to advances in embedded and mobile devices supporting video processing with hardware acceleration.
 
@@ -10,7 +20,7 @@ The main reasons for extending the project are:
 Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.com/chradev/rpi5-h264-live-stereo-streamer/) but include following one:
  * The streaming server has to be able to change picamera2 properties like ```ScalerCrop``` for implementing pan & tilt eye movements.
 
-# Basic changes in:
+### Basic changes in:
  * src/server.py
    - changes to send to web page: ```{'port': serverPort, 'width': frameWidth, 'height': frameHeight, 'fps': frameRate}```
    - create two rpicamera2 instances for both RPi 5 CSI cameras
@@ -25,18 +35,18 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
    - create two ```WebSocket``` instances with right URLs
    - add ```WebSocket``` listeners for visualization of both camera streams
 
-# Problems not solved for now:
+### Problems not solved for now:
  * dublication of ```StreamingOutput``` and ```wsHandler``` classes
  * using of ```offsetX``` and ```offsetY``` variables calculated by independent process - **solved**
 
-# Basic changes usage
+### Basic changes usage
  * run in src: ```python3 server.py```
  * browse: ```http://RPi-IP:8000/```
  * watch moving image in X direction of both RPi 5 camera streams
 
 ![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/09.05.2024_23.10.33_REC.png)
 
-# Streaming from a single camera with PTZ control
+### Streaming from a single camera with PTZ control
  * run in src: ```python3 server-ss.py```
  * browse: ```http://RPi-IP:8000/```
  * watch stream from choosen RPi 5 camera
@@ -76,7 +86,7 @@ Notes:
  * To make X/Y offset available use none standard resolutions like 1200x1200 (for now).
 
 
-# Motivation of the original project
+### Motivation of the original project
 
 Fork of [dans98/pi-h264-to-browser](https://github.com/dans98/pi-h264-to-browser/) that supports the new picamera2 Python library.
 
