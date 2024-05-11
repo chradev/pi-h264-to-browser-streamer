@@ -36,10 +36,11 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
 
 ![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/09.05.2024_23.10.33_REC.png)
 
-# Added streaming from a single camera
+# Added streaming from a single camera with pan/tilt/zoom
  * run in src: ```python3 server-ss.py```
  * browse: ```http://RPi-IP:8000/```
  * watch stream from choosen RPi 5 camera
+ * use X/Y/Z sliders for each camera to do Pan/Tilt/Zoom
 
 Default parameters:
 ```
@@ -68,7 +69,7 @@ options:
   -f FLIP FLIP, --Flip FLIP FLIP
 ```
 
-![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/11.05.2024_01.19.55_REC.png)
+![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/11.05.2024_08.30.10_REC.png)
 
 Notes:
  * Two server application can be run for both RPi 5 cameras (0/1) on different ports (8000/8001);
