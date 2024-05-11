@@ -39,8 +39,6 @@ frameHeight  = args.Height
 framehFlip   = args.Flip[0]
 framevFlip   = args.Flip[1]
 
-cropChanged = False
-
 from subprocess import check_output
 hostIPAddr = check_output(['hostname', '-I'], text=True).split()[0]
 
@@ -95,8 +93,9 @@ def templatize(content, replacements):
     tmpl = Template(content)
     return tmpl.substitute(replacements)
 
+full_camera_res = picam2.camera_properties['PixelArraySize']
 
-indexHtml = templatize(getFile('index-ss.html'), {'port': serverPort, 'fps': frameRate})
+indexHtml  = templatize(getFile('index-ss.html'), {'port': serverPort, 'width': frameWidth, 'height': frameHeight, 'xmax': full_camera_res[0] - frameWidth, 'ymax': full_camera_res[1] - frameHeight, 'fps': frameRate})
 jmuxerJs = getFile('jmuxer.min.js')
 
 
@@ -115,14 +114,14 @@ class StreamingOutput(Output):
             self.loop.add_callback(callback=wsHandler.broadcast, message=self.buffer.getvalue())
         self.buffer.seek(0)
         self.buffer.truncate()
-        if cropChanged is True:
-          # Set camera offset and zoom properties if changed
-          scalerCrop = (frameOffsetX, frameOffsetY, frameWidth, frameHeight)
-          picam2.set_controls({"ScalerCrop": scalerCrop})
 
 
 class wsHandler(tornado.websocket.WebSocketHandler):
     connections = []
+    OffsetX = frameOffsetX
+    OffsetY = frameOffsetY
+    Width = frameWidth
+    Height = frameWidth
 
     def open(self):
         self.connections.append(self)
@@ -131,7 +130,12 @@ class wsHandler(tornado.websocket.WebSocketHandler):
         self.connections.remove(self)
 
     def on_message(self, message):
-        pass
+        if message.split(':')[0] is 'X':
+            self.OffsetX = int(message.split(':')[1])
+        if message.split(':')[0] is 'Y':
+            self.OffsetY = int(message.split(':')[1])
+        scalerCrop = (self.OffsetX, self.OffsetY, self.Width, self.Height)
+        picam2.set_controls({"ScalerCrop": scalerCrop})
 
     @classmethod
     def hasConnections(cl):

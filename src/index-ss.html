@@ -6,28 +6,82 @@
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <style>
       body{
-      margin:0;
-      padding:0;
-      background-color:#303030;
-    }
+        margin:0;
+        padding:0;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: bold;
+        color: blue;
+        
+
+//        background-color:#303030;
+      }
     </style>
     <script src="/jmuxer.min.js"></script>
   </head>
   <body>
     <div id="streamStage">
-      <video autoplay muted id="stream"></video>	
+      <video autoplay muted id="stream"></video>
+      <br>&nbsp;Change camera X/Y offset and Zoom values:
+      <div>
+        <div>
+          <label for="xoffset">&nbsp;X</label>
+          <input style="width: 100px;" type="range" id="xoffset" name="xoffset" min="0" max="1000" value="500" step="10" />
+          Value: <output id="xvalue"></output>
+        </div>
+        <div>
+          <label for="yoffset">&nbsp;Y</label>
+          <input style="width: 100px;" type="range" id="yoffset" name="yoffset" min="0" max="1000" value="500" step="10" />
+          Value: <output id="yvalue"></output>
+        </div>
+        <div>
+          <label for="zoffset">&nbsp;Z</label>
+          <input style="width: 100px;" type="range" id="zoffset" name="zoffset" min="0" max="1.0" value="0.5" step="0.01" />
+          Value: <output id="zvalue"></output>
+        </div>
+      </div>	
     </div>
   </body>
     <script>
       window.onload = function(){	
         var jmuxer = new JMuxer({
-        node: 'stream', mode: 'video',
-        flushingTime: 0, fps: $fps, debug: false
-      });
-      var ws = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/ws/");
-      ws.binaryType = 'arraybuffer';
-      ws.addEventListener('message',function(event){
+          node: 'stream', mode: 'video',
+          flushingTime: 0, fps: $fps, width: $width, height: $height, debug: false
+        });
+        var ws = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/ws/");
+        ws.binaryType = 'arraybuffer';
+        ws.addEventListener('message',function(event){
           if (!document.hidden){ jmuxer.feed({ video: new Uint8Array(event.data) }); }
+        });
+        const xvalue = document.querySelector("#xvalue");
+        const xinput = document.querySelector("#xoffset");
+        xinput.style["width"] = $width * 3 / 4 + 'px';
+        xinput.max = $xmax;
+        xinput.value = xinput.max / 2;
+        xvalue.textContent = xinput.value;
+        xinput.addEventListener("input", (event) => {
+          xvalue.textContent = event.target.value;
+          ws.send("X:" + xvalue.textContent);
+        });
+        const yvalue = document.querySelector("#yvalue");
+        const yinput = document.querySelector("#yoffset");
+        yinput.style["width"] = $width * 3 / 4 + 'px';
+        yinput.max = $ymax;
+        yinput.value = yinput.max / 2;
+        yvalue.textContent = yinput.value;
+        yinput.addEventListener("input", (event) => {
+          yvalue.textContent = event.target.value;
+          ws.send("Y:" + yvalue.textContent);
+        });
+        const zvalue = document.querySelector("#zvalue");
+        const zinput = document.querySelector("#zoffset");
+        zinput.style["width"] = $width * 3 / 4 + 'px';
+        zinput.value = $width / ($xmax + $width);
+        zvalue.textContent = parseFloat(zinput.value).toFixed(2);
+        zinput.addEventListener("input", (event) => {
+          zvalue.textContent = parseFloat(event.target.value).toFixed(2);
+          ws.send("Z:" + zvalue.textContent);
         });
       }     
     </script>
