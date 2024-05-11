@@ -95,8 +95,10 @@ def templatize(content, replacements):
 
 full_camera_res = picam2.camera_properties['PixelArraySize']
 
-indexHtml  = templatize(getFile('index-ss.html'), {'port': serverPort, 'width': frameWidth, 'height': frameHeight, 'xmax': full_camera_res[0] - frameWidth, 'ymax': full_camera_res[1] - frameHeight, 'fps': frameRate})
 jmuxerJs = getFile('jmuxer.min.js')
+styleCSS = getFile('clock-style.css')
+clockSVG = getFile('clock.svg')
+indexHtml  = templatize(getFile('index-ss.html'), {'port': serverPort, 'width': frameWidth, 'height': frameHeight, 'xmax': full_camera_res[0] - frameWidth, 'ymax': full_camera_res[1] - frameHeight, 'fps': frameRate})
 
 
 class StreamingOutput(Output):
@@ -170,11 +172,23 @@ class jmuxerHandler(tornado.web.RequestHandler):
         self.set_header('Content-Type', 'text/javascript')
         self.write(jmuxerJs)
 
+class styleHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.set_header('Content-Type', 'text/css')
+        self.write(styleCSS)
+
+class clocksvgHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.set_header('Content-Type', 'image/svg+xml')
+        self.write(clockSVG)
+
 
 requestHandlers = [
     (r"/ws/", wsHandler),
     (r"/", indexHandler),
-    (r"/jmuxer.min.js", jmuxerHandler)
+    (r"/jmuxer.min.js", jmuxerHandler),
+    (r"/clock-style.css", styleHandler),
+#    (r"/clock.svg", clocksvgHandler)
 ]
 
 try:

@@ -4,8 +4,17 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" type="text/css" href="clock-style.css">
     <style>
-      body{
+      .player{
+        vertical-align: bottom;
+        align-items: left;
+        position: absolute;
+        z-index: -1;
+      }
+      .sliders{
+        vertical-align: bottom;
+        align-items: left;
         margin:0;
         padding:0;
         font-family: Helvetica, Arial, sans-serif;
@@ -13,15 +22,31 @@
         font-style: normal;
         font-weight: bold;
         color: blue;
+        position: absolute;
+        z-index: 100;
       }
     </style>
     <script src="/jmuxer.min.js"></script>
   </head>
   <body>
-    <div>
-      <video autoplay muted id="stream"></video>
+    <div class="clock">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div>
+      <div style="z-index: -1;" id="streamStage">
+        <video autoplay muted id="stream"></video>
+      </div>
+    </div>
+    <div class="sliders" id="streamStage">
+      <div style="height: 1100px;">&nbsp;</div>
       <br>&nbsp;Change camera X/Y offset and Zoom values:
-      <div class=sliders>
+      <div>
         <div>
           <label for="xoffset">&nbsp;X</label>
           <input style="width: 100px;" type="range" id="xoffset" name="xoffset" min="0" max="1000" value="500" step="10" />
@@ -82,6 +107,25 @@
           ws.send("Z:" + zvalue.textContent);
         });
       }     
+      const hr = document.querySelector('#hr');
+      const mn = document.querySelector('#mn');
+      const sc = document.querySelector('#sc');
+      setInterval(() => {
+          let day = new Date();
+
+          let hh = day.getHours();
+          let mm = day.getMinutes();
+          let ss = day.getSeconds();
+          let ms = day.getMilliseconds();
+
+          let hrPosition = (hh * 360 / 12) + (mm * (360 / 60) / 12);
+          let minPosition = (mm * 360 / 60) + (ss * (360 / 60) / 60);
+          let secPosition = ss * 360 / 60 + ms * 6 / 1000;
+
+          hr.style.transform = "rotate(" + hrPosition + "deg)";
+          mn.style.transform = "rotate(" + minPosition + "deg)";
+          sc.style.transform = "rotate(" + secPosition + "deg)";
+      })
     </script>
 </html>
 
