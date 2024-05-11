@@ -50,9 +50,9 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
 ![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/09.05.2024_23.10.33_REC.png)
 
 ### Streaming from a single camera with PTZ control
- * run in src: ```python3 server-ss.py```
- * browse: ```http://RPi-IP:8000/```
- * watch stream from choosen RPi 5 camera
+ * run in src: ```python3 server-ss.py``` and/or ```python3 server-ss.py -n 1 -p 8001```
+ * browse: ```http://RPi-IP:8000/``` and/or ```http://RPi-IP:8001/```
+ * watch stream(s) from choosen RPi 5 camera or from both cameras
  * watch both desktop clock from RPi 5 via camera streaming and web clock from client machine
  * use X/Y/Z sliders for each camera to do Pan/Tilt/Zoom
 
@@ -86,8 +86,9 @@ options:
 ![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/11.05.2024_16.30.53_REC.png)
 
 Notes:
- * Two server application can be run for both RPi 5 cameras (0/1) on different ports (8000/8001);
  * To make X/Y offset available use none standard resolutions like 1200x1200 (for now).
+ * Two server application can be run for both RPi 5 cameras (0/1) on different ports (8000/8001);
+ * In browser application the web clock is synchronized with the client machine and it is laying on top of the video stream comming from RPi 5 camera directed to RPi 5 HDMI display where is running desktop ```xclock```. Both clocks were synchronized via NTP with Internet time server. The clocks are precisely positioned one over another thanks to pan/tilt functionality;
 
 
 ### Motivation of the original project
