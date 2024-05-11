@@ -53,7 +53,7 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
  * run in src: ```python3 server-ss.py```
  * browse: ```http://RPi-IP:8000/```
  * watch stream from choosen RPi 5 camera
- * watch both clocks from RPi 5 desktop via camera streaming and from client machine
+ * watch both desktop clock from RPi 5 via camera streaming and web clock from client machine
  * use X/Y/Z sliders for each camera to do Pan/Tilt/Zoom
 
 Default parameters:
@@ -83,7 +83,7 @@ options:
   -f FLIP FLIP, --Flip FLIP FLIP
 ```
 
-![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/11.05.2024_15.40.44_REC.png)
+![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/11.05.2024_16.30.53_REC.png)
 
 Notes:
  * Two server application can be run for both RPi 5 cameras (0/1) on different ports (8000/8001);
