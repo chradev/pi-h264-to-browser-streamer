@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="stylesheet" type="text/css" href="clock-style.css">
     <style>
-      body{
+      .sliders{
         margin:0;
         padding:0;
         font-family: Helvetica, Arial, sans-serif;
@@ -24,7 +25,7 @@
     <div id="streamStage">
       <video autoplay muted id="stream"></video>
       <br>&nbsp;Change camera X/Y offset and Zoom values:
-      <div>
+      <div class=sliders>
         <div>
           <label for="xoffset">&nbsp;X</label>
           <input style="width: 100px;" type="range" id="xoffset" name="xoffset" min="0" max="1000" value="500" step="10" />
@@ -42,6 +43,36 @@
         </div>
       </div>	
     </div>
+    <div class="clock">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const deg = 6;
+        const hr = document.querySelector('#hr');
+        const mn = document.querySelector('#mn');
+        const sc = document.querySelector('#sc');
+
+        setInterval(() => {
+            let day = new Date();
+
+            let hh = day.getHours();
+            let mm = day.getMinutes();
+            let ss = day.getSeconds();
+            let ms = day.getMilliseconds();
+
+            hr.style.transform = `rotateZ(${(hh*30)+(mm/2)}deg`;
+            mn.style.transform = `rotateZ(${(mm*6)+(ss/10)}deg`;
+            sc.style.transform = `rotateZ(${(ss*6)+(ms/1000*6)}deg`;
+        })
+    </script>
   </body>
     <script>
       window.onload = function(){	
