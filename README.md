@@ -1,10 +1,10 @@
-### Dual camera, near-real-time, h.264 video streamer from RPi 5 directly to a browser
+### Dual camera, near-real-time, h.264 video streamer from RPi 5 to a bowser
 
-Current status of [pi-h264-to-browser-stramer](https://github.com/chradev/pi-h264-to-browser-stramer) - single and dual camera support with PTZ control.
+Current status of [pi-h264-to-browser-stramer](https://github.com/chradev/pi-h264-to-browser-stramer): single and dual camera support with PTZ control.
 
-The project is intended to become a base for stereo vision for a robot. The PTZ control of the cameras will be similar to the human eye but without mechanical movement.
- * Fork of [kroketio/pi-h264-to-browser](https://github.com/kroketio/pi-h264-to-browser) by [chradev](https://github.com/chradev) Apr 2024 - dual camera support and more
-   * Fork of [dans98/pi-h264-to-browser](https://github.com/dans98/pi-h264-to-browser/)  by [nikola-j](https://github.com/nikola-j) Jan 2024 - supports the new picamera2 Python library
+The project is intended to become a base for a stereo vision of a robot. The PTZ control of the cameras will be similar to the human eye but without mechanical movement.
+ * Fork of [kroketio/pi-h264-to-browser](https://github.com/kroketio/pi-h264-to-browser) by [chradev](https://github.com/chradev) Apr 2024: dual camera support and more
+   * Fork of [dans98/pi-h264-to-browser](https://github.com/dans98/pi-h264-to-browser/)  by [nikola-j](https://github.com/nikola-j) Jan 2024: supports the new picamera2 Python library
      * Initial staff published by [dans98](https://github.com/dans98) Nov 2021 and based on:
        * [Picamera](https://picamera.readthedocs.io/en/release-1.13/) handles all the video related tasks.
        * [Tornado](https://www.tornadoweb.org/en/stable/) handles serving out the html and js assets via http, and the h264 stream via websockets.
