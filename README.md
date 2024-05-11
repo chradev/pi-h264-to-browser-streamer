@@ -1,7 +1,7 @@
 ### Dual camera near-real-time h.264 video streamer from RPi 5 directly to a browser
 
 Current status of [pi-h264-to-browser-stramer](https://github.com/chradev/pi-h264-to-browser-stramer) - single and dual camera support with PTZ control
- * Fork of [kroketio/pi-h264-to-browser](https://github.com/kroketio/pi-h264-to-browser) by [chradev](https://github.com/chradev) Apr 2024 - dual camera supports on RPi 5 and more
+ * Fork of [kroketio/pi-h264-to-browser](https://github.com/kroketio/pi-h264-to-browser) by [chradev](https://github.com/chradev) Apr 2024 - dual camera support and more
    * Fork of [dans98/pi-h264-to-browser](https://github.com/dans98/pi-h264-to-browser/)  by [nikola-j](https://github.com/nikola-j) Jan 2024 - supports the new picamera2 Python library
      * Initial staff published by [dans98](https://github.com/dans98) Nov 2021 and based on:
        * [Picamera](https://picamera.readthedocs.io/en/release-1.13/) handles all the video related tasks.
@@ -13,7 +13,7 @@ Current status of [pi-h264-to-browser-stramer](https://github.com/chradev/pi-h26
 The parent project is an excellent solution for near-real-time video capturing, encoding and streaming. Extending it to reach the robot's stereo vision requirements is a challenge that could be solved thanks to advances in embedded and mobile devices supporting video processing with hardware acceleration.
 
 The main reasons for extending the project are:
-  * The new PRi 5 board is much more powerful and supports two upto 16 MP CSI cameras;
+  * The new PRi 5 board is much more powerful and supports two 5, 8, 12 and 16 MP CSI cameras;
   * There is a feature-rich set of picamera2 library supporting the video processing;
   * Extremely low latency is a main reason for choosing the project for stereo vision of a robot.
 
@@ -37,7 +37,8 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
 
 ### Problems not solved for now:
  * dublication of ```StreamingOutput``` and ```wsHandler``` classes
- * using of ```offsetX``` and ```offsetY``` variables calculated by independent process - **solved**
+ * using of ```offsetX``` and ```offsetY``` variables calculated by independent process 
+    - **solved in single streamer case from browser via WebSocket connection**
 
 ### Basic changes usage
  * run in src: ```python3 server.py```
