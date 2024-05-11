@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-    <link rel="stylesheet" type="text/css" href="clock-style.css">
     <style>
-      .sliders{
+      body{
         margin:0;
         padding:0;
         font-family: Helvetica, Arial, sans-serif;
@@ -14,15 +13,12 @@
         font-style: normal;
         font-weight: bold;
         color: blue;
-        
-
-//        background-color:#303030;
       }
     </style>
     <script src="/jmuxer.min.js"></script>
   </head>
   <body>
-    <div id="streamStage">
+    <div>
       <video autoplay muted id="stream"></video>
       <br>&nbsp;Change camera X/Y offset and Zoom values:
       <div class=sliders>
@@ -43,36 +39,6 @@
         </div>
       </div>	
     </div>
-    <div class="clock">
-        <div class="hour">
-            <div class="hr" id="hr"></div>
-        </div>
-        <div class="min">
-            <div class="mn" id="mn"></div>
-        </div>
-        <div class="sec">
-            <div class="sc" id="sc"></div>
-        </div>
-    </div>
-    <script type="text/javascript">
-        const deg = 6;
-        const hr = document.querySelector('#hr');
-        const mn = document.querySelector('#mn');
-        const sc = document.querySelector('#sc');
-
-        setInterval(() => {
-            let day = new Date();
-
-            let hh = day.getHours();
-            let mm = day.getMinutes();
-            let ss = day.getSeconds();
-            let ms = day.getMilliseconds();
-
-            hr.style.transform = `rotateZ(${(hh*30)+(mm/2)}deg`;
-            mn.style.transform = `rotateZ(${(mm*6)+(ss/10)}deg`;
-            sc.style.transform = `rotateZ(${(ss*6)+(ms/1000*6)}deg`;
-        })
-    </script>
   </body>
     <script>
       window.onload = function(){	
