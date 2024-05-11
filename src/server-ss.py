@@ -13,15 +13,15 @@ from picamera2.outputs import Output
 
 import sys, argparse
 
-# Default properties and parce arguments
-# python3 server-ss.py -n 0 -p 8000 -r 30 -X 700 -Y 200 -W 1600 -H 1200 -f 1 1
+# Default properties and parce arguments and secon camera
+# python3 server-ss.py -n 1 -p 8001 -X 1750 -Y 340
 parser = argparse.ArgumentParser()
 parser.add_argument("-v", "--preView",       action='store_true', default=False)
 parser.add_argument("-n", "--cameraNumb",    type=int, default=0)
 parser.add_argument("-p", "--serverPort",    type=int, default=8000)
 parser.add_argument("-r", "--frameRate",     type=int, default=30)
-parser.add_argument("-X", "--Xoffset",       type=int, default=950) #680)
-parser.add_argument("-Y", "--Yoffset",       type=int, default=350) #692)
+parser.add_argument("-X", "--Xoffset",       type=int, default=930) #680)
+parser.add_argument("-Y", "--Yoffset",       type=int, default=400) #692)
 parser.add_argument("-W", "--Width",         type=int, default=1000) #1920)
 parser.add_argument("-H", "--Height",        type=int, default=1000) #1080)
 parser.add_argument("-f", "--Flip", nargs=2, type=int, default=(1, 1))
@@ -188,7 +188,7 @@ requestHandlers = [
     (r"/", indexHandler),
     (r"/jmuxer.min.js", jmuxerHandler),
     (r"/clock-style.css", styleHandler),
-#    (r"/clock.svg", clocksvgHandler)
+    (r"/clock.svg", clocksvgHandler)
 ]
 
 try:

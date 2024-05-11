@@ -53,6 +53,7 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
  * run in src: ```python3 server-ss.py```
  * browse: ```http://RPi-IP:8000/```
  * watch stream from choosen RPi 5 camera
+ * watch both clocks from RPi 5 desktop via camera streaming and from client machine
  * use X/Y/Z sliders for each camera to do Pan/Tilt/Zoom
 
 Default parameters:
