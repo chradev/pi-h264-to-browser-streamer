@@ -83,7 +83,7 @@ options:
   -f FLIP FLIP, --Flip FLIP FLIP
 ```
 
-![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/11.05.2024_08.40.14_REC.png)
+![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/11.05.2024_15.40.44_REC.png)
 
 Notes:
  * Two server application can be run for both RPi 5 cameras (0/1) on different ports (8000/8001);
