@@ -121,7 +121,8 @@ class wsHandler(tornado.websocket.WebSocketHandler):
     OffsetX = frameOffsetX
     OffsetY = frameOffsetY
     Width = frameWidth
-    Height = frameWidth
+    Height = frameHeight
+    Zoom = 1
 
     def open(self):
         self.connections.append(self)
@@ -130,11 +131,13 @@ class wsHandler(tornado.websocket.WebSocketHandler):
         self.connections.remove(self)
 
     def on_message(self, message):
-        if message.split(':')[0] is 'X':
+        if message.split(':')[0] == 'X':
             self.OffsetX = int(message.split(':')[1])
-        if message.split(':')[0] is 'Y':
+        elif message.split(':')[0] == 'Y':
             self.OffsetY = int(message.split(':')[1])
-        scalerCrop = (self.OffsetX, self.OffsetY, self.Width, self.Height)
+        elif message.split(':')[0] == 'Z':
+            self.Zoom = float(message.split(':')[1])
+        scalerCrop = (self.OffsetX, self.OffsetY, int(self.Width * self.Zoom), int(self.Height * self.Zoom))
         picam2.set_controls({"ScalerCrop": scalerCrop})
 
     @classmethod

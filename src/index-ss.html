@@ -37,7 +37,7 @@
         </div>
         <div>
           <label for="zoffset">&nbsp;Z</label>
-          <input style="width: 100px;" type="range" id="zoffset" name="zoffset" min="0" max="1.0" value="0.5" step="0.01" />
+          <input style="width: 100px;" type="range" id="zoffset" name="zoffset" min="0.5" max="2.0" value="1.0" step="0.05" />
           Value: <output id="zvalue"></output>
         </div>
       </div>	
@@ -64,6 +64,7 @@
           xvalue.textContent = event.target.value;
           ws.send("X:" + xvalue.textContent);
         });
+
         const yvalue = document.querySelector("#yvalue");
         const yinput = document.querySelector("#yoffset");
         yinput.style["width"] = $width * 3 / 4 + 'px';
@@ -74,10 +75,10 @@
           yvalue.textContent = event.target.value;
           ws.send("Y:" + yvalue.textContent);
         });
+
         const zvalue = document.querySelector("#zvalue");
         const zinput = document.querySelector("#zoffset");
         zinput.style["width"] = $width * 3 / 4 + 'px';
-        zinput.value = $width / ($xmax + $width);
         zvalue.textContent = parseFloat(zinput.value).toFixed(2);
         zinput.addEventListener("input", (event) => {
           zvalue.textContent = parseFloat(event.target.value).toFixed(2);
