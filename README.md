@@ -105,7 +105,7 @@ options:
   -f FLIP FLIP, --Flip FLIP FLIP
 ```
 
-![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/12.05.2024_10.50.58_REC.png)
+![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/12.05.2024_14.10.57_REC.png)
 
 **Notes:**
  * To make X/Y offset available use none standard resolutions like 1200x1200 (for now).
