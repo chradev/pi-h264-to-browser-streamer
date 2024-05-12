@@ -19,9 +19,9 @@ The main reasons for extending the project are:
   * There is a feature-rich set of picamera2 library supporting the video processing;
   * Extremely low latency is a main reason for choosing the project for stereo vision of a robot.
 
-Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.com/chradev/rpi5-h264-live-stereo-streamer/) but include following one:
- * The streaming server has to be able to change picamera2 properties like ```ScalerCrop``` for implementing pan & tilt eye movements.
+Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.com/chradev/rpi5-h264-live-stereo-streamer/) but include following once:
  * KISS (Keep It as Simple as poSsible)
+ * The streaming server has to be able to change picamera2 properties like ```ScalerCrop``` for implementing pan & tilt eye movements.
 
 ### Basic changes in:
  * src/server.py
@@ -42,6 +42,7 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
  * dublication of ```StreamingOutput``` and ```wsHandler``` classes
  * using of ```offsetX``` and ```offsetY``` variables calculated by independent process 
     - **solved in single streamer case from browser via WebSocket connection**
+    * **in dual streamer case will be divided into a separate WS interface**
 
 ### Basic changes usage
  * run in src: ```python3 server.py```
@@ -55,21 +56,21 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
 Streaming from a single camera is based on the original application and web interface with some extends like:
  * reading of customization parameters from the command line
  * adding of time stamp to the video using opencv2 and local preview
- * testing and adding of picam2.set_controls({"ScalerCrop": scalerCrop}) for PTZ setup
+ * testing and adding of picam2.set_controls({"ScalerCrop": scalerCrop}) for PTZ control
  * adding more camera parameters to index-ss.html at its templatization
- * building right WS url and adding of sliders for PRZ controls of the camera
- * adding message protocol to WS to send back to the server PRZ controls commands
- * implement PRZ controls in server WS when PRZ control is received
- * adding client analog clock to the web interface 
+ * building right WS url and adding of sliders for PTZ controls of the camera
+ * adding message protocol to WS to send back to the server PTZ controls commands
+ * implement PTZ controls in server WS message handler when PTZ command is received
+ * adding client synchronized analog clock to the web interface
    * it was done tnaks to https://github.com/MrTech-AK/Analog.OnlineClock
-   * style.css was added to index-ss.html head section because of .clock -> background: url(clock.svg);
+   * style.css was added to index-ss.html head section because of .clock -> background: url(clock.svg)
    * components styles was modified to keep the clock transparent and on top of the video
 
 **Notes:** 
  * clock and video components styles are not optimized and well done;
  * single camera streamer will be used mainly for experimental and test purposes
 
-### New changes usage
+### New changes in single camera streamer usage
 
  * run in src: ```python3 server-ss.py``` and/or ```python3 server-ss.py -n 1 -p 8001```
  * browse: ```http://RPi-IP:8000/``` and/or ```http://RPi-IP:8001/```
@@ -104,7 +105,7 @@ options:
   -f FLIP FLIP, --Flip FLIP FLIP
 ```
 
-![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/11.05.2024_16.30.53_REC.png)
+![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/12.05.2024_10.50.58_REC.png)
 
 **Notes:**
  * To make X/Y offset available use none standard resolutions like 1200x1200 (for now).
