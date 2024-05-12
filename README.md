@@ -1,6 +1,6 @@
 ### Dual camera, near-real-time, h.264 video streamer from RPi 5 to a bowser
 
-Current status of [pi-h264-to-browser-stramer](https://github.com/chradev/pi-h264-to-browser-stramer): single and dual camera support with PTZ control.
+Current status of [pi-h264-to-browser-stramer](https://github.com/chradev/pi-h264-to-browser-stramer): single and dual camera support with PTZ control (only in single camera streaming for now).
 
 The project is intended to become a base for a stereo vision of a robot. The PTZ control of the cameras will be similar to the human eye but without mechanical movement.
  * Fork of [kroketio/pi-h264-to-browser](https://github.com/kroketio/pi-h264-to-browser) by [chradev](https://github.com/chradev) Apr 2024: dual camera support and more
@@ -21,6 +21,7 @@ The main reasons for extending the project are:
 
 Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.com/chradev/rpi5-h264-live-stereo-streamer/) but include following one:
  * The streaming server has to be able to change picamera2 properties like ```ScalerCrop``` for implementing pan & tilt eye movements.
+ * KISS (Keep It as Simple as poSsible)
 
 ### Basic changes in:
  * src/server.py
@@ -50,13 +51,33 @@ Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.
 ![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/09.05.2024_23.10.33_REC.png)
 
 ### Streaming from a single camera with PTZ control
+
+Streaming from a single camera is based on the original application and web interface with some extends like:
+ * reading of customization parameters from the command line
+ * adding of time stamp to the video using opencv2 and local preview
+ * testing and adding of picam2.set_controls({"ScalerCrop": scalerCrop}) for PTZ setup
+ * adding more camera parameters to index-ss.html at its templatization
+ * building right WS url and adding of sliders for PRZ controls of the camera
+ * adding message protocol to WS to send back to the server PRZ controls commands
+ * implement PRZ controls in server WS when PRZ control is received
+ * adding client analog clock to the web interface 
+   * it was done tnaks to https://github.com/MrTech-AK/Analog.OnlineClock
+   * style.css was added to index-ss.html head section because of .clock -> background: url(clock.svg);
+   * components styles was modified to keep the clock transparent and on top of the video
+
+**Notes:** 
+ * clock and video components styles are not optimized and well done;
+ * single camera streamer will be used mainly for experimental and test purposes
+
+### New changes usage
+
  * run in src: ```python3 server-ss.py``` and/or ```python3 server-ss.py -n 1 -p 8001```
  * browse: ```http://RPi-IP:8000/``` and/or ```http://RPi-IP:8001/```
  * watch stream(s) from choosen RPi 5 camera or from both cameras
  * watch both desktop clock from RPi 5 via camera streaming and web clock from client machine
  * use X/Y/Z sliders for each camera to do Pan/Tilt/Zoom
 
-Default parameters:
+**Default parameters:**
 ```
 Arguments Namespace(preView=False, cameraNumb=0, serverPort=8000, frameRate=30, Xoffset=950, Yoffset=350, Width=1000, Height=1000, Flip=(1, 1))
 Camera 0 at flip(1/1), size(1000.1000), offset(950/350) -> h264 video stream at 30fps -> frame by frame over WebSocket -> http://192.168.1.111:8000/
@@ -64,7 +85,7 @@ Camera 0 at flip(1/1), size(1000.1000), offset(950/350) -> h264 video stream at 
 Camera ScalerCrop properties: ((0, 0, 128, 128), (0, 0, 3280, 2464), (408, 0, 2464, 2464))
 ```
 
-Available options:
+**Available options:**
 ```
 python3 server-ss.py -h
 usage: server-ss.py [-h] [-v] [-n CAMERANUMB] [-p SERVERPORT] [-r FRAMERATE]
@@ -85,7 +106,7 @@ options:
 
 ![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/11.05.2024_16.30.53_REC.png)
 
-Notes:
+**Notes:**
  * To make X/Y offset available use none standard resolutions like 1200x1200 (for now).
  * Two server application can be run for both RPi 5 cameras (0/1) on different ports (8000/8001);
  * In browser application the web clock is synchronized with the client machine and it is laying on top of the video stream comming from RPi 5 camera directed to RPi 5 HDMI display where is running desktop ```xclock```. Both clocks were synchronized via NTP with Internet time server. The clocks are precisely positioned one over another thanks to pan/tilt functionality;
