@@ -112,6 +112,9 @@ options:
  * Two server application can be run for both RPi 5 cameras (0/1) on different ports (8000/8001);
  * In browser application the web clock is synchronized with the client machine and it is laying on top of the video stream comming from RPi 5 camera directed to RPi 5 HDMI display where is running desktop ```xclock```. Both clocks were synchronized via NTP with Internet time server. The clocks are precisely positioned one over another thanks to pan/tilt functionality;
 
+Watch a minute video:
+<video src="https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/12.05.2024_14.45.00_REC.mp4"  width="830" />
+
 
 ### Motivation of the original project
 
