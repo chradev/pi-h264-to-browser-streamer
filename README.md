@@ -19,7 +19,7 @@ The main reasons for extending the project are:
   * There is a feature-rich set of picamera2 library supporting the video processing;
   * Extremely low latency is a main reason for choosing the project for stereo vision of a robot.
 
-Notes: Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.com/chradev/rpi5-h264-live-stereo-streamer/) but include following once:
+**Notes:** Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.com/chradev/rpi5-h264-live-stereo-streamer/) but include following once:
  * KISS (Keep It as Simple as poSsible)
  * The streaming server has to be able to change picamera2 properties like ```ScalerCrop``` for implementing pan & tilt eye movements.
 
