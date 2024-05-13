@@ -47,13 +47,13 @@ The main reasons for extending the project are:
 
 ### Advanced canges for double camera streaming with PTZ control
 
-Double camera streaming is based on the already modified application and web interface with some extends like:
+Dual camera streaming is based on the basic modifications in server application and web interface with following extensions:
  * problem with dublication of ```StreamingOutput``` and ```wsHandler``` classes is solved
  * extended startup settings, added camera preview, logging functionality and more
  * added second '''WebSocket''' handler '''ptzHandler''' for PTZ control of both cameras
  * added sliders for PTZ control of both cameras separately and simultaneously
 
-### Double camera streaming usage
+### Dual camera streamer usage
  * run in src: ```python3 server.py```
  * browse: ```http://RPi-IP:8000/```
  * watch streams of both RPi 5 cameras
