@@ -225,7 +225,7 @@ requestHandlers = [
 ]
 
 # server startup staff and main loop -> 3280x2464
-print("[%s] Starting: camera 0/1 at flip: %r/%r, offset: 0-%r/0-%rpx \n\t\t\t\t-> capture at size: %r/%rpx, framerate: %rfps \n\t\t\t\t-> h264 video stream frame by frame over WebSocket \n\t\t\t\t-> browse http://%s:%r/" % 
+print("[%s] Starting: camera 0/1 at flip: %r/%r, offset: 0-%r/0-%rpx \n\t\t\t\t-> capture at size: %r/%rpx, framerate: %rfps \n\t\t\t\t-> stream h264 video frame by frame over WebSocket \n\t\t\t\t-> browse http://%s:%r/" % 
      (time.strftime("%Y-%m-%d %X"), framehFlip, framevFlip, frameOffsetX0m - frameWidth, frameOffsetY0m - frameHeight, frameWidth, frameHeight, frameRate, hostIPAddr, serverPort))
 
 try:
