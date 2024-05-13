@@ -96,7 +96,6 @@ def templatize(content, replacements):
 full_camera_res = picam2.camera_properties['PixelArraySize']
 
 jmuxerJs = getFile('jmuxer.min.js')
-clockSVG = getFile('clock.svg')
 indexHtml  = templatize(getFile('index-ss.html'), {'port': serverPort, 'width': frameWidth, 'height': frameHeight, 'xmax': full_camera_res[0] - frameWidth, 'ymax': full_camera_res[1] - frameHeight, 'fps': frameRate})
 
 
@@ -172,17 +171,10 @@ class jmuxerHandler(tornado.web.RequestHandler):
         self.write(jmuxerJs)
 
 
-class clocksvgHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.set_header('Content-Type', 'image/svg+xml')
-        self.write(clockSVG)
-
-
 requestHandlers = [
     (r"/ws/", wsHandler),
     (r"/", indexHandler),
-    (r"/jmuxer.min.js", jmuxerHandler),
-    (r"/clock.svg", clocksvgHandler)
+    (r"/jmuxer.min.js", jmuxerHandler)
 ]
 
 try:
