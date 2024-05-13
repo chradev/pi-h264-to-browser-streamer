@@ -38,19 +38,28 @@ The main reasons for extending the project are:
    - create two ```WebSocket``` instances with right URLs
    - add ```WebSocket``` listeners for visualization of both camera streams
 
-### Problems not solved for now:
+### Problems ~~not~~ solved for now:
  * dublication of ```StreamingOutput``` and ```wsHandler``` classes - **solved**
     * **added second '''WebSocket''' handler '''ptzHandler''' for PTZ camera control**
  * using of ```offsetX``` and ```offsetY``` variables calculated by independent process 
     * **solved in single streamer case from browser via WebSocket connection**
     * **in dual streamer case will be divided into a separate WS interface**
 
-### Basic changes usage
+### Advanced canges for double camera streaming with PTZ control
+
+Double camera streaming is based on the already modified application and web interface with some extends like:
+ * problem with dublication of ```StreamingOutput``` and ```wsHandler``` classes is solved
+ * extended startup settings, added camera preview, logging functionality and more
+ * added second '''WebSocket''' handler '''ptzHandler''' for PTZ control of both cameras
+ * added sliders for PTZ control of both cameras separately and simultaneously
+
+### Double camera streaming usage
  * run in src: ```python3 server.py```
  * browse: ```http://RPi-IP:8000/```
  * watch moving image in X direction of both RPi 5 camera streams
 
-![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/09.05.2024_23.10.33_REC.png)
+![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/13.05.2024_16.50.05_REC.png)
+
 
 ### Streaming from a single camera with PTZ control
 
@@ -115,17 +124,7 @@ options:
 
 Watch a short video:
 
-
 https://github.com/chradev/pi-h264-to-browser-stramer/assets/11261306/35d78562-eade-4b3c-9026-b9a101f1fcf4
-
-
-### Double camera streaming with PTZ control
-
-Double camera streaming is based on the already modified application and web interface with some extends like:
- * problem with dublication of ```StreamingOutput``` and ```wsHandler``` classes is solved
- * extended startup settings, added camera preview, logging functionality and more
- * added second '''WebSocket''' handler '''ptzHandler''' for PTZ control of both cameras
- * added sliders for PTZ control of both cameras separately and simultaneously
 
 
 
