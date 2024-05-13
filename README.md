@@ -40,9 +40,9 @@ The main reasons for extending the project are:
 
 ### Problems ~~not~~ solved for now:
  * dublication of ```StreamingOutput``` and ```wsHandler``` classes - **solved**
-    * **added second '''WebSocket''' handler '''ptzHandler''' for PTZ camera control**
+    * **added second ```WebSocket``` handler ```ptzHandler``` for PTZ camera control**
  * using of ```offsetX``` and ```offsetY``` variables calculated by independent process 
-    * **solved in single streamer case from browser via WebSocket connection**
+    * **solved in single streamer case from browser via ```WebSocket``` connection**
     * **in dual streamer case will be divided into a separate WS interface**
 
 ### Advanced canges for double camera streaming with PTZ control
@@ -50,7 +50,7 @@ The main reasons for extending the project are:
 Dual camera streaming is based on the basic modifications in server application and web interface with following extensions:
  * problem with dublication of ```StreamingOutput``` and ```wsHandler``` classes is solved
  * extended startup settings, added camera preview, logging functionality and more
- * added second '''WebSocket''' handler '''ptzHandler''' for PTZ control of both cameras
+ * added second ```WebSocket``` handler ```ptzHandler``` for PTZ control of both cameras
  * added sliders in web page for PTZ control of both cameras separately and simultaneously
 
 ### Dual camera streamer usage
