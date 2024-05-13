@@ -29,16 +29,18 @@
       	node: 'stream1', mode: 'video', flushingTime: 0,
               fps: $fps, width: $width, height: $height, debug: false
        });
-          var ws0 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/cam0/");
+      var ws0 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/cam0/");
       ws0.binaryType = 'arraybuffer';
       ws0.addEventListener('message',function(event){
       	if (!document.hidden){ jmuxer0.feed({ video: new Uint8Array(event.data) }); }
       });
-          var ws1 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/cam1/");
+      var ws1 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/cam1/");
       ws1.binaryType = 'arraybuffer';
       ws1.addEventListener('message',function(event){
       	if (!document.hidden){ jmuxer1.feed({ video: new Uint8Array(event.data) }); }
       });
+      var ptz0 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/ptz0/");
+      var ptz1 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/ptz1/");
 	}     
   </script>
 </html>
