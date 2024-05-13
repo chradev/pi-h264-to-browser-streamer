@@ -51,7 +51,7 @@ Dual camera streaming is based on the basic modifications in server application 
  * problem with dublication of ```StreamingOutput``` and ```wsHandler``` classes is solved
  * extended startup settings, added camera preview, logging functionality and more
  * added second '''WebSocket''' handler '''ptzHandler''' for PTZ control of both cameras
- * added sliders for PTZ control of both cameras separately and simultaneously
+ * added sliders in web page for PTZ control of both cameras separately and simultaneously
 
 ### Dual camera streamer usage
  * run in src: ```python3 server.py```
@@ -60,6 +60,7 @@ Dual camera streaming is based on the basic modifications in server application 
 
 Server log:
 ```
+.../src $ python server.py
 ...
 [2024-05-13 17:21:44] Starting: camera 0/1 at flip: 1/1, offset: 0-2280/0-1464px
                                 -> capture at size: 1000/1000px, framerate: 30fps
