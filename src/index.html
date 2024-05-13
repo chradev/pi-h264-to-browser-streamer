@@ -8,16 +8,114 @@
       body{
         margin:0;
         padding:0;
-        background-color:#303030;
+        background-color:#fff;
+      }
+      .common_table{
+          display:table;
+          border-collapse:collapse;
+          border:4px solid grey;
+          }
+      .common_table_row{
+          display:table-row;
+          border:4px solid grey;
+          }
+      .common_table_col{
+          display:table-cell;
+          border:4px solid grey;
+          }
+      .common_table_caption{
+          display:table-caption;
+          border:4px solid grey;
+          }
+      .sliders{
+        vertical-align: top;
+        align-items: left;
+        margin:0;
+        padding:0;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: bold;
+        color: blue;
       }
     </style>
     <script src="/jmuxer.min.js"></script>
   </head>
   <body>
-  	<div id="streamStage">
-      <video autoplay muted id="stream0"></video>	
-      <video autoplay muted id="stream1"></video>	
-  	</div>
+    <DIV class="common_table">
+      <DIV class="common_table_caption">
+        <div class="sliders" id="streamStage">
+          <div style="text-align: center;">
+              &nbsp;Change X/Y offset and Zoom values of both cameras:
+          </div>
+          <div>
+            <div>
+              <label for="xoffset">&nbsp;X</label>
+              <input style="width: 100px;" type="range" id="xoffset" name="xoffset" min="0" max="1000" value="500" step="10" />
+              Value: <output id="xvalue"></output>
+            </div>
+            <div>
+              <label for="yoffset">&nbsp;Y</label>
+              <input style="width: 100px;" type="range" id="yoffset" name="yoffset" min="0" max="1000" value="500" step="10" />
+              Value: <output id="yvalue"></output>
+            </div>
+            <div>
+              <label for="zoffset">&nbsp;Z</label>
+              <input style="width: 100px;" type="range" id="zoffset" name="zoffset" min="0.5" max="2.0" value="1.0" step="0.05" />
+              Value: <output id="zvalue"></output>
+            </div>
+          </div>	
+        </div>
+      </DIV>
+      <DIV class="common_table_row">
+        <DIV class="common_table_col">
+          <video autoplay muted id="stream0"></video>	
+        </DIV>
+        <DIV class="common_table_col">
+          <video autoplay muted id="stream1"></video>	
+        </DIV>
+      </DIV>
+      <DIV class="common_table_row">
+        <DIV class="common_table_col">
+          <div class="sliders" id="streamStage0">
+            <div style="text-align: center;">
+                &nbsp;Change X/Y offset values of camera 0:
+            </div>
+            <div>
+              <div>
+                <label for="xoffset0">&nbsp;X</label>
+                <input style="width: 100px;" type="range" id="xoffset0" name="xoffset0" min="0" max="1000" value="500" step="10" />
+                Value: <output id="xvalue0"></output>
+              </div>
+              <div>
+                <label for="yoffset0">&nbsp;Y</label>
+                <input style="width: 100px;" type="range" id="yoffset0" name="yoffset0" min="0" max="1000" value="500" step="10" />
+                Value: <output id="yvalue0"></output>
+              </div>
+            </div>	
+          </div>
+        </DIV>
+        <DIV class="common_table_col">
+          <div class="sliders" id="streamStage1">
+            <div style="text-align: center;">
+                &nbsp;Change X/Y offset values of camera 1:
+            </div>
+            <div>
+              <div>
+                <label for="xoffset1">&nbsp;X</label>
+                <input style="width: 100px;" type="range" id="xoffset1" name="xoffset1" min="0" max="1000" value="500" step="10" />
+                Value: <output id="xvalue1"></output>
+              </div>
+              <div>
+                <label for="yoffset1">&nbsp;Y</label>
+                <input style="width: 100px;" type="range" id="yoffset1" name="yoffset1" min="0" max="1000" value="500" step="10" />
+                Value: <output id="yvalue1"></output>
+              </div>
+            </div>	
+          </div>
+        </DIV>
+      </DIV>
+    </DIV>
   </body>
   <script>
 	window.onload = function(){	
@@ -39,8 +137,80 @@
       ws1.addEventListener('message',function(event){
       	if (!document.hidden){ jmuxer1.feed({ video: new Uint8Array(event.data) }); }
       });
+
       var ptz0 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/ptz0/");
       var ptz1 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/ptz1/");
+
+      const xvalue = document.querySelector("#xvalue");
+      const xinput = document.querySelector("#xoffset");
+      xinput.style["width"] = $width * 3 / 2 + 'px';
+      xinput.max = $xmax;
+      xinput.value = xinput.max / 2;
+      xvalue.textContent = xinput.value;
+      xinput.addEventListener("input", (event) => {
+        xvalue.textContent = event.target.value;
+//        ws.send("X:" + xvalue.textContent);
+      });
+      const yvalue = document.querySelector("#yvalue");
+      const yinput = document.querySelector("#yoffset");
+      yinput.style["width"] = $width * 3 / 2 + 'px';
+      yinput.max = $ymax;
+      yinput.value = yinput.max / 2;
+      yvalue.textContent = yinput.value;
+      yinput.addEventListener("input", (event) => {
+        yvalue.textContent = event.target.value;
+//        ws.send("Y:" + yvalue.textContent);
+      });
+      const zvalue = document.querySelector("#zvalue");
+      const zinput = document.querySelector("#zoffset");
+      zinput.style["width"] = $width * 3 / 2 + 'px';
+      zvalue.textContent = parseFloat(zinput.value).toFixed(2);
+      zinput.addEventListener("input", (event) => {
+        zvalue.textContent = parseFloat(event.target.value).toFixed(2);
+//        ws.send("Z:" + zvalue.textContent);
+      });
+
+      const xvalue0 = document.querySelector("#xvalue0");
+      const xinput0 = document.querySelector("#xoffset0");
+      xinput0.style["width"] = $width * 3 / 4 + 'px';
+      xinput0.max = $xmax;
+      xinput0.value = xinput0.max / 2;
+      xvalue0.textContent = xinput0.value;
+      xinput0.addEventListener("input", (event) => {
+        xvalue0.textContent = event.target.value;
+//        ws.send("X:" + xvalue.textContent);
+      });
+      const yvalue0 = document.querySelector("#yvalue0");
+      const yinput0 = document.querySelector("#yoffset0");
+      yinput0.style["width"] = $width * 3 / 4 + 'px';
+      yinput0.max = $ymax;
+      yinput0.value = yinput0.max / 2;
+      yvalue0.textContent = yinput0.value;
+      yinput0.addEventListener("input", (event) => {
+        yvalue0.textContent = event.target.value;
+//        ws.send("Y:" + yvalue.textContent);
+      });
+
+      const xvalue1 = document.querySelector("#xvalue1");
+      const xinput1 = document.querySelector("#xoffset1");
+      xinput1.style["width"] = $width * 3 / 4 + 'px';
+      xinput1.max = $xmax;
+      xinput1.value = xinput1.max / 2;
+      xvalue1.textContent = xinput1.value;
+      xinput1.addEventListener("input", (event) => {
+        xvalue1.textContent = event.target.value;
+//        ws.send("X:" + xvalue.textContent);
+      });
+      const yvalue1 = document.querySelector("#yvalue1");
+      const yinput1 = document.querySelector("#yoffset1");
+      yinput1.style["width"] = $width * 3 / 4 + 'px';
+      yinput1.max = $ymax;
+      yinput1.value = yinput1.max / 2;
+      yvalue1.textContent = yinput1.value;
+      yinput1.addEventListener("input", (event) => {
+        yvalue1.textContent = event.target.value;
+//        ws.send("Y:" + yvalue.textContent);
+      });
 	}     
   </script>
 </html>

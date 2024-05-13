@@ -94,7 +94,7 @@ def templatize(content, replacements):
     tmpl = Template(content)
     return tmpl.substitute(replacements)
 
-indexHtml  = templatize(getFile('index.html'), {'port': serverPort, 'width': frameWidth, 'height': frameHeight, 'fps': frameRate})
+indexHtml  = templatize(getFile('index.html'), {'port': serverPort, 'width': frameWidth, 'height': frameHeight, 'xmax': frameOffsetX0m - frameWidth, 'ymax': frameOffsetY0m - frameHeight, 'fps': frameRate})
 jmuxerJs = getFile('jmuxer.min.js')
 
 # Main class streaming output
