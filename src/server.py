@@ -182,45 +182,30 @@ class camHandler(tornado.websocket.WebSocketHandler):
 
 # WebSocketHandler for camera PTZ control
 class ptzHandler(tornado.websocket.WebSocketHandler):
-    camera = -1
-    connsCam0 = []
-    connsCam1 = []
+    connections = []
     remoteIP = ""
 
-    def open(self, camera):
+    def open(self):
         self.remoteIP = str(self.request.remote_ip)
-        self.camera = int(camera)
-        print("[%s] Starting a service: CamPTZ %r (%s)" % (time.strftime("%Y-%m-%d %X"), self.camera, self.remoteIP))
-        if self.camera == 0:
-            self.connsCam0.append(self)
-        else:
-            self.connsCam1.append(self)
+        print("[%s] Starting a service: CamPTZ - (%s)" % (time.strftime("%Y-%m-%d %X"), self.remoteIP))
+        self.connections.append(self)
 
     def on_close(self):
-        print("[%s] Stopping a service: CamPTZ %r (%s)" % (time.strftime("%Y-%m-%d %X"), self.camera, self.remoteIP))
-        if self.camera == 0:
-            self.connsCam0.remove(self)
-        else:
-            self.connsCam1.remove(self)
+        print("[%s] Stopping a service: CamPTZ - (%s)" % (time.strftime("%Y-%m-%d %X"), self.remoteIP))
+        self.connections.remove(self)
 
     def on_message(self, message):
         pass
 
     @classmethod
-    def hasConnections(cl, cam):
-        if cam == 0 and len(cl.connsCam0) == 0:
-            return False
-        elif cam == 1 and len(cl.connsCam1) == 0:
+    def hasConnections(cl):
+        if len(cl.connections) == 0:
             return False
         return True
 
     @classmethod
-    async def broadcast(cl, cam, message):
-        if cam == 0:
-            conns = cl.connsCam0
-        else:
-            conns = cl.connsCam1
-        for connection in conns:
+    async def broadcast(cl, message):
+        for connection in cl.connections:
             try:
                 await connection.write_message(message, True)
             except tornado.websocket.WebSocketClosedError:
@@ -234,7 +219,7 @@ class ptzHandler(tornado.websocket.WebSocketHandler):
 # web application requestHandlers
 requestHandlers = [
     (r"/cam(\d+)/", camHandler),
-    (r"/ptz(\d+)/", ptzHandler),
+    (r"/ptz/", ptzHandler),
     (r"/jmuxer.min.js", jmuxerHandler),
     (r"/", indexHandler)
 ]

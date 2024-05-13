@@ -138,8 +138,8 @@
       	if (!document.hidden){ jmuxer1.feed({ video: new Uint8Array(event.data) }); }
       });
 
-      var ptz0 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/ptz0/");
-      var ptz1 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/ptz1/");
+      var ptz = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/ptz/");
+//      var ptz1 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/ptz1/");
 
       const xvalue = document.querySelector("#xvalue");
       const xinput = document.querySelector("#xoffset");

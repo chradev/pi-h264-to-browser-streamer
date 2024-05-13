@@ -58,6 +58,20 @@ Double camera streaming is based on the already modified application and web int
  * browse: ```http://RPi-IP:8000/```
  * watch moving image in X direction of both RPi 5 camera streams
 
+Server log:
+```
+...
+[2024-05-13 17:09:06] Starting: camera 0/1 at flip: 1/1, offset: 0-2280/0-1464px
+                                -> capture at size: 1000/1000px, framerate: 30fps
+                                -> h264 video stream frame by frame over WebSocket
+                                -> browse http://192.168.1.111:8000/
+[2024-05-13 17:09:06] Starting chain for: Stream 0 (ready for streaming)
+[2024-05-13 17:09:06] Starting chain for: Stream 1 (ready for streaming)
+[2024-05-13 17:09:14] Starting a service: Camera 0 (192.168.1.178)
+[2024-05-13 17:09:14] Starting a service: Camera 1 (192.168.1.178)
+[2024-05-13 17:09:14] Starting a service: CamPTZ - (192.168.1.178)
+```
+
 ![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/13.05.2024_16.50.05_REC.png)
 
 
