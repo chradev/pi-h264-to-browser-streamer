@@ -73,6 +73,24 @@ Server log:
 [2024-05-13 17:21:47] Starting a service: CamPTZ - (192.168.1.178)
 ```
 
+Server performance reported by ```htop```
+```
+    0[|||||||||||||||||                       34.5%] Tasks: 91, 122 thr, 120 kthr; 3 running
+    1[||||||||||||||||||||||||||              55.0%] Load average: 2.38 2.31 2.18
+    2[||||||||||||||||||                      38.6%] Uptime: 1 day, 09:25:13
+    3[||||||||||||||||||||                    41.4%]
+  Mem[||||||||||||||||||                 702M/3.95G]
+  Swp[|||||||||||||||||||||||||||||||||83.8M/100.0M]
+
+  [Main] [I/O]
+    PID USER       PRI  NI  VIRT   RES   SHR S  CPU%?MEM%   TIME+  Command
+   9510 chr         20   0 1839M  290M  135M S 166.8  7.2 33:40.74 python server.py
+   9529 chr         20   0 1839M  290M  135M S  45.2  7.2  8:03.60 python server.py
+   9531 chr         20   0 1839M  290M  135M S  45.2  7.2  7:36.82 python server.py
+   9522 chr         20   0 1839M  290M  135M S  23.3  7.2  5:20.35 python server.py
+   9533 chr         20   0 1839M  290M  135M S   5.3  7.2  1:07.46 python server.py
+```
+
 ![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/13.05.2024_16.50.05_REC.png)
 
 
