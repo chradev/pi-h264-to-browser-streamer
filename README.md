@@ -91,7 +91,7 @@ Server performance reported by ```htop```
    9533 chr         20   0 1839M  290M  135M S   5.3  7.2  1:07.46 python server.py
 ```
 
-![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/13.05.2024_16.50.05_REC.png)
+![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/13.05.2024_18.06.32_REC.png)
 
 
 ### Streaming from a single camera with PTZ control
