@@ -32,6 +32,10 @@ The main reasons for extending the project are:
 
 ![Dual camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/15.05.2024_00.12.38_REC.png)
 
+### A snapshot of dual camera streamer server PTZ control
+
+https://github.com/chradev/pi-h264-to-browser-stramer/assets/11261306/a2a676e4-b6e4-4bf9-b1e4-67f3dd66af25
+
 
 ### Basic changes in:
  * src/server.py
