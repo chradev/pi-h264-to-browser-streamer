@@ -28,6 +28,11 @@ The main reasons for extending the project are:
 ![A Standard Stereo Vision Principle drawings](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/AStandardStereoVisionPrinciple.png)
 
 
+### A snapshot of running dual camera streamer server and its web user interfase
+
+![Dual camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/14.05.2024_06.10.01_REC.png)
+
+
 ### Basic changes in:
  * src/server.py
    - changes to send to web page: ```{'port': serverPort, 'width': frameWidth, 'height': frameHeight, 'fps': frameRate}```
@@ -97,8 +102,6 @@ Server performance reported by ```htop```
    9522 chr         20   0 1839M  290M  135M S  23.3  7.2  5:20.35 python server.py
    9533 chr         20   0 1839M  290M  135M S   5.3  7.2  1:07.46 python server.py
 ```
-
-![Dual camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/14.05.2024_06.10.01_REC.png)
 
 
 ### Streaming from a single camera with PTZ control

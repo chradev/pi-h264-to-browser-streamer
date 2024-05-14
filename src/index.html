@@ -143,7 +143,7 @@
 
       const xvalue = document.querySelector("#xvalue");
       const xinput = document.querySelector("#xoffset");
-      xinput.style["width"] = $width * 3 / 2 + 'px';
+      xinput.style["width"] = $width * 7 / 4 + 'px';
       xinput.max = $xmax;
       xinput.value = xinput.max / 2;
       xvalue.textContent = xinput.value;
@@ -153,7 +153,7 @@
       });
       const yvalue = document.querySelector("#yvalue");
       const yinput = document.querySelector("#yoffset");
-      yinput.style["width"] = $width * 3 / 2 + 'px';
+      yinput.style["width"] = $width * 7 / 4 + 'px';
       yinput.max = $ymax;
       yinput.value = yinput.max / 2;
       yvalue.textContent = yinput.value;
@@ -163,7 +163,7 @@
       });
       const zvalue = document.querySelector("#zvalue");
       const zinput = document.querySelector("#zoffset");
-      zinput.style["width"] = $width * 3 / 2 + 'px';
+      zinput.style["width"] = $width * 7 / 4 + 'px';
       zvalue.textContent = parseFloat(zinput.value).toFixed(2);
       zinput.addEventListener("input", (event) => {
         zvalue.textContent = parseFloat(event.target.value).toFixed(2);
