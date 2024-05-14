@@ -96,11 +96,9 @@ def templatize(content, replacements):
     tmpl = Template(content)
     return tmpl.substitute(replacements)
 
-indexHtml  = templatize(getFile('index.html'),  
-                {'port': serverPort, 'width': frameWidth, 
-                 'height': frameHeight, 'xmax': frameOffsetX0m - frameWidth, 
-                 'ymax': frameOffsetY0m - frameHeight, 'fps': frameRate})
-jmuxerJs = getFile('jmuxer.min.js')
+jmuxerJs   = getFile('jmuxer.min.js')
+indexHtml  = templatize(getFile('index.html'), {'port': serverPort, 
+              'fps': frameRate, 'width': frameWidth, 'height': frameHeight})
 
 # Main class streaming output
 class StreamingOutput(Output):
@@ -192,6 +190,102 @@ class camHandler(tornado.websocket.WebSocketHandler):
     def check_origin(self, origin):
         return True
 
+import json
+def ptz_send_data():
+    return json.dumps([
+                { 'cam': 0,
+                  'x': {
+                    'min': int(frameWidth / 2),
+                    'val': int(frameOffsetX0 + frameWidth / 2),
+                    'max': int(frameOffsetX0m - frameWidth / 2)
+                  },
+                  'y': {
+                    'min': int(frameHeight / 2),
+                    'val': int(frameOffsetY0 + frameHeight / 2),
+                    'max': int(frameOffsetY0m - frameHeight / 2)
+                  }
+                }, 
+                { 'cam': 1,
+                  'x': {
+                    'min': int(frameWidth / 2),
+                    'val': int(frameOffsetX1 + frameWidth / 2),
+                    'max': int(frameOffsetX1m - frameWidth / 2)
+                  },
+                  'y': {
+                    'min': int(frameHeight / 2),
+                    'val': int(frameOffsetY1 + frameHeight / 2),
+                    'max': int(frameOffsetY1m - frameHeight / 2)
+                  }
+                },
+                { 'cam': 2,
+                  'x': {
+                    'min': -1500,
+                    'val': 0,
+                    'max': 1500
+                  },
+                  'y': {
+                    'min': -1500,
+                    'val': 0,
+                    'max': 1500
+                  },
+                  'z': {
+                    'min': 0.5,
+                    'val': 1.0,
+                    'max': 2.0
+                  }
+                }
+                ])
+
+'''
+        # Reset camera offset and size properties
+        scalerCrop = (frameOffsetX0, frameOffsetY0, frameWidth, frameHeight)
+        picam20.set_controls({"ScalerCrop": scalerCrop})
+        scalerCrop = (frameOffsetX1, frameOffsetY1, frameWidth, frameHeight)
+        picam21.set_controls({"ScalerCrop": scalerCrop})
+'''
+
+'''
+frameWidth     = 1000
+frameHeight    = 1000
+frameOffsetX0  = 1080
+frameOffsetY0  = 740
+frameOffsetX1  = 1750
+frameOffsetY1  = 360
+frameOffsetX0m  = full_camera_res[0]
+frameOffsetY0m  = full_camera_res[1]
+frameOffsetX1m  = full_camera_res[0]
+frameOffsetY1m  = full_camera_res[1]
+'''
+
+def set_ptz_data1(data):
+        # Set camera offset and size properties
+#        frameWidth     = int(frameWidth * data[2]['z']['val'])
+#        frameHeight    = int(frameHeight * data[2]['z']['val'])
+        frameOffsetX0  = data[0]['x']['val'] - data[0]['x']['min'] + data[2]['x']['val']
+        frameOffsetY0  = data[0]['y']['val'] - data[0]['y']['min'] + data[2]['y']['val']
+        frameOffsetX1  = data[1]['x']['val'] - data[1]['x']['min'] + data[2]['x']['val']
+        frameOffsetY1  = data[1]['y']['val'] - data[1]['y']['min'] + data[2]['y']['val']
+
+        # Set camera offset and size properties
+        scalerCrop = (frameOffsetX0, frameOffsetY0, frameWidth, frameHeight)
+        picam20.set_controls({"ScalerCrop": scalerCrop})
+        scalerCrop = (frameOffsetX1, frameOffsetY1, frameWidth, frameHeight)
+        picam21.set_controls({"ScalerCrop": scalerCrop})
+    
+def set_ptz_data(data):
+        scalerCrop = (
+            data[0]['x']['val'] - data[0]['x']['min'] + data[2]['x']['val'] + int((frameWidth - frameWidth * data[2]['z']['val']) / 2), 
+            data[0]['y']['val'] - data[0]['y']['min'] + data[2]['y']['val'] + int((frameHeight - frameHeight * data[2]['z']['val']) / 2), 
+            int(frameWidth * data[2]['z']['val']), 
+            int(frameHeight * data[2]['z']['val']))
+        picam20.set_controls({"ScalerCrop": scalerCrop})
+        scalerCrop = (
+            data[1]['x']['val'] - data[1]['x']['min'] + data[2]['x']['val'] + int((frameWidth - frameWidth * data[2]['z']['val']) / 2),
+            data[1]['y']['val'] - data[1]['y']['min'] + data[2]['y']['val'] + int((frameHeight - frameHeight * data[2]['z']['val']) / 2),
+            int(frameWidth * data[2]['z']['val']), 
+            int(frameHeight * data[2]['z']['val']))
+        picam21.set_controls({"ScalerCrop": scalerCrop})
+
 # WebSocketHandler for camera PTZ control
 class ptzHandler(tornado.websocket.WebSocketHandler):
     connections = []
@@ -202,6 +296,14 @@ class ptzHandler(tornado.websocket.WebSocketHandler):
         print("[%s] Starting a service: CamPTZ - (%s)" % 
               (time.strftime("%Y-%m-%d %X"), self.remoteIP))
         self.connections.append(self)
+        # Reset camera offset and size properties
+        scalerCrop = (frameOffsetX0, frameOffsetY0, frameWidth, frameHeight)
+        picam20.set_controls({"ScalerCrop": scalerCrop})
+        scalerCrop = (frameOffsetX1, frameOffsetY1, frameWidth, frameHeight)
+        picam21.set_controls({"ScalerCrop": scalerCrop})
+        # Send initial data
+        message = ptz_send_data()
+        self.broadcast(message)
 
     def on_close(self):
         print("[%s] Stopping a service: CamPTZ - (%s)" % 
@@ -209,7 +311,10 @@ class ptzHandler(tornado.websocket.WebSocketHandler):
         self.connections.remove(self)
 
     def on_message(self, message):
-        pass
+        data = json.loads(message)
+        set_ptz_data(data)
+#        messg = ptz_send_data()
+        self.broadcast(message)
 
     @classmethod
     def hasConnections(cl):
@@ -218,10 +323,10 @@ class ptzHandler(tornado.websocket.WebSocketHandler):
         return True
 
     @classmethod
-    async def broadcast(cl, message):
+    def broadcast(cl, message):
         for connection in cl.connections:
             try:
-                await connection.write_message(message, True)
+                connection.write_message(message)
             except tornado.websocket.WebSocketClosedError:
                 pass
             except tornado.iostream.StreamClosedError:
