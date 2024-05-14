@@ -25,7 +25,7 @@ The main reasons for extending the project are:
 
 ### A Standard Stereo Vision Principle
 
-![A Standard Stereo Vision Principle drawings](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/StereoVisionPrinciple.png)
+![A Standard Stereo Vision Principle drawings](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/AStandardStereoVisionPrinciple.png)
 
 
 ### Basic changes in:
