@@ -30,7 +30,7 @@ The main reasons for extending the project are:
 
 ### A snapshot of running dual camera streamer server and its web user interfase
 
-![Dual camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/14.05.2024_06.10.01_REC.png)
+![Dual camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/15.05.2024_00.12.38_REC.png)
 
 
 ### Basic changes in:
@@ -62,6 +62,8 @@ Dual camera streaming is based on the basic modifications in server application 
  * extended startup settings, added camera preview, logging functionality and more
  * added second ```WebSocket``` handler ```ptzHandler``` for PTZ control of both cameras
  * added sliders in web page for PTZ control of both cameras separately and simultaneously
+ * added server support for PTZ control for both cameras separately and simultaneously
+ * added server support for changing of default PTZ values for tuning of cameras positions
 
 ### Dual camera streamer usage
  * run in src: ```python3 server.py```

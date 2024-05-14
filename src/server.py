@@ -17,13 +17,17 @@ serverPort     = 8000
 frameRate      = 30
 frameWidth     = 1000
 frameHeight    = 1000
-frameOffsetX0  = 1080
-frameOffsetY0  = 740
-frameOffsetX1  = 1750
-frameOffsetY1  = 360
+frameOffsetX0  = 1020 # 1080
+frameOffsetY0  = 880  #740
+frameOffsetX1  = 1740 #1750
+frameOffsetY1  = 430  #360
 framehFlip     = 1
 framevFlip     = 1
 enableView     = False
+enableTexts0   = True
+enableTexts1   = True
+enableLines0   = True
+enableLines1   = True
 
 # Get host IP address
 from subprocess import check_output
@@ -60,12 +64,20 @@ thickness = 2
 def apply_timestamp0(request):
     timestamp = time.strftime("%Y-%m-%d %X") + " - Camera: 0"
     with MappedArray(request, "main") as m:
-        cv2.putText(m.array, timestamp, origin, font, scale, colour, thickness)
+        if enableTexts0 is True:
+            cv2.putText(m.array, timestamp, origin, font, scale, colour, thickness)
+        if enableLines0 is True:
+            cv2.line(m.array, (0, int(frameHeight/2)), (frameWidth, int(frameHeight/2)), [0, 255, 0], 2)
+            cv2.line(m.array, (int(frameWidth/2), 0), (int(frameWidth/2), frameHeight), [0, 255, 0], 2)
 
 def apply_timestamp1(request):
     timestamp = time.strftime("%Y-%m-%d %X") + " - Camera: 1"
     with MappedArray(request, "main") as m:
-        cv2.putText(m.array, timestamp, origin, font, scale, colour, thickness)
+        if enableTexts1 is True:
+            cv2.putText(m.array, timestamp, origin, font, scale, colour, thickness)
+        if enableLines1 is True:
+            cv2.line(m.array, (0, int(frameHeight/2)), (frameWidth, int(frameHeight/2)), [0, 255, 0], 2)
+            cv2.line(m.array, (int(frameWidth/2), 0), (int(frameWidth/2), frameHeight), [0, 255, 0], 2)
 
 picam20.pre_callback = apply_timestamp0
 picam21.pre_callback = apply_timestamp1
@@ -194,6 +206,11 @@ import json
 def ptz_send_data():
     return json.dumps([
                 { 'cam': 0,
+                  'e': {
+                      'txt': enableTexts0,
+                      'lin': enableLines0,
+                      'def': False,
+                  },
                   'x': {
                     'min': int(frameWidth / 2),
                     'val': int(frameOffsetX0 + frameWidth / 2),
@@ -206,6 +223,11 @@ def ptz_send_data():
                   }
                 }, 
                 { 'cam': 1,
+                  'e': {
+                      'txt': enableTexts1,
+                      'lin': enableLines1,
+                      'def': False,
+                  },
                   'x': {
                     'min': int(frameWidth / 2),
                     'val': int(frameOffsetX1 + frameWidth / 2),
@@ -247,10 +269,10 @@ def ptz_send_data():
 '''
 frameWidth     = 1000
 frameHeight    = 1000
-frameOffsetX0  = 1080
-frameOffsetY0  = 740
-frameOffsetX1  = 1750
-frameOffsetY1  = 360
+frameOffsetX0  = 1020 # 1080
+frameOffsetY0  = 880  #740
+frameOffsetX1  = 1740 #1750
+frameOffsetY1  = 430  #360
 frameOffsetX0m  = full_camera_res[0]
 frameOffsetY0m  = full_camera_res[1]
 frameOffsetX1m  = full_camera_res[0]
@@ -273,6 +295,26 @@ def set_ptz_data1(data):
         picam21.set_controls({"ScalerCrop": scalerCrop})
     
 def set_ptz_data(data):
+        global enableTexts0
+        global enableTexts1
+        global enableLines0
+        global enableLines1
+        enableTexts0   = data[0]['e']['txt']
+        enableTexts1   = data[1]['e']['txt']
+        enableLines0   = data[0]['e']['lin']
+        enableLines1   = data[1]['e']['lin']
+
+        if data[0]['e']['def'] or data[1]['e']['def']:
+            global frameOffsetX0 # = 1080
+            global frameOffsetY0 # = 740
+            global frameOffsetX1 # = 1750
+            global frameOffsetY1 # = 360
+#            print(data[0])
+            frameOffsetX0  = data[0]['x']['val'] - data[0]['x']['min']
+            frameOffsetY0  = data[0]['y']['val'] - data[0]['y']['min']
+            frameOffsetX1  = data[1]['x']['val'] - data[1]['x']['min']
+            frameOffsetY1  = data[1]['y']['val'] - data[1]['y']['min']
+
         scalerCrop = (
             data[0]['x']['val'] - data[0]['x']['min'] + data[2]['x']['val'] + int((frameWidth - frameWidth * data[2]['z']['val']) / 2), 
             data[0]['y']['val'] - data[0]['y']['min'] + data[2]['y']['val'] + int((frameHeight - frameHeight * data[2]['z']['val']) / 2), 
