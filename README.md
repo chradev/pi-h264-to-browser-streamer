@@ -21,7 +21,12 @@ The main reasons for extending the project are:
 
 **Notes:** Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.com/chradev/rpi5-h264-live-stereo-streamer/) but include following once:
  * KISS (Keep It as Simple as poSsible)
- * The streaming server has to be able to change picamera2 properties like ```ScalerCrop``` for implementing pan & tilt eye movements.
+ * The streaming server has to be able to change picamera2 properties like ```ScalerCrop``` for implementing of motorless PTZ control.
+
+### A Standard Stereo Vision Principle
+
+![A Standard Stereo Vision Principle drawings](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/StereoVisionPrinciple.png)
+
 
 ### Basic changes in:
  * src/server.py
@@ -93,7 +98,7 @@ Server performance reported by ```htop```
    9533 chr         20   0 1839M  290M  135M S   5.3  7.2  1:07.46 python server.py
 ```
 
-![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/14.05.2024_02.32.00_REC.png)
+![Dual camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/14.05.2024_02.32.00_REC.png)
 
 
 ### Streaming from a single camera with PTZ control
@@ -150,14 +155,14 @@ options:
   -f FLIP FLIP, --Flip FLIP FLIP
 ```
 
-![All staff snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/12.05.2024_14.10.57_REC.png)
+![Single camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/12.05.2024_14.10.57_REC.png)
 
 **Notes:**
  * To make X/Y offset available use none standard resolutions like 1200x1200 (for now).
  * Two server application can be run for both RPi 5 cameras (0/1) on different ports (8000/8001);
  * In browser application the web clock is synchronized with the client machine and it is laying on top of the video stream comming from RPi 5 camera directed to RPi 5 HDMI display where is running desktop ```xclock```. Both clocks were synchronized via NTP with Internet time server. The clocks are precisely positioned one over another thanks to pan/tilt functionality;
 
-Watch a short video:
+Watch a short video of single camera streaming latency:
 
 https://github.com/chradev/pi-h264-to-browser-stramer/assets/11261306/35d78562-eade-4b3c-9026-b9a101f1fcf4
 
