@@ -98,7 +98,7 @@ Server performance reported by ```htop```
    9533 chr         20   0 1839M  290M  135M S   5.3  7.2  1:07.46 python server.py
 ```
 
-![Dual camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/14.05.2024_05.52.18_REC.png)
+![Dual camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/14.05.2024_06.10.01_REC.png)
 
 
 ### Streaming from a single camera with PTZ control
