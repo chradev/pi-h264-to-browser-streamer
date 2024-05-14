@@ -62,15 +62,17 @@ Server log:
 ```
 .../src $ python server.py
 ...
-[2024-05-13 17:21:44] Starting: camera 0/1 at flip: 1/1, offset: 0-2280/0-1464px
-                                -> capture at size: 1000/1000px, framerate: 30fps
-                                -> stream h264 video frame by frame over WebSocket
-                                -> browse http://192.168.1.111:8000/
-[2024-05-13 17:21:44] Starting chain for: Stream 0 (ready for streaming)
-[2024-05-13 17:21:44] Starting chain for: Stream 1 (ready for streaming)
-[2024-05-13 17:21:47] Starting a service: Camera 0 (192.168.1.178)
-[2024-05-13 17:21:47] Starting a service: Camera 1 (192.168.1.178)
-[2024-05-13 17:21:47] Starting a service: CamPTZ - (192.168.1.178)
+[2024-05-14 03:26:07] Starting: Dual camera streaming server & web interface on RPi 5
+                                -> with two 8MP RPi cameras v.2 at size: 3280/2464 px
+                                -> starting up at flip: 1/1, offset: 0-2280/0-1464 px
+                                -> capturing at framerate: 30 fps, size: 1000/1000 px
+                                -> streaming h264 video frame by frame over WebSocket
+                                => run browser at address: http://192.168.1.111:8000/
+[2024-05-14 03:26:07] Starting chain for: Stream 0 (ready for streaming)
+[2024-05-14 03:26:07] Starting chain for: Stream 1 (ready for streaming)
+[2024-05-14 03:26:10] Starting a service: Camera 0 (192.168.1.178)
+[2024-05-14 03:26:10] Starting a service: Camera 1 (192.168.1.178)
+[2024-05-14 03:26:10] Starting a service: CamPTZ - (192.168.1.178)
 ```
 
 Server performance reported by ```htop```

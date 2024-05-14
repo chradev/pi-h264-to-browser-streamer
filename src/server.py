@@ -40,15 +40,17 @@ frameOffsetX1m  = full_camera_res[0]
 frameOffsetY1m  = full_camera_res[1]
 
 from libcamera import Transform
-picam20.configure(picam20.create_video_configuration(main={"size": (frameWidth, frameHeight)}, transform=Transform(hflip=framehFlip, vflip=framevFlip) ))
-picam21.configure(picam21.create_video_configuration(main={"size": (frameWidth, frameHeight)}, transform=Transform(hflip=framehFlip, vflip=framevFlip) ))
+picam20.configure(picam20.create_video_configuration(main={"size": (frameWidth, 
+      frameHeight)}, transform=Transform(hflip=framehFlip, vflip=framevFlip) ))
+picam21.configure(picam21.create_video_configuration(main={"size": (frameWidth, 
+      frameHeight)}, transform=Transform(hflip=framehFlip, vflip=framevFlip) ))
 
 # use sudo apt install python3-opencv
 import cv2
 import time
 from picamera2 import MappedArray
 
-# Define and attach camera2.pre_callback to put date, time and camera numb into the video frames
+# Define and attach camera2.pre_callback to put date & time into the video frame
 colour = (0, 255, 0)
 origin = (0, 30)
 font = cv2.FONT_HERSHEY_SIMPLEX
@@ -94,7 +96,10 @@ def templatize(content, replacements):
     tmpl = Template(content)
     return tmpl.substitute(replacements)
 
-indexHtml  = templatize(getFile('index.html'), {'port': serverPort, 'width': frameWidth, 'height': frameHeight, 'xmax': frameOffsetX0m - frameWidth, 'ymax': frameOffsetY0m - frameHeight, 'fps': frameRate})
+indexHtml  = templatize(getFile('index.html'),  
+                {'port': serverPort, 'width': frameWidth, 
+                 'height': frameHeight, 'xmax': frameOffsetX0m - frameWidth, 
+                 'ymax': frameOffsetY0m - frameHeight, 'fps': frameRate})
 jmuxerJs = getFile('jmuxer.min.js')
 
 # Main class streaming output
@@ -103,7 +108,8 @@ class StreamingOutput(Output):
     def __init__(self, stream):
         super().__init__()
         self.stream = stream
-        print("[%s] Starting chain for: Stream %r (ready for streaming)" % (time.strftime("%Y-%m-%d %X"), self.stream))
+        print("[%s] Starting chain for: Stream %r (ready for streaming)" % 
+              (time.strftime("%Y-%m-%d %X"), self.stream))
         self.loop = None
         self.buffer = io.BytesIO()
         super(StreamingOutput, self).__init__(stream)
@@ -114,7 +120,8 @@ class StreamingOutput(Output):
     def outputframe(self, frame, keyframe=True, timestamp=None):
         self.buffer.write(frame)
         if self.loop is not None and camHandler.hasConnections(cam=self.stream):
-            self.loop.add_callback(callback=camHandler.broadcast, cam=self.stream, message=self.buffer.getvalue())
+            self.loop.add_callback(callback=camHandler.broadcast, 
+                cam=self.stream, message=self.buffer.getvalue())
         self.buffer.seek(0)
         self.buffer.truncate()
 
@@ -135,18 +142,23 @@ class camHandler(tornado.websocket.WebSocketHandler):
     connsCam1 = []
     remoteIP = ""
 
-    # self.request -> HTTPServerRequest(protocol='http', host='192.168.1.111:8000', method='GET', uri='/cam1/', version='HTTP/1.1', remote_ip='192.168.1.178')
+    '''
+    self.request: HTTPServerRequest(protocol='http', host='192.168.1.111:8000', 
+    method='GET', uri='/cam0/', version='HTTP/1.1', remote_ip='192.168.1.178')
+    '''
     def open(self, camera):
         self.remoteIP = str(self.request.remote_ip)
         self.camera = int(camera)
-        print("[%s] Starting a service: Camera %r (%s)" % (time.strftime("%Y-%m-%d %X"), self.camera, self.remoteIP))
+        print("[%s] Starting a service: Camera %r (%s)" % 
+              (time.strftime("%Y-%m-%d %X"), self.camera, self.remoteIP))
         if self.camera == 0:
             self.connsCam0.append(self)
         else:
             self.connsCam1.append(self)
 
     def on_close(self):
-        print("[%s] Stopping a service: Camera %r (%s)" % (time.strftime("%Y-%m-%d %X"), self.camera, self.remoteIP))
+        print("[%s] Stopping a service: Camera %r (%s)" % 
+              (time.strftime("%Y-%m-%d %X"), self.camera, self.remoteIP))
         if self.camera == 0:
             self.connsCam0.remove(self)
         else:
@@ -187,11 +199,13 @@ class ptzHandler(tornado.websocket.WebSocketHandler):
 
     def open(self):
         self.remoteIP = str(self.request.remote_ip)
-        print("[%s] Starting a service: CamPTZ - (%s)" % (time.strftime("%Y-%m-%d %X"), self.remoteIP))
+        print("[%s] Starting a service: CamPTZ - (%s)" % 
+              (time.strftime("%Y-%m-%d %X"), self.remoteIP))
         self.connections.append(self)
 
     def on_close(self):
-        print("[%s] Stopping a service: CamPTZ - (%s)" % (time.strftime("%Y-%m-%d %X"), self.remoteIP))
+        print("[%s] Stopping a service: CamPTZ - (%s)" % 
+              (time.strftime("%Y-%m-%d %X"), self.remoteIP))
         self.connections.remove(self)
 
     def on_message(self, message):
@@ -224,9 +238,16 @@ requestHandlers = [
     (r"/", indexHandler)
 ]
 
-# server startup staff and main loop -> 3280x2464
-print("[%s] Starting: camera 0/1 at flip: %r/%r, offset: 0-%r/0-%rpx \n\t\t\t\t-> capture at size: %r/%rpx, framerate: %rfps \n\t\t\t\t-> stream h264 video frame by frame over WebSocket \n\t\t\t\t-> browse http://%s:%r/" % 
-     (time.strftime("%Y-%m-%d %X"), framehFlip, framevFlip, frameOffsetX0m - frameWidth, frameOffsetY0m - frameHeight, frameWidth, frameHeight, frameRate, hostIPAddr, serverPort))
+# server startup staff and main loop
+print(('[%s] Starting: Dual camera streaming server & web interface on RPi 5'
+                '\n\t\t\t\t-> with two 8MP RPi cameras v.2 at size: %r/%r px'
+              '\n\t\t\t\t-> starting up at flip: %r/%r, offset: 0-%r/0-%r px'
+                '\n\t\t\t\t-> capturing at framerate: %r fps, size: %r/%r px'
+            '\n\t\t\t\t-> streaming h264 video frame by frame over WebSocket'
+                         '\n\t\t\t\t=> run browser at address: http://%s:%r/') % 
+    (time.strftime("%Y-%m-%d %X"), frameOffsetX0m, frameOffsetY0m, framehFlip, 
+     framevFlip, frameOffsetX0m - frameWidth, frameOffsetY0m - frameHeight, 
+     frameRate, frameWidth, frameHeight, hostIPAddr, serverPort))
 
 try:
     # streamer pipe set up and cameras start up
