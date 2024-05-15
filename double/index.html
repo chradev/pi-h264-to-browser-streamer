@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="icon" href="data:image/x-icon;base64,AAABAAEAMDAAAAEAGACoHAAAFgAAACgAAAAwAAAAYAAAAAEAGAAAAAAAAAAAAEgAAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///////8AAP///////wAA////////AAD///////8AAP///////wAA////////AAD///////8AAP///////wAA////////AAD///////8AAP///////wAA////////AAD/8D/8D/8AAP/AH/gD/wAA/8AH8AH/AAD/gAfgAP8AAP8AA8AA/wAA/wABwAB/AAD+AAGAAH8AAP4AAYAAPwAA/AAAgAA/AAD8AAAAAD8AAPwAAAAAPwAA/AAAAAA/AAD8AAAAAD8AAPwAAAAAPwAA/AAAAAA/AAD8AAAAAD8AAPwAAIAAPwAA/AABgAA/AAD+AAGAAH8AAP4AAYAAfwAA/wADwAD/AAD/gAfgAf8AAP+AD/AD/wAA/+A/+Af/AAD///////8AAP///////wAA////////AAD///////8AAP///////wAA////////AAD///////8AAP///////wAA////////AAD///////8AAP///////wAA////////AAA=">
+    <style>
+      body{
+        margin:0;
+        padding:0;
+        background-color:#fff;
+      }
+      .common_table{
+        display:table;
+        border-collapse:collapse;
+        border:4px solid grey;
+        }
+      .common_table_row{
+        display:table-row;
+        border:4px solid grey;
+        }
+      .common_table_col{
+        display:table-cell;
+        border:4px solid grey;
+        }
+      .common_table_caption{
+        display:table-caption;
+        border:4px solid grey;
+        }
+      .common_table_vid{
+        display:table-cell;
+        border:4px solid grey;
+        width: $width;
+        height: $height;
+      }
+      .sliders{
+        vertical-align: top;
+        align-items: left;
+        margin:0;
+        padding:0;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: bold;
+        color: blue;
+      }
+    </style>
+    <script src="/jmuxer.min.js"></script>
+  </head>
+  <body>
+    <DIV class="common_table">
+      <DIV class="common_table_caption">
+        <div class="sliders" id="streamStage">
+          <div style="text-align: center;">
+              &nbsp;Change X/Y offset and Zoom values of both cameras:
+          </div>
+          <div>
+            <div>
+              <label for="xoffset">&nbsp;X</label>
+              <input style="width: 100px;" type="range" id="xoffset" name="xoffset" min="0" max="1000" value="500" step="10" />
+              Value: <output id="xvalue"></output>
+            </div>
+            <div>
+              <label for="yoffset">&nbsp;Y</label>
+              <input style="width: 100px;" type="range" id="yoffset" name="yoffset" min="0" max="1000" value="500" step="10" />
+              Value: <output id="yvalue"></output>
+            </div>
+            <div>
+              <label for="zoffset">&nbsp;Z</label>
+              <input style="width: 100px;" type="range" id="zoffset" name="zoffset" min="0.5" max="2.0" value="1.0" step="0.05" />
+              Value: <output id="zvalue"></output>
+            </div>
+          </div>	
+        </div>
+      </DIV>
+      <DIV class="common_table_row">
+        <DIV class="common_table_vid">
+          <video autoplay muted id="stream0"></video>	
+        </DIV>
+        <DIV class="common_table_vid">
+          <video autoplay muted id="stream1"></video>	
+        </DIV>
+      </DIV>
+      <DIV class="common_table_row">
+        <DIV class="common_table_col">
+          <div class="sliders" id="streamStage0">
+            <div style="text-align: center;">
+                &nbsp;Change X/Y offset values of camera 0:
+            </div>
+            <div>
+              <div>
+                <label for="xoffset0">&nbsp;X</label>
+                <input style="width: 100px;" type="range" id="xoffset0" name="xoffset0" min="0" max="1000" value="500" step="10" />
+                Value: <output id="xvalue0"></output>
+              </div>
+              <div>
+                <label for="yoffset0">&nbsp;Y</label>
+                <input style="width: 100px;" type="range" id="yoffset0" name="yoffset0" min="0" max="1000" value="500" step="10" />
+                Value: <output id="yvalue0"></output>
+              </div>
+              <div>
+                &nbsp;
+                <input type="checkbox" id="text0" name="text0" value="text0" checked style="transform: scale(2);" onclick='handleCbClick(this);' />
+                <label for="text0">Enable texts</label>
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="line0" name="line0" value="line0" checked style="transform: scale(2);" onclick='handleCbClick(this);' />
+                <label for="line0">Enable lines</label>
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="defs0" name="defs0" value="defs0" style="transform: scale(2);" onclick='handleCbClick(this);' />
+                <label for="defs0">Save as defaults</label>
+              </div>
+            </div>	
+          </div>
+        </DIV>
+        <DIV class="common_table_col">
+          <div class="sliders" id="streamStage1">
+            <div style="text-align: center;">
+                &nbsp;Change X/Y offset values of camera 1:
+            </div>
+            <div>
+              <div>
+                <label for="xoffset1">&nbsp;&nbsp;X</label>
+                <input style="width: 100px;" type="range" id="xoffset1" name="xoffset1" min="0" max="1000" value="500" step="10" />
+                Value: <output id="xvalue1"></output>
+              </div>
+              <div>
+                <label for="yoffset1">&nbsp;&nbsp;Y</label>
+                <input style="width: 100px;" type="range" id="yoffset1" name="yoffset1" min="0" max="1000" value="500" step="10" />
+                Value: <output id="yvalue1"></output>
+              </div>
+              <div>
+                &nbsp;
+                <input type="checkbox" id="text1" name="text1" value="text1" checked style="transform: scale(2);" onclick='handleCbClick(this);' />
+                <label for="text1">Enable texts</label>
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="line1" name="line1" value="line1" checked style="transform: scale(2);" onclick='handleCbClick(this);' />
+                <label for="line1">Enable lines</label>
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="defs1" name="defs1" value="defs1" style="transform: scale(2);" onclick='handleCbClick(this);' />
+                <label for="defs1">Save as defaults</label>
+<!--
+                <button class="sliders" type="button">&nbsp;Make defaults&nbsp;</button>
+-->
+              </div>
+            </div>	
+          </div>
+        </DIV>
+      </DIV>
+    </DIV>
+  </body>
+  <script>
+    var ptz = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/ptz/");
+
+    const etxt0 = document.querySelector("#text0");
+    const elin0 = document.querySelector("#line0");
+    const edef0 = document.querySelector("#defs0");
+    const etxt1 = document.querySelector("#text1");
+    const elin1 = document.querySelector("#line1");
+    const edef1 = document.querySelector("#defs1");
+    const xvalue = document.querySelector("#xvalue");
+    const xinput = document.querySelector("#xoffset");
+    const yvalue = document.querySelector("#yvalue");
+    const yinput = document.querySelector("#yoffset");
+    const zvalue = document.querySelector("#zvalue");
+    const zinput = document.querySelector("#zoffset");
+    const xvalue0 = document.querySelector("#xvalue0");
+    const xinput0 = document.querySelector("#xoffset0");
+    const yvalue0 = document.querySelector("#yvalue0");
+    const yinput0 = document.querySelector("#yoffset0");
+    const xvalue1 = document.querySelector("#xvalue1");
+    const xinput1 = document.querySelector("#xoffset1");
+    const yvalue1 = document.querySelector("#yvalue1");
+    const yinput1 = document.querySelector("#yoffset1");
+
+    ptz.addEventListener('message',function(event){
+      const data = JSON.parse(event.data);
+//      console.log(data[0].e);
+
+      etxt0.checked = data[0].e.txt;
+      elin0.checked = data[0].e.lin;
+      edef0.checked = false;
+
+      etxt1.checked = data[1].e.txt;
+      elin1.checked = data[1].e.lin;
+      edef1.checked = false;
+
+      xinput0.min = data[0].x.min;
+      xinput0.max = data[0].x.max;
+      xinput0.value = data[0].x.val;
+      xvalue0.textContent = xinput0.value;
+
+      yinput0.min = data[0].y.min;
+      yinput0.max = data[0].y.max;
+      yinput0.value = data[0].y.val;
+      yvalue0.textContent = yinput0.value;
+
+      xinput1.min = data[1].x.min;
+      xinput1.max = data[1].x.max;
+      xinput1.value = data[1].x.val;
+      xvalue1.textContent = xinput1.value;
+
+      yinput1.min = data[1].y.min;
+      yinput1.max = data[1].y.max;
+      yinput1.value = data[1].y.val;
+      yvalue1.textContent = yinput1.value;
+
+      xinput.min = data[2].x.min;
+      xinput.max = data[2].x.max;
+      xinput.value = data[2].x.val;
+      xvalue.textContent = xinput.value;
+
+      yinput.min = data[2].y.min;
+      yinput.max = data[2].y.max;
+      yinput.value = data[2].y.val;
+      yvalue.textContent = yinput.value;
+
+      zinput.min = data[2].z.min;
+      zinput.max = data[2].z.max;
+      zinput.value = data[2].z.val;
+      zvalue.textContent = zinput.value;
+    });
+
+	window.onload = function(){	
+      var jmuxer0 = new JMuxer({
+      	node: 'stream0', mode: 'video', flushingTime: 0,
+              fps: $fps, width: $width, height: $height, debug: false
+       });
+      var jmuxer1 = new JMuxer({
+      	node: 'stream1', mode: 'video', flushingTime: 0,
+              fps: $fps, width: $width, height: $height, debug: false
+       });
+      var ws0 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/cam0/");
+      ws0.binaryType = 'arraybuffer';
+      ws0.addEventListener('message',function(event){
+      	if (!document.hidden){ jmuxer0.feed({ video: new Uint8Array(event.data) }); }
+      });
+      var ws1 = new WebSocket("ws://" + document.location.hostname + ":" + $port + "/cam1/");
+      ws1.binaryType = 'arraybuffer';
+      ws1.addEventListener('message',function(event){
+      	if (!document.hidden){ jmuxer1.feed({ video: new Uint8Array(event.data) }); }
+      });
+
+      xinput.style["width"] = $width * 7 / 4 + 'px';
+      xvalue.textContent = xinput.value;
+      xinput.addEventListener("input", (event) => {
+        xvalue.textContent = event.target.value;
+        ptz.send(ptz_send());
+      });
+      yinput.style["width"] = $width * 7 / 4 + 'px';
+      yvalue.textContent = yinput.value;
+      yinput.addEventListener("input", (event) => {
+        yvalue.textContent = event.target.value;
+        ptz.send(ptz_send());
+      });
+      zinput.style["width"] = $width * 7 / 4 + 'px';
+      zvalue.textContent = parseFloat(zinput.value).toFixed(2);
+      zinput.addEventListener("input", (event) => {
+        zvalue.textContent = parseFloat(event.target.value).toFixed(2);
+        ptz.send(ptz_send());
+      });
+
+      xinput0.style["width"] = $width * 3 / 4 + 'px';
+      xvalue0.textContent = xinput0.value;
+      xinput0.addEventListener("input", (event) => {
+        xvalue0.textContent = event.target.value;
+        ptz.send(ptz_send());
+      });
+      yinput0.style["width"] = $width * 3 / 4 + 'px';
+      yvalue0.textContent = yinput0.value;
+      yinput0.addEventListener("input", (event) => {
+        yvalue0.textContent = event.target.value;
+        ptz.send(ptz_send());
+      });
+
+      xinput1.style["width"] = $width * 3 / 4 + 'px';
+      xvalue1.textContent = xinput1.value;
+      xinput1.addEventListener("input", (event) => {
+        xvalue1.textContent = event.target.value;
+        ptz.send(ptz_send());
+      });
+      yinput1.style["width"] = $width * 3 / 4 + 'px';
+      yvalue1.textContent = yinput1.value;
+      yinput1.addEventListener("input", (event) => {
+        yvalue1.textContent = event.target.value;
+        ptz.send(ptz_send());
+      });
+	}     
+    function ptz_send() {
+      var data = [
+                    { 'cam': 0,
+                      'e': {
+                          'txt': etxt0.checked,
+                          'lin': elin0.checked,
+                          'def': edef0.checked,
+                      },
+                      'x': {
+                        'min': parseInt(xinput0.min),
+                        'val': parseInt(xinput0.value),
+                        'max': parseInt(xinput0.max)
+                      },
+                      'y': {
+                        'min': parseInt(yinput0.min),
+                        'val': parseInt(yinput0.value),
+                        'max': parseInt(yinput0.max)
+                      }
+                    }, 
+                    { 'cam': 1,
+                      'e': {
+                          'txt': etxt1.checked,
+                          'lin': elin1.checked,
+                          'def': edef1.checked,
+                      },
+                      'x': {
+                        'min': parseInt(xinput1.min),
+                        'val': parseInt(xinput1.value),
+                        'max': parseInt(xinput1.max)
+                      },
+                      'y': {
+                        'min': parseInt(yinput1.min),
+                        'val': parseInt(yinput1.value),
+                        'max': parseInt(yinput1.max)
+                      }
+                    },
+                    { 'cam': 2,
+                      'x': {
+                        'min': parseInt(xinput.min),
+                        'val': parseInt(xinput.value),
+                        'max': parseInt(xinput.max)
+                      },
+                      'y': {
+                        'min': parseInt(yinput.min),
+                        'val': parseInt(yinput.value),
+                        'max': parseInt(yinput.max)
+                      },
+                      'z': {
+                      'min': parseFloat(zinput.min),
+                      'val': parseFloat(zinput.value),
+                      'max': parseFloat(zinput.max)
+                    }
+                  }
+      ];
+//      console.log(JSON.stringify(data));
+      return JSON.stringify(data);
+    };
+    function handleCbClick(cb) {
+      ptz.send(ptz_send());
+    }
+  </script>
+</html>
+
