@@ -1,6 +1,6 @@
 ### Dual camera, near-real-time, h.264 video streamer from RPi 5 to a bowser
 
-Current status of [pi-h264-to-browser-stramer](https://github.com/chradev/pi-h264-to-browser-stramer): single and dual camera support with PTZ control (only in single camera streaming for now).
+Current status of [pi-h264-to-browser-stramer](https://github.com/chradev/pi-h264-to-browser-stramer): single and dual camera support with PTZ control.
 
 The project is intended to become a base for a stereo vision of a robot. The PTZ control of the cameras will be similar to the human eye but without mechanical movement.
  * Fork of [kroketio/pi-h264-to-browser](https://github.com/kroketio/pi-h264-to-browser) by [chradev](https://github.com/chradev) Apr 2024: dual camera support and more
@@ -12,7 +12,7 @@ The project is intended to become a base for a stereo vision of a robot. The PTZ
 
 ### Motivation for extension
 
-The parent project is an excellent solution for near-real-time video capturing, encoding and streaming. Extending it to reach the robot's stereo vision requirements is a challenge that could be solved thanks to advances in embedded and mobile devices supporting video processing with hardware acceleration.
+The parent projects are an excellent solution for near-real-time video capturing, encoding and streaming. Extending it to reach the robot's stereo vision requirements is a challenge that could be solved thanks to advances in embedded and mobile devices supporting video processing with hardware acceleration.
 
 The main reasons for extending the project are:
   * The new PRi 5 board is much more powerful and supports two 5, 8, 12 and 16 MP CSI cameras;
@@ -21,27 +21,27 @@ The main reasons for extending the project are:
 
 **Notes:** Requirements are like in [rpi5-h264-live-stereo-streamer](https://github.com/chradev/rpi5-h264-live-stereo-streamer/) but include following once:
  * KISS (Keep It as Simple as poSsible)
- * The streaming server has to be able to change picamera2 properties like ```ScalerCrop``` for implementing of motorless PTZ control.
+ * The streaming server has to be able to change picamera2 properties like ```ScalerCrop``` while streaming for implementing of motorless PTZ control.
 
 ### A Standard Stereo Vision Principle
 
 ![A Standard Stereo Vision Principle drawings](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/AStandardStereoVisionPrinciple.png)
 
 
-### A snapshot of running dual camera streamer server and its web user interfase
+### A snapshot of running dual camera streaming server and its web user interfase
 
 ![Dual camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/15.05.2024_00.12.38_REC.png)
 
-### A short video of dual camera streaming with PTZ control
+### A short video of dual camera streaming server with PTZ control
 
 https://github.com/chradev/pi-h264-to-browser-stramer/assets/11261306/cbac77e0-3cdb-4b67-8a05-6e53c996912c
 
 **Notes:**
  * in video you can only see usage of PTZ control for both cameras simultaneously
- * in addition each camera can be PT controled separately
+ * in addition each camera can be PT controled separately and can be used for tuning
  * individual PT parameters for both cameras can be set as defaults
  * PTZ parameters of the cameras will be reset to defaults at browser refresh
- * additional actions usable are: enable/disable of texts and lines drawn on the frames
+ * additional actions available are: enable/disable of texts and lines drawn on the frames
  * PTZ control is available to any user connected to the server but result is visible by all of them 
 
 
@@ -60,7 +60,7 @@ https://github.com/chradev/pi-h264-to-browser-stramer/assets/11261306/cbac77e0-3
    - create two ```WebSocket``` instances with right URLs
    - add ```WebSocket``` listeners for visualization of both camera streams
 
-### Problems ~~not~~ solved for now:
+### Problems ~~not~~ solved~~ for now~~:
  * dublication of ```StreamingOutput``` and ```wsHandler``` classes - **solved**
     * **added second ```WebSocket``` handler ```ptzHandler``` for PTZ camera control**
  * using of ```offsetX``` and ```offsetY``` variables calculated by independent process 
@@ -75,14 +75,15 @@ Dual camera streaming is based on the basic modifications in server application 
  * added second ```WebSocket``` handler ```ptzHandler``` for PTZ control of both cameras
  * added sliders in web page for PTZ control of both cameras separately and simultaneously
  * added server support for PTZ control for both cameras separately and simultaneously
- * added server support for changing of default PTZ values for tuning of cameras positions
+ * added server support for changing of default PTZ values for tuning of cameras position
 
 ### Dual camera streamer usage
  * run in src: ```python3 server.py```
  * browse: ```http://RPi-IP:8000/```
- * watch streams of both RPi 5 cameras
+ * watch streams of both cameras
+ * use PTZ cameras controls
 
-Server log:
+Server log at startup:
 ```
 .../src $ python server.py
 ...
