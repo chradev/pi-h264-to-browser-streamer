@@ -60,7 +60,7 @@ https://github.com/chradev/pi-h264-to-browser-stramer/assets/11261306/cbac77e0-3
    - create two ```WebSocket``` instances with right URLs
    - add ```WebSocket``` listeners for visualization of both camera streams
 
-### Problems ~~not~~ solved~~ for now~~:
+### Problems ~~not~~ solved ~~for now~~:
  * dublication of ```StreamingOutput``` and ```wsHandler``` classes - **solved**
     * **added second ```WebSocket``` handler ```ptzHandler``` for PTZ camera control**
  * using of ```offsetX``` and ```offsetY``` variables calculated by independent process 
