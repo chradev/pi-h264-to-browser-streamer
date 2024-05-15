@@ -25,12 +25,12 @@ The main reasons for extending the project are:
 
 ### A Standard Stereo Vision Principle
 
-![A Standard Stereo Vision Principle drawings](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/AStandardStereoVisionPrinciple.png)
+![A Standard Stereo Vision Principle drawings](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/assets/AStandardStereoVisionPrinciple.png)
 
 
 ### A snapshot of running dual camera streaming server and its web user interfase
 
-![Dual camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/15.05.2024_00.12.38_REC.png)
+![Dual camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/assets/15.05.2024_00.12.38_REC.png)
 
 ### A short video of dual camera streaming server with PTZ control
 
@@ -173,7 +173,7 @@ options:
   -f FLIP FLIP, --Flip FLIP FLIP
 ```
 
-![Single camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/12.05.2024_14.10.57_REC.png)
+![Single camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/assets/12.05.2024_14.10.57_REC.png)
 
 **Notes:**
  * To make X/Y offset available use none standard resolutions like 1200x1200 (for now).
