@@ -96,7 +96,7 @@ def templatize(content, replacements):
 full_camera_res = picam2.camera_properties['PixelArraySize']
 
 jmuxerJs = getFile('jmuxer.min.js')
-indexHtml  = templatize(getFile('index-ss.html'), {'port': serverPort, 'width': frameWidth, 'height': frameHeight, 'xmax': full_camera_res[0] - frameWidth, 'ymax': full_camera_res[1] - frameHeight, 'fps': frameRate})
+indexHtml  = templatize(getFile('index.html'), {'port': serverPort, 'width': frameWidth, 'height': frameHeight, 'xmax': full_camera_res[0] - frameWidth, 'ymax': full_camera_res[1] - frameHeight, 'fps': frameRate})
 
 
 class StreamingOutput(Output):
