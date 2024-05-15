@@ -32,10 +32,17 @@ The main reasons for extending the project are:
 
 ![Dual camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/readmeAssets/15.05.2024_00.12.38_REC.png)
 
-### A snapshot of dual camera streamer server PTZ control
+### A short snapshot of dual camera streaming and PTZ control
 
 https://github.com/chradev/pi-h264-to-browser-stramer/assets/11261306/cbac77e0-3cdb-4b67-8a05-6e53c996912c
 
+**Notes:**
+ * in video you can only see usage of PTZ control for both cameras simultaneously
+ * in addition each camera can be PT controled separately
+ * individual PT parameters for both cameras can be set as defaults
+ * PTZ parameters of the cameras will be reset to defaults at browser refresh
+ * additional actions usable are: eneble/disable of texts and lines drawn on the frames
+ * PTZ control is available to any user connected to the server but result is visible by all of them 
 
 
 ### Basic changes in:
