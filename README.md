@@ -77,15 +77,28 @@ Dual camera streaming is based on the basic modifications in server application 
  * added server support for PTZ control for both cameras separately and simultaneously
  * added server support for changing of default PTZ values for tuning of cameras position
 
+### Changes in file and directory structure
+
+Original files are kept in ```src``` folder
+
+All files are moved for:
+ * single streamer to ```single``` folder
+ * dual streamer to ```dual``` folder
+
+Files of the web user interfase are moved for:
+ * single streamer to ```single/web``` folder
+ * dual streamer to ```dual/web``` folder
+
+
 ### Dual camera streamer usage
- * run in src: ```python3 server.py```
+ * run in ```dual``` folder: ```python3 server.py```
  * browse: ```http://RPi-IP:8000/```
  * watch streams of both cameras
  * use PTZ cameras controls
 
 Server log at startup:
 ```
-.../src $ python server.py
+.../double $ python server.py
 ...
 [2024-05-14 03:26:07] Starting: Dual camera streaming server & web interface on RPi 5
                                 -> with two 8MP RPi cameras v.2 at size: 3280/2464 px
@@ -140,7 +153,7 @@ Streaming from a single camera is based on the original application and web inte
 
 ### New changes in single camera streamer usage
 
- * run in src: ```python3 server-ss.py``` and/or ```python3 server-ss.py -n 1 -p 8001```
+ * run in ```single``` folder: ```python3 server.py``` and/or ```python3 server.py -n 1 -p 8001```
  * browse: ```http://RPi-IP:8000/``` and/or ```http://RPi-IP:8001/```
  * watch stream(s) from choosen RPi 5 camera or from both cameras
  * watch both desktop clock from RPi 5 via camera streaming and web clock from client machine
@@ -156,8 +169,8 @@ Camera ScalerCrop properties: ((0, 0, 128, 128), (0, 0, 3280, 2464), (408, 0, 24
 
 **Available options:**
 ```
-python3 server-ss.py -h
-usage: server-ss.py [-h] [-v] [-n CAMERANUMB] [-p SERVERPORT] [-r FRAMERATE]
+python3 server.py -h
+usage: server.py [-h] [-v] [-n CAMERANUMB] [-p SERVERPORT] [-r FRAMERATE]
                     [-X XOFFSET] [-Y YOFFSET] [-W WIDTH] [-H HEIGHT] [-f FLIP FLIP]
 
 options:
