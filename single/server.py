@@ -20,8 +20,8 @@ parser.add_argument("-v", "--preView",       action='store_true', default=False)
 parser.add_argument("-n", "--cameraNumb",    type=int, default=0)
 parser.add_argument("-p", "--serverPort",    type=int, default=8000)
 parser.add_argument("-r", "--frameRate",     type=int, default=30)
-parser.add_argument("-X", "--Xoffset",       type=int, default=930) #680)
-parser.add_argument("-Y", "--Yoffset",       type=int, default=400) #692)
+parser.add_argument("-X", "--Xoffset",       type=int, default=1030) #680)
+parser.add_argument("-Y", "--Yoffset",       type=int, default=900) #692)
 parser.add_argument("-W", "--Width",         type=int, default=1000) #1920)
 parser.add_argument("-H", "--Height",        type=int, default=1000) #1080)
 parser.add_argument("-f", "--Flip", nargs=2, type=int, default=(1, 1))
@@ -60,6 +60,8 @@ def apply_timestamp(request):
     timestamp = time.strftime("%Y-%m-%d %X") + " - Camera: " + str(picam2Numb)
     with MappedArray(request, "main") as m:
         cv2.putText(m.array, timestamp, origin, font, scale, colour, thickness)
+        cv2.line(m.array, (0, int(frameHeight/2)), (frameWidth, int(frameHeight/2)), [0, 255, 0], 2)
+        cv2.line(m.array, (int(frameWidth/2), 0), (int(frameWidth/2), frameHeight), [0, 255, 0], 2)
 
 from libcamera import Transform
 picam2 = Picamera2(picam2Numb)

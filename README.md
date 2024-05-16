@@ -136,7 +136,7 @@ Server performance reported by ```htop```
 
 Streaming from a single camera is based on the original application and web interface with some extends like:
  * reading of customization parameters from the command line
- * adding of time stamp to the video using opencv2 and local preview
+ * adding of time stamp and two lines to the video using opencv2 and local preview
  * testing and adding of ```picam2.set_controls({"ScalerCrop": scalerCrop})``` for PTZ control
  * adding more camera parameters to index-ss.html at its templatization
  * building right WS url and adding of sliders for PTZ controls of the camera
@@ -153,7 +153,7 @@ Streaming from a single camera is based on the original application and web inte
 
 ### Single camera streamer usage
 
- * run in ```single``` folder: ```python3 server.py``` and/or ```python3 server.py -n 1 -p 8001```
+ * run in ```single``` folder: ```python3 server.py``` and/or ```python3 server.py -n 1 -p 8001 -X 1730 -Y 410```
  * run as user: ```export DISPLAY=:0 && xclock -analog -update 0.1 -bw 100```
  * direct both RPi cameras to RPi 5 desktop monitor
  * browse other computer: ```http://RPi-IP:8000/``` and/or ```http://RPi-IP:8001/```
