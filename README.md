@@ -81,13 +81,11 @@ Dual camera streaming is based on the basic modifications in server application 
 
 Original files are kept in ```src``` folder
 
-All files are moved for:
- * single streamer to ```single``` folder
- * dual streamer to ```dual``` folder
+All files of single streamer are moved to ```single``` folder
 
-Files of the web user interfase are moved for:
- * single streamer to ```single/web``` folder
- * dual streamer to ```dual/web``` folder
+Files of dual streamer are moved for:
+ * server to ```dual``` folder
+ * web user interfase to ```dual/web``` folder
 
 
 ### Dual camera streamer usage
