@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Double RPi camera streamer</title>
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <script src="/jmuxer.min.js"></script>
+  </head>
+  <body>
+    <DIV class="common_table">
+      <DIV class="common_table_row">
+        <DIV class="common_table_vid">
+          <video autoplay muted id="stream0"></video>	
+        </DIV>
+        <DIV class="common_table_vid">
+          <video autoplay muted id="stream1"></video>	
+        </DIV>
+      </DIV>
+      <DIV class="common_table_row">
+        <DIV class="common_table_col">
+          <div class="sliders" id="streamStage0">
+            <div style="text-align: center;">
+                &nbsp;Change X/Y offset values of camera 0:
+            </div>
+            <div>
+              <div>
+                <label for="xoffset0">&nbsp;X</label>
+                <input style="width: 100px;" type="range" id="xoffset0" name="xoffset0" min="0" max="1000" value="500" step="10" />
+                Value: <output id="xvalue0"></output>
+              </div>
+              <div>
+                <label for="yoffset0">&nbsp;Y</label>
+                <input style="width: 100px;" type="range" id="yoffset0" name="yoffset0" min="0" max="1000" value="500" step="10" />
+                Value: <output id="yvalue0"></output>
+              </div>
+              <div>
+                &nbsp;
+                <input type="checkbox" id="text0" name="text0" value="text0" checked style="transform: scale(2);" onclick='handleCbClick(this);' />
+                <label for="text0">Enable texts</label>
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="line0" name="line0" value="line0" checked style="transform: scale(2);" onclick='handleCbClick(this);' />
+                <label for="line0">Enable lines</label>
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="defs0" name="defs0" value="defs0" style="transform: scale(2);" onclick='handleCbClick(this);' />
+                <label for="defs0">Save as defaults</label>
+              </div>
+            </div>	
+          </div>
+        </DIV>
+        <DIV class="common_table_col">
+          <div class="sliders" id="streamStage1">
+            <div style="text-align: center;">
+                &nbsp;Change X/Y offset values of camera 1:
+            </div>
+            <div>
+              <div>
+                <label for="xoffset1">&nbsp;&nbsp;X</label>
+                <input style="width: 100px;" type="range" id="xoffset1" name="xoffset1" min="0" max="1000" value="500" step="10" />
+                Value: <output id="xvalue1"></output>
+              </div>
+              <div>
+                <label for="yoffset1">&nbsp;&nbsp;Y</label>
+                <input style="width: 100px;" type="range" id="yoffset1" name="yoffset1" min="0" max="1000" value="500" step="10" />
+                Value: <output id="yvalue1"></output>
+              </div>
+              <div>
+                &nbsp;
+                <input type="checkbox" id="text1" name="text1" value="text1" checked style="transform: scale(2);" onclick='handleCbClick(this);' />
+                <label for="text1">Enable texts</label>
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="line1" name="line1" value="line1" checked style="transform: scale(2);" onclick='handleCbClick(this);' />
+                <label for="line1">Enable lines</label>
+                &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" id="defs1" name="defs1" value="defs1" style="transform: scale(2);" onclick='handleCbClick(this);' />
+                <label for="defs1">Save as defaults</label>
+              </div>
+            </div>	
+          </div>
+        </DIV>
+      </DIV>
+      <DIV class="common_table_caption">
+        <div class="sliders" id="streamStage">
+          <div style="text-align: center;">
+              &nbsp;Change X/Y offset and Zoom values of both cameras:
+          </div>
+          <div>
+            <div>
+              <label for="xoffset">&nbsp;X</label>
+              <input style="width: 100px;" type="range" id="xoffset" name="xoffset" min="0" max="1000" value="500" step="10" />
+              Value: <output id="xvalue"></output>
+            </div>
+            <div>
+              <label for="yoffset">&nbsp;Y</label>
+              <input style="width: 100px;" type="range" id="yoffset" name="yoffset" min="0" max="1000" value="500" step="10" />
+              Value: <output id="yvalue"></output>
+            </div>
+            <div>
+              <label for="zoffset">&nbsp;Z</label>
+              <input style="width: 100px;" type="range" id="zoffset" name="zoffset" min="0.5" max="2.0" value="1.0" step="0.05" />
+              Value: <output id="zvalue"></output>
+            </div>
+          </div>	
+        </div>
+      </DIV>
+    </DIV>
+  </body>
+  <script src="/sliders.js"></script>
+  <script src="/main.js"></script>
+</html>
+

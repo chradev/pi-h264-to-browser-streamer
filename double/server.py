@@ -93,25 +93,6 @@ if enableView is True:
     picam20.start_preview(Preview.QTGL, x=10, y=40, width=500, height=500)
     picam21.start_preview(Preview.QTGL, x=1400, y=540, width=500, height=500)
 
-# Define file handlers and index.html templatization
-abspath = os.path.abspath(__file__)
-dname = os.path.dirname(abspath)
-os.chdir(dname)
-
-def getFile(filePath):
-    file = open(filePath, 'r')
-    content = file.read()
-    file.close()
-    return content
-
-def templatize(content, replacements):
-    tmpl = Template(content)
-    return tmpl.substitute(replacements)
-
-jmuxerJs   = getFile('jmuxer.min.js')
-indexHtml  = templatize(getFile('index.html'), {'port': serverPort, 
-              'fps': frameRate, 'width': frameWidth, 'height': frameHeight})
-
 # Main class streaming output
 class StreamingOutput(Output):
     stream = -1
@@ -134,16 +115,6 @@ class StreamingOutput(Output):
                 cam=self.stream, message=self.buffer.getvalue())
         self.buffer.seek(0)
         self.buffer.truncate()
-
-# RequestHandler for files access
-class indexHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.write(indexHtml)
-
-class jmuxerHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.set_header('Content-Type', 'text/javascript')
-        self.write(jmuxerJs)
 
 # WebSocketHandler for camera streaming
 class camHandler(tornado.websocket.WebSocketHandler):
@@ -377,12 +348,39 @@ class ptzHandler(tornado.websocket.WebSocketHandler):
     def check_origin(self, origin):
         return True
 
+# Define file handlers and index.html templatization
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
+
+def getFile(filePath):
+    file = open(filePath, 'r')
+    content = file.read()
+    file.close()
+    return content
+
+def templatize(content, replacements):
+    tmpl = Template(content)
+    return tmpl.substitute(replacements)
+
+mainJs    = templatize(getFile('web/main.js'), {'port': serverPort, 
+              'fps': frameRate, 'width': frameWidth, 'height': frameHeight})
+
+# RequestHandler for files access
+class mainHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.set_header('Content-Type', 'text/javascript')
+        self.write(mainJs)
+
 # web application requestHandlers
 requestHandlers = [
     (r"/cam(\d+)/", camHandler),
     (r"/ptz/", ptzHandler),
-    (r"/jmuxer.min.js", jmuxerHandler),
-    (r"/", indexHandler)
+    (r"/main.js", mainHandler),
+    (r"/(.*)", tornado.web.StaticFileHandler, {
+        "path": "web/",
+        "default_filename": "index.html"
+    })
 ]
 
 # server startup staff and main loop
