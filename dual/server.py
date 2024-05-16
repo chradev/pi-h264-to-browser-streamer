@@ -229,42 +229,6 @@ def ptz_send_data():
                 }
                 ])
 
-'''
-        # Reset camera offset and size properties
-        scalerCrop = (frameOffsetX0, frameOffsetY0, frameWidth, frameHeight)
-        picam20.set_controls({"ScalerCrop": scalerCrop})
-        scalerCrop = (frameOffsetX1, frameOffsetY1, frameWidth, frameHeight)
-        picam21.set_controls({"ScalerCrop": scalerCrop})
-'''
-
-'''
-frameWidth     = 1000
-frameHeight    = 1000
-frameOffsetX0  = 1020 # 1080
-frameOffsetY0  = 880  #740
-frameOffsetX1  = 1740 #1750
-frameOffsetY1  = 430  #360
-frameOffsetX0m  = full_camera_res[0]
-frameOffsetY0m  = full_camera_res[1]
-frameOffsetX1m  = full_camera_res[0]
-frameOffsetY1m  = full_camera_res[1]
-'''
-
-def set_ptz_data1(data):
-        # Set camera offset and size properties
-#        frameWidth     = int(frameWidth * data[2]['z']['val'])
-#        frameHeight    = int(frameHeight * data[2]['z']['val'])
-        frameOffsetX0  = data[0]['x']['val'] - data[0]['x']['min'] + data[2]['x']['val']
-        frameOffsetY0  = data[0]['y']['val'] - data[0]['y']['min'] + data[2]['y']['val']
-        frameOffsetX1  = data[1]['x']['val'] - data[1]['x']['min'] + data[2]['x']['val']
-        frameOffsetY1  = data[1]['y']['val'] - data[1]['y']['min'] + data[2]['y']['val']
-
-        # Set camera offset and size properties
-        scalerCrop = (frameOffsetX0, frameOffsetY0, frameWidth, frameHeight)
-        picam20.set_controls({"ScalerCrop": scalerCrop})
-        scalerCrop = (frameOffsetX1, frameOffsetY1, frameWidth, frameHeight)
-        picam21.set_controls({"ScalerCrop": scalerCrop})
-    
 def set_ptz_data(data):
         global enableTexts0
         global enableTexts1
@@ -305,6 +269,10 @@ class ptzHandler(tornado.websocket.WebSocketHandler):
     remoteIP = ""
 
     def open(self):
+        global enableTexts0
+        global enableTexts1
+        global enableLines0
+        global enableLines1
         self.remoteIP = str(self.request.remote_ip)
         print("[%s] Starting a service: CamPTZ - (%s)" % 
               (time.strftime("%Y-%m-%d %X"), self.remoteIP))
@@ -315,6 +283,10 @@ class ptzHandler(tornado.websocket.WebSocketHandler):
         scalerCrop = (frameOffsetX1, frameOffsetY1, frameWidth, frameHeight)
         picam21.set_controls({"ScalerCrop": scalerCrop})
         # Send initial data
+        enableTexts0   = True
+        enableTexts1   = True
+        enableLines0   = True
+        enableLines1   = True
         message = ptz_send_data()
         self.broadcast(message)
 

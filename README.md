@@ -89,14 +89,16 @@ Files of dual streamer are moved for:
 
 
 ### Dual camera streamer usage
- * run in ```dual``` folder: ```python3 server.py```
- * browse: ```http://RPi-IP:8000/```
+ * run as user in ```dual``` folder: ```python3 server.py```
+ * run as user: ```export DISPLAY=:0 && xclock -analog -update 0.1 -bw 100```
+ * direct both RPi cameras to RPi 5 desktop monitor
+ * browse other computer: ```http://RPi-IP:8000/```
  * watch streams of both cameras
  * use PTZ cameras controls
 
 Server log at startup:
 ```
-.../double $ python server.py
+.../dual $ python server.py
 ...
 [2024-05-14 03:26:07] Starting: Dual camera streaming server & web interface on RPi 5
                                 -> with two 8MP RPi cameras v.2 at size: 3280/2464 px
@@ -135,24 +137,26 @@ Server performance reported by ```htop```
 Streaming from a single camera is based on the original application and web interface with some extends like:
  * reading of customization parameters from the command line
  * adding of time stamp to the video using opencv2 and local preview
- * testing and adding of picam2.set_controls({"ScalerCrop": scalerCrop}) for PTZ control
+ * testing and adding of ```picam2.set_controls({"ScalerCrop": scalerCrop})``` for PTZ control
  * adding more camera parameters to index-ss.html at its templatization
  * building right WS url and adding of sliders for PTZ controls of the camera
  * adding message protocol to WS to send back to the server PTZ controls commands
  * implement PTZ controls in server WS message handler when PTZ command is received
  * adding client synchronized analog clock to the web interface
    * it was done tnaks to https://github.com/MrTech-AK/Analog.OnlineClock
-   * style.css was added to index-ss.html head section because of .clock -> background: url(clock.svg)
+   * style.css was added to index-ss.html head section because of ```.clock -> background: url(clock.svg)```
    * components styles was modified to keep the clock transparent and on top of the video
 
 **Notes:** 
- * clock and video components styles are not optimized and well done;
+ * clock and video components styles are not optimized;
  * single camera streamer will be used mainly for experimental and test purposes
 
-### New changes in single camera streamer usage
+### Single camera streamer usage
 
  * run in ```single``` folder: ```python3 server.py``` and/or ```python3 server.py -n 1 -p 8001```
- * browse: ```http://RPi-IP:8000/``` and/or ```http://RPi-IP:8001/```
+ * run as user: ```export DISPLAY=:0 && xclock -analog -update 0.1 -bw 100```
+ * direct both RPi cameras to RPi 5 desktop monitor
+ * browse other computer: ```http://RPi-IP:8000/``` and/or ```http://RPi-IP:8001/```
  * watch stream(s) from choosen RPi 5 camera or from both cameras
  * watch both desktop clock from RPi 5 via camera streaming and web clock from client machine
  * use X/Y/Z sliders for each camera to do Pan/Tilt/Zoom
