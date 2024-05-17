@@ -143,6 +143,7 @@ Dual camera streaming is based on the basic modifications in server application 
  * added sliders in web page for ePTZ control of both cameras separately and simultaneously
  * added server support for ePTZ control for both cameras separately and simultaneously
  * added server support for changing of default ePTZ values for tuning of cameras position
+ * default ePTZ values of the cameras are written to a file if ```Save to defaults``` is send 
 
 ### Changes in the file and directory structure
 

@@ -4,16 +4,16 @@
     "e": {
       "txt": true,
       "lin": true,
-      "def": true
+      "def": false
     },
     "x": {
       "min": 500,
-      "val": 1520,
+      "val": 1480,
       "max": 2780
     },
     "y": {
       "min": 500,
-      "val": 1420,
+      "val": 1460,
       "max": 1964
     }
   },
@@ -22,16 +22,16 @@
     "e": {
       "txt": true,
       "lin": true,
-      "def": false
+      "def": true
     },
     "x": {
       "min": 500,
-      "val": 2220,
+      "val": 2180,
       "max": 2780
     },
     "y": {
       "min": 500,
-      "val": 910,
+      "val": 950,
       "max": 1964
     }
   },
@@ -39,12 +39,12 @@
     "cam": 2,
     "x": {
       "min": -1500,
-      "val": 0,
+      "val": 40,
       "max": 1500
     },
     "y": {
       "min": -1500,
-      "val": 0,
+      "val": -40,
       "max": 1500
     },
     "z": {
