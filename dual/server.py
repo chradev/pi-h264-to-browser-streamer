@@ -344,10 +344,9 @@ readmeHtml = markdown.markdown(getFile('../README.md'), extensions=['fenced_code
 #readmeHtml.replace('<head></head>', '<head><title>Readme.md</title><style>table, th, td {border:1px solid black;}</style></head>')
 #print(readmeHtml)
 
-readmeHtml = '<!doctype html><html lang="en"><head>\
-    <title>Readme.md</title><style>\
-    table, th, td {text-align: center; border:1px solid black; border-collapse: collapse;}\
-</style></head><body>' + readmeHtml + '</body></html>'
+#    table, th, td {text-align: center; border:1px solid black; border-collapse: collapse;}\
+
+readmeHtml = '<!doctype html><html lang="en"><head><title>Readme.md</title><style></style></head><body>' + readmeHtml + '</body></html>'
 
 # RequestHandler for files access
 class readmeHandler(tornado.web.RequestHandler):
