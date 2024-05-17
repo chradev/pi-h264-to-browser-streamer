@@ -29,7 +29,7 @@ The main reasons for extending the project are:
 
 ### An example of ePTZ or difital PTZ Principle
 
-![An example of ePTZ or difital PTZ Principle](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/assets/ePTZ-example.webp)
+![An example of ePTZ or difital PTZ Principle](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/assets/ePTZ-example-landscape.webp)
 
 
 
