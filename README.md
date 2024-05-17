@@ -27,6 +27,12 @@ The main reasons for extending the project are:
 
 ![A Standard Stereo Vision Principle drawings](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/assets/AStandardStereoVisionPrinciple.png)
 
+### An example of ePTZ or difital PTZ Principle
+
+![An example of ePTZ or difital PTZ Principle](https://github.com/chradev/pi-h264-to-browser-stramer/blob/main/assets/ePTZ-example.webp)
+
+
+
 
 ### A snapshot of running dual camera streaming server and its web user interfase
 
