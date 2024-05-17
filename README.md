@@ -50,6 +50,13 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 <table style="overflow-y: hidden;width: 100%;height: 100%;text-align: center; border:1px; border-collapse: collapse;"><thead><tr style="background-color: #f0f0c0;">
 <th> Feature / Camera </th><th> Module v1 </th><th> Module v2 </th><th> Module 3 </th><th> Module 3 Wide </th><th> HQ </th>
  </tr></thead><tbody><tr>
+    <td></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm1-60.png?raw=true" height = 60px ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm2-60.png?raw=true" height = 60px ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-110.png?raw=true" height = 60px ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-w-110.png?raw=true" height = 60px ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/hq-110.png?raw=true" height = 60px ></td>
+   </tr><tr>
 <td style="text-align: end; padding-right: 5px;"> Net price </td><td> $25 </td><td> $25 </td><td> $25 </td><td> $35 </td><td> $50 </td>
 </tr><tr style="background-color: #fcfccc;">
 <td style="text-align: end; padding-right: 5px;"> Size </td><td> 25 x 24 x 9 mm </td><td> 25 x 24 x 9 mm </td><td> 25 x 24 x 11.5 mm </td><td> 25 x 24 x 12.4 mm </td><td> 38 x 38 x 18.4mm<br>(excluding lens) </td>
