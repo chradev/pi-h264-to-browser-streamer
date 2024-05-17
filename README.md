@@ -45,7 +45,7 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 
 ### RPi cameras comparisn table
 
-<div style="overflow-y: hidden;">
+<details>
 
 <table style="overflow-y: hidden;width: 100%;height: 100%;text-align: center; border:1px; border-collapse: collapse;"><thead><tr style="background-color: #f0f0c0;">
 <th> Feature / Camera </th><th> Module v1 </th><th> Module v2 </th><th> Module 3 </th><th> Module 3 Wide </th><th> HQ </th>
@@ -89,8 +89,7 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 <td style="text-align: end; padding-right: 5px;"> NoIR version available? </td><td> Yes </td><td> Yes </td><td> Yes </td><td> Yes </td><td> No </td>
 </tr><tr></tbody></table>
 
-</div>
-
+</details>
 
 ### A snapshot of running dual camera streaming server and its web user interfase
 
@@ -171,6 +170,9 @@ Files of dual streamer are moved for:
  * use ePTZ cameras controls
 
 Server log at startup:
+
+<details>
+
 ```
 .../dual $ python server.py
 ...
@@ -187,7 +189,12 @@ Server log at startup:
 [2024-05-14 03:26:10] Starting a service: CamPTZ - (192.168.1.178)
 ```
 
+</details>
+
 Server performance reported by ```htop```
+
+<details>
+
 ```
     0[|||||||||||||||||                       34.5%] Tasks: 91, 122 thr, 120 kthr; 3 running
     1[||||||||||||||||||||||||||              55.0%] Load average: 2.38 2.31 2.18
@@ -204,6 +211,8 @@ Server performance reported by ```htop```
    9522 chr         20   0 1839M  290M  135M S  23.3  7.2  5:20.35 python server.py
    9533 chr         20   0 1839M  290M  135M S   5.3  7.2  1:07.46 python server.py
 ```
+
+</details>
 
 
 ### Streaming from a single camera with ePTZ control
@@ -238,6 +247,9 @@ Streaming from a single camera is based on the original application and web inte
  * use X/Y/Z sliders for each camera to do Pan/Tilt/Zoom
 
 **Default parameters:**
+
+<details>
+
 ```
 Arguments Namespace(preView=False, cameraNumb=0, serverPort=8000, frameRate=30, Xoffset=950, Yoffset=350, Width=1000, Height=1000, Flip=(1, 1))
 Camera 0 at flip(1/1), size(1000.1000), offset(950/350) -> h264 video stream at 30fps -> frame by frame over WebSocket -> http://192.168.1.111:8000/
@@ -245,7 +257,12 @@ Camera 0 at flip(1/1), size(1000.1000), offset(950/350) -> h264 video stream at 
 Camera ScalerCrop properties: ((0, 0, 128, 128), (0, 0, 3280, 2464), (408, 0, 2464, 2464))
 ```
 
+</details>
+
 **Available options:**
+
+<details>
+
 ```
 python3 server.py -h
 usage: server.py [-h] [-v] [-n CAMERANUMB] [-p SERVERPORT] [-r FRAMERATE]
@@ -263,6 +280,7 @@ options:
   -H HEIGHT, --Height HEIGHT
   -f FLIP FLIP, --Flip FLIP FLIP
 ```
+</details>
 
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/12.05.2024_14.10.57_REC.png?raw=true" alt="Single camera streaming snapshot" width="100%">
 
@@ -275,7 +293,6 @@ options:
 Watch a short video of single camera streaming latency:
 
 https://github.com/chradev/pi-h264-to-browser-streamer/assets/11261306/35d78562-eade-4b3c-9026-b9a101f1fcf4
-
 
 
 ### Motivation of the original project
