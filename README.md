@@ -12,9 +12,9 @@ The project is intended to become a base for a stereo vision of a robot. The ePT
 
 ### Motivation to use and extend choosen projects
 
-The main goal is to implement h.264 video streamer from dual RPi cameras to a bowser with near-real-time latency. In addition to it following opportunities are possible
+The main goal is to implement h.264 video streaming from dual RPi cameras to a bowser with near-real-time latency. In addition to it following opportunities are possible
   *  by using of RPi 5, UC-512 Camarray HAT and 5 RPi cameras with high resolution:
-     * full 2p steradians video streaming 
+     * full 2&pi; steradians video streaming 
   *  by using 3 sets of RPi 5 and dual RPi cameras with high resolution:
      * 360 degree panoramic real time video streaming
      * ePTZ based on 360 degree panoramic real time video
@@ -25,7 +25,7 @@ The main reasons to use and extend above projects are:
   * There is a feature-rich set of picamera2 library supporting the video processing;
   * There is a feature-rich set of opencv2 library supporting the video pre-processing;
   * Extremely low latency is a main advantage for using the project for stereo vision of a robot.
-  * The streaming server has to be able to change properties like ```ScalerCrop``` thanks to picamera2 library features while streaming for implementing of motorless ePTZ control.
+  * The streaming server is able to change properties like ```ScalerCrop``` thanks to picamera2 library features while streaming for implementing of motorless ePTZ control.
 
 Requirements are like in the [rpi5-h264-live-stereo-streamer](https://github.com/chradev/rpi5-h264-live-stereo-streamer/) project but an essential difference is that with usage of the picamera2 library for capturing and encoding in the streaming server the video process is under complete control. In addition the ability to combine the opencv2 library in the video processing chain gives almost endless possibilities.
 
