@@ -45,6 +45,8 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 
 ### RPi cameras comparisn table
 
+<div style="overflow-y: hidden;">
+
 <table style="overflow-y: hidden;width: 100%;height: 100%;text-align: center; border:1px; border-collapse: collapse;"><thead><tr style="background-color: #f0f0c0;">
 <th> Feature / Camera </th><th> Module v1 </th><th> Module v2 </th><th> Module 3 </th><th> Module 3 Wide </th><th> HQ </th>
  </tr></thead><tbody><tr>
@@ -86,6 +88,8 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 </tr><tr>
 <td style="text-align: end; padding-right: 5px;"> NoIR version available? </td><td> Yes </td><td> Yes </td><td> Yes </td><td> Yes </td><td> No </td>
 </tr><tr></tbody></table>
+
+</div>
 
 
 ### A snapshot of running dual camera streaming server and its web user interfase
