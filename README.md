@@ -1,54 +1,67 @@
 ### Dual camera, near-real-time, h.264 video streamer from RPi 5 to a bowser
 
-Current status of [pi-h264-to-browser-streamer](https://github.com/chradev/pi-h264-to-browser-streamer): single and dual camera support with ePTZ control.
+Current status of [pi-h264-to-browser-streamer](https://github.com/chradev/pi-h264-to-browser-streamer) project: single and dual camera support with ePTZ control.
 
 The project is intended to become a base for a stereo vision of a robot. The ePTZ control of the cameras will be similar to the human eye but without mechanical movement.
- * Fork of [kroketio/pi-h264-to-browser](https://github.com/kroketio/pi-h264-to-browser) by [chradev](https://github.com/chradev) Apr 2024: dual camera support and more
-   * Fork of [dans98/pi-h264-to-browser](https://github.com/dans98/pi-h264-to-browser/)  by [nikola-j](https://github.com/nikola-j) Jan 2024: supports the new picamera2 Python library
-     * Initial staff published by [dans98](https://github.com/dans98) Nov 2021 and based on:
-       * [Picamera](https://picamera.readthedocs.io/en/release-1.13/) handles all the video related tasks.
-       * [Tornado](https://www.tornadoweb.org/en/stable/) handles serving out the html and js assets via http, and the h264 stream via websockets.
-       * [jMuxer](https://github.com/samirkumardas/jmuxer) handles muxing the h264 stream (in browser) and playing it via Media Source extensions. 
+
+  * Fork of [kroketio/pi-h264-to-browser](https://github.com/kroketio/pi-h264-to-browser) by [chradev](https://github.com/chradev) Apr 2024: dual camera support and more
+    * Fork of [dans98/pi-h264-to-browser](https://github.com/dans98/pi-h264-to-browser/)  by [nikola-j](https://github.com/nikola-j) Jan 2024: supports the new picamera2 Python library
+      * Initial staff published by [dans98](https://github.com/dans98) Nov 2021 and based on:
+        * [Picamera](https://picamera.readthedocs.io/en/release-1.13/) handles all the video related tasks.
+        * [Tornado](https://www.tornadoweb.org/en/stable/) handles serving out the html and js assets via http, and the h264 stream via websockets.
+        * [jMuxer](https://github.com/samirkumardas/jmuxer) handles muxing the h264 stream (in browser) and playing it via Media Source extensions. 
 
 ### Motivation to use and extend choosen projects
 
 The main goal is to implement h.264 video streaming from dual RPi cameras to a bowser with near-real-time latency. In addition to it following opportunities are possible
-  *  by using of RPi 5, UC-512 Camarray HAT and 5 RPi cameras with high resolution:
-     * full 2&pi; steradians video streaming 
-  *  by using 3 sets of RPi 5 and dual RPi cameras with high resolution:
-     * 360 degree panoramic real time video streaming
-     * ePTZ based on 360 degree panoramic real time video
+
+  * by using of RPi 5, UC-512 Camarray HAT and 5 RPi cameras with high resolution:
+    * full 2&pi; steradians video streaming 
+  * by using 3 sets of RPi 5 and dual RPi cameras with high resolution:
+    * 360 degree panoramic real time video streaming
+    * ePTZ based on 360 degree panoramic real time video
 
 The main reasons to use and extend above projects are:
-  * KISS (Keep It as Simple as poSsible)
-  * The new PRi 5 board is much more powerful and supports two 5, 8, 12, 16 or 64 MP CSI cameras;
-  * There is a feature-rich set of picamera2 library supporting the video processing;
-  * There is a feature-rich set of opencv2 library supporting the video pre-processing;
-  * Extremely low latency is a main advantage for using the project for stereo vision of a robot.
-  * The streaming server is able to change properties like ```ScalerCrop``` thanks to picamera2 library features while streaming for implementing of motorless ePTZ control.
+
+ * KISS (Keep It as Simple as poSsible)
+ * The new PRi 5 board is much more powerful and supports two 5, 8, 12, 16 or 64 MP CSI cameras;
+ * There is a feature-rich set of picamera2 library supporting the video processing;
+ * There is a feature-rich set of opencv2 library supporting the video pre-processing;
+ * Extremely low latency is a main advantage for using the project for stereo vision of a robot.
+ * The streaming server is able to change properties like ```ScalerCrop``` thanks to picamera2 library features while streaming for implementing of motorless ePTZ control.
 
 Requirements are like in the [rpi5-h264-live-stereo-streamer](https://github.com/chradev/rpi5-h264-live-stereo-streamer/) project but an essential difference is that with usage of the picamera2 library for capturing and encoding in the streaming server the video process is under complete control. In addition the ability to combine the opencv2 library in the video processing chain gives almost endless possibilities.
 
 ### A Standard Stereo Vision Principle
 
-![A Standard Stereo Vision Principle drawings](https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/AStandardStereoVisionPrinciple.png)
+<!---
+![A Standard Stereo Vision Principle drawings](https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/AStandardStereoVisionPrinciple.png?raw=true)
+--->
+
+<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/AStandardStereoVisionPrinciple.png?raw=true" alt="A Standard Stereo Vision Principle drawings" width="100%">
+
 
 ### An example of ePTZ or difital PTZ Principle
 
-![An example of ePTZ or difital PTZ Principle](https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ePTZ-example-landscape.webp)
-
-
+<!---
+![An example of ePTZ or difital PTZ Principle](https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ePTZ-example-landscape.webp?raw=true)
+--->
+<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ePTZ-example-landscape.webp?raw=true" alt="An example of ePTZ or difital PTZ Principle" width="100%">
 
 
 ### A snapshot of running dual camera streaming server and its web user interfase
 
-![Dual camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/15.05.2024_00.12.38_REC.png)
+<!---
+![Dual camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/15.05.2024_00.12.38_REC.png?raw=true)
+--->
+<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/15.05.2024_00.12.38_REC.png?raw=true" alt="Dual camera streaming snapshot" width="100%">
 
 ### A short video of dual camera streaming server with ePTZ control
 
 https://github.com/chradev/pi-h264-to-browser-streamer/assets/11261306/cbac77e0-3cdb-4b67-8a05-6e53c996912c
 
 **Notes:**
+
  * in video you can only see usage of ePTZ control for both cameras simultaneously
  * in addition each camera can be PT controled separately and can be used for tuning
  * individual PT parameters for both cameras can be set as defaults
@@ -58,6 +71,7 @@ https://github.com/chradev/pi-h264-to-browser-streamer/assets/11261306/cbac77e0-
 
 
 ### Basic changes in:
+
  * src/server.py
    - changes to send to web page: ```{'port': serverPort, 'width': frameWidth, 'height': frameHeight, 'fps': frameRate}```
    - create two rpicamera2 instances for both RPi 5 CSI cameras
@@ -72,16 +86,18 @@ https://github.com/chradev/pi-h264-to-browser-streamer/assets/11261306/cbac77e0-
    - create two ```WebSocket``` instances with right URLs
    - add ```WebSocket``` listeners for visualization of both camera streams
 
-### Problems ~~not~~ solved ~~for now~~:
+### Problems <del>not</del> solved <del>for now</del>:
+
  * dublication of ```StreamingOutput``` and ```wsHandler``` classes - **solved**
     * **added second ```WebSocket``` handler ```ptzHandler``` for ePTZ camera control**
  * using of ```offsetX``` and ```offsetY``` variables calculated by independent process 
     * **solved in single streamer case from browser via ```WebSocket``` connection**
     * **in dual streamer case will be divided into a separate WS interface**
 
-### Advanced canges for double camera streaming with ePTZ control
+### Advanced changes for double camera streaming with ePTZ control
 
 Dual camera streaming is based on the basic modifications in server application and web interface with following extensions:
+
  * problem with dublication of ```StreamingOutput``` and ```wsHandler``` classes is solved
  * extended startup settings, added camera preview, logging functionality and more
  * added second ```WebSocket``` handler ```ptzHandler``` for ePTZ control of both cameras
@@ -96,11 +112,13 @@ Original files are kept in ```src``` folder
 All files of single streamer are moved to ```single``` folder
 
 Files of dual streamer are moved for:
+
  * server to ```dual``` folder
  * web user interfase to ```dual/web``` folder
 
 
 ### Dual camera streamer usage
+
  * run as user in ```dual``` folder: ```python3 server.py```
  * run as user: ```export DISPLAY=:0 && xclock -analog -update 0.1 -bw 100```
  * direct both RPi cameras to RPi 5 desktop monitor
@@ -147,6 +165,7 @@ Server performance reported by ```htop```
 ### Streaming from a single camera with ePTZ control
 
 Streaming from a single camera is based on the original application and web interface with some extends like:
+
  * reading of customization parameters from the command line
  * adding of time stamp and two lines to the video using opencv2 and local preview
  * testing and adding of ```picam2.set_controls({"ScalerCrop": scalerCrop})``` for ePTZ control
@@ -160,6 +179,7 @@ Streaming from a single camera is based on the original application and web inte
    * components styles was modified to keep the clock transparent and on top of the video
 
 **Notes:** 
+
  * clock and video components styles are not optimized;
  * single camera streamer will be used mainly for experimental and test purposes
 
@@ -200,9 +220,13 @@ options:
   -f FLIP FLIP, --Flip FLIP FLIP
 ```
 
-![Single camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/12.05.2024_14.10.57_REC.png)
+<!---
+![Single camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/12.05.2024_14.10.57_REC.png?raw=true)
+--->
+<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/12.05.2024_14.10.57_REC.png?raw=true" alt="Single camera streaming snapshot" width="100%">
 
 **Notes:**
+
  * To make X/Y offset available use none standard resolutions like 1200x1200 (for now).
  * Two server application can be run for both RPi 5 cameras (0/1) on different ports (8000/8001);
  * In browser application the web clock is synchronized with the client machine and it is laying on top of the video stream comming from RPi 5 camera directed to RPi 5 HDMI display where is running desktop ```xclock```. Both clocks were synchronized via NTP with Internet time server. The clocks are precisely positioned one over another thanks to pan/tilt functionality;

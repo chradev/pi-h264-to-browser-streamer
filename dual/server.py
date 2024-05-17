@@ -338,7 +338,15 @@ def templatize(content, replacements):
 mainJs    = templatize(getFile('web/main.js'), {'port': serverPort, 
               'fps': frameRate, 'width': frameWidth, 'height': frameHeight})
 
+import markdown
+# sudo apt install python3-markdown
+readmeHtml = markdown.markdown(getFile('../README.md'), extensions=['fenced_code', 'codehilite'])
+
 # RequestHandler for files access
+class readmeHandler(tornado.web.RequestHandler):
+    def get(self):
+        self.write(readmeHtml)
+
 class mainHandler(tornado.web.RequestHandler):
     def get(self):
         self.set_header('Content-Type', 'text/javascript')
@@ -349,6 +357,7 @@ requestHandlers = [
     (r"/cam(\d+)/", camHandler),
     (r"/ptz/", ptzHandler),
     (r"/main.js", mainHandler),
+    (r"/readme", readmeHandler),
     (r"/(.*)", tornado.web.StaticFileHandler, {
         "path": "web/",
         "default_filename": "index.html"
