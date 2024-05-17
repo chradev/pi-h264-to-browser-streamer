@@ -51,13 +51,13 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 <th style="text-align: end; padding-right: 5px;"> Vendor </th><th colspan="5"> Raspberry Pi </th><th colspan="2"> Arducam </th></tr><tr style="background-color: #f0f0c0;">
 <th style="text-align: end; padding-right: 5px;"> Camera Model </th><th> Module v1 </th><th> Module v2 </th><th> Module 3 </th><th> Module 3 Wide </th><th> HQ </th><th> 16MP IMX519 </th><th>64MP Hawkeye</th>
  </tr></thead><tbody><tr><td style="text-align: end; padding-right: 5px;">Photo</td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm1-60.png?raw=true" height = 60px ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm1-80.png?raw=true" height = 60px ></td>
     <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm2-60.png?raw=true" height = 60px ><br>Normal / NoIR</td>
     <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-110.png?raw=true" height = 60px ><br>Normal / NoIR</td>
     <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-w-110.png?raw=true" height = 60px ><br>Normal / NoIR</td>
     <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/hq-110.png?raw=true" height = 60px ><br>M12 / C/CS-mount</td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac16mp-60.png?raw=true" height = 60px ></td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac64mp-60.png?raw=true" height = 60px ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac16mp-80.png?raw=true" height = 60px ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac64mp-80.png?raw=true" height = 60px ></td>
 </tr><tr style="background-color: #fcfccc;">
 <td style="text-align: end; padding-right: 5px;"> Net price [$] </td><td> 25 </td><td> 25 </td><td> 25 </td><td> 35 </td><td> 50 </td><td></td><td></td>
 </tr><tr>
