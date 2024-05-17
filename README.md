@@ -88,6 +88,13 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 </tr><tr></tbody></table>
 
 
+| Feature | Camera Module v1 | Camera Module v2 | Camera Module 3 | Camera Module 3 Wide | HQ Camera |
+|:------------------|:----------------------:|:----------------------:|:---------------------:|:--------------------------:|:---------------:|
+| Net price | $25 | $25 | $25 | $35 | $50 |
+| Size | Around 25 x 24 x 9 mm | Around 25 x 24 x 9 mm | Around 25 x 24 x 11.5 mm | Around 25 x 24 x 12.4 mm | 38 x 38 x 18.4mm (excluding lens) |
+| Weight | 3g | 3g | 4g | 4g | 30.4g |
+
+
 ### A snapshot of running dual camera streaming server and its web user interfase
 
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/15.05.2024_00.12.38_REC.png?raw=true" alt="Dual camera streaming snapshot" width="100%">
