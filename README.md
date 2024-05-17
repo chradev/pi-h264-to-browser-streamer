@@ -43,7 +43,7 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ePTZ-example-landscape.webp?raw=true" alt="An example of ePTZ or difital PTZ Principle" width="100%">
 
-### RPi cameras comparisn table
+### RPi cameras comparison table
 
 <details>
 
@@ -144,20 +144,13 @@ Dual camera streaming is based on the basic modifications in server application 
  * added server support for ePTZ control for both cameras separately and simultaneously
  * added server support for changing of default ePTZ values for tuning of cameras position
 
-### Changes to be done (TBD)
-
- * saving default ePTZ values in a file
-
 ### Changes in the file and directory structure
 
-Original files are kept in ```src``` folder
-
-All files of single streamer are moved to ```single``` folder
-
-Files of dual streamer are moved for:
-
- * server to ```dual``` folder
- * web user interfase to ```dual/web``` folder
+ * Original files are kept in ```src``` folder
+ * All files of single streamer are moved to ```single``` folder
+ * Files of dual streamer are moved for:
+    * server to ```dual``` folder
+    * web user interfase to ```dual/web``` folder
 
 
 ### Dual camera streamer usage

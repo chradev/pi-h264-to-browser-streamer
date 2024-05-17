@@ -82,11 +82,13 @@ def apply_timestamp1(request):
 picam20.pre_callback = apply_timestamp0
 picam21.pre_callback = apply_timestamp1
 
+'''
 # Set camera offset and size properties
 scalerCrop = (frameOffsetX0, frameOffsetY0, frameWidth, frameHeight)
 picam20.set_controls({"ScalerCrop": scalerCrop})
 scalerCrop = (frameOffsetX1, frameOffsetY1, frameWidth, frameHeight)
 picam21.set_controls({"ScalerCrop": scalerCrop})
+'''
 
 from picamera2 import Preview
 if enableView is True:
@@ -239,16 +241,17 @@ def set_ptz_data(data):
         enableLines0   = data[0]['e']['lin']
         enableLines1   = data[1]['e']['lin']
 
+#        print(data[2])
+
         if data[0]['e']['def'] or data[1]['e']['def']:
             global frameOffsetX0 # = 1080
             global frameOffsetY0 # = 740
             global frameOffsetX1 # = 1750
             global frameOffsetY1 # = 360
-#            print(data[0])
-            frameOffsetX0  = data[0]['x']['val'] - data[0]['x']['min']
-            frameOffsetY0  = data[0]['y']['val'] - data[0]['y']['min']
-            frameOffsetX1  = data[1]['x']['val'] - data[1]['x']['min']
-            frameOffsetY1  = data[1]['y']['val'] - data[1]['y']['min']
+            frameOffsetX0  = data[0]['x']['val'] - data[0]['x']['min'] + data[2]['x']['val']
+            frameOffsetY0  = data[0]['y']['val'] - data[0]['y']['min'] + data[2]['y']['val']
+            frameOffsetX1  = data[1]['x']['val'] - data[1]['x']['min'] + data[2]['x']['val']
+            frameOffsetY1  = data[1]['y']['val'] - data[1]['y']['min'] + data[2]['y']['val']
 
         scalerCrop = (
             data[0]['x']['val'] - data[0]['x']['min'] + data[2]['x']['val'] + int((frameWidth - frameWidth * data[2]['z']['val']) / 2), 
@@ -278,6 +281,7 @@ class ptzHandler(tornado.websocket.WebSocketHandler):
               (time.strftime("%Y-%m-%d %X"), self.remoteIP))
         self.connections.append(self)
         # Reset camera offset and size properties
+        set_ptz_data(json.loads(getFile("data.json")))
         scalerCrop = (frameOffsetX0, frameOffsetY0, frameWidth, frameHeight)
         picam20.set_controls({"ScalerCrop": scalerCrop})
         scalerCrop = (frameOffsetX1, frameOffsetY1, frameWidth, frameHeight)
@@ -298,7 +302,8 @@ class ptzHandler(tornado.websocket.WebSocketHandler):
     def on_message(self, message):
         data = json.loads(message)
         set_ptz_data(data)
-#        messg = ptz_send_data()
+        with open('data.json', 'w') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
         self.broadcast(message)
 
     @classmethod
@@ -337,6 +342,9 @@ def templatize(content, replacements):
 
 mainJs    = templatize(getFile('web/main.js'), {'port': serverPort, 
               'fps': frameRate, 'width': frameWidth, 'height': frameHeight})
+
+# Load defaults from the file
+set_ptz_data(json.loads(getFile("data.json")))
 
 import markdown
 # sudo apt install python3-markdown
