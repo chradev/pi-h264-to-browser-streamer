@@ -56,24 +56,24 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
     <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-110.png?raw=true" weidth="auto" height="60px"  ><br>Normal &amp; NoIR</td>
     <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-w-110.png?raw=true" weidth="auto" height="60px"  ><br>Normal &amp; NoIR</td>
     <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/hq-110.png?raw=true" weidth="auto" height="60px"  ><br>M12 &amp; C/CS</td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac16mp-120.png?raw=true" weidth="auto" height="80px"  ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac16mp-110.png?raw=true" weidth="auto" height="80px"  ></td>
     <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac64mp-120.png?raw=true" weidth="auto" height="80px"  ></td>
 </tr><tr style="background-color: #fcfccc;">
-<td style="text-align: end; padding-right: 5px;"> Net price [$] </td><td> 25 </td><td> 25 </td><td> 25 </td><td> 35 </td><td> 50 </td><td></td><td></td>
+<td style="text-align: end; padding-right: 5px;"> Net price [$] </td><td> 25 </td><td> 25 </td><td> 25 </td><td> 35 </td><td> 50 </td>25<td></td><td>60</td>
 </tr><tr>
-<td style="text-align: end; padding-right: 5px;"> Size [mm] </td><td> 25 x 24 x 9 </td><td> 25 x 24 x 9 </td><td> 25 x 24 x 11.5 </td><td> 25 x 24 x 12.4 </td><td> 38 x 38 x 18.4<br>(excluding lens) </td><td></td><td></td>
+<td style="text-align: end; padding-right: 5px;"> Size [mm] </td><td> 25 x 24 x 9 </td><td> 25 x 24 x 9 </td><td> 25 x 24 x 11.5 </td><td> 25 x 24 x 12.4 </td><td> 38 x 38 x 18.4<br>(excluding lens) </td><td>25 x 24</td><td>25 x 24</td>
 </tr><tr style="background-color: #fcfccc;">
 <td style="text-align: end; padding-right: 5px;"> Weight [g] </td><td> 3 </td><td> 3 </td><td> 4 </td><td> 4 </td><td> 30.4 </td><td></td><td></td>
 </tr><tr>
 <td style="text-align: end; padding-right: 5px;"> Still resolution [MP] </td><td> 5 </td><td> 8 </td><td> 11.9 </td><td> 11.9 </td><td> 12.3 </td><td>16</td><td>64</td>
 </tr><tr style="background-color: #fcfccc;">
-<td style="text-align: end; padding-right: 5px;"> Video modes </td><td> 1080p30,<br>720p60 and<br>640 x 480p60/90 </td><td> 1080p47,<br>1640 x 1232p41 and<br>640 x 480p206 </td><td> 2304 x 1296p56,<br>2304 x 1296p30 HDR,<br>1536 x 864p120 </td><td> 2304 x 1296p56,<br>2304 x 1296p30 HDR,<br>1536 x 864p120 </td><td> 2028 x 1080p50,<br>2028 x 1520p40 and<br>1332 x 990p120 </td><td></td><td></td>
+<td style="text-align: end; padding-right: 5px;"> Video modes </td><td> 1080p30,<br>720p60 and<br>640 x 480p60/90 </td><td> 1080p47,<br>1640 x 1232p41 and<br>640 x 480p206 </td><td> 2304 x 1296p56,<br>2304 x 1296p30 HDR,<br>1536 x 864p120 </td><td> 2304 x 1296p56,<br>2304 x 1296p30 HDR,<br>1536 x 864p120 </td><td> 2028 x 1080p50,<br>2028 x 1520p40 and<br>1332 x 990p120 </td><td>4656x3496@10fps, 3840x2160@21fps, 1920x1080@60fps, 1280x720@120fps</td><td>1280x720@120fps, 1920x1080@60fps, 2312x1736@30fps, 3840x2160@20fps, 4624x3472@10fps, 9152x6944@2.7fps</td>
 </tr><tr>
 <td style="text-align: end; padding-right: 5px;"> Sensor </td><td> OmniVision OV5647 </td><td> Sony IMX219 </td><td> Sony IMX708 </td><td> Sony IMX708 </td><td> Sony IMX477 </td><td>Sony IMX519</td><td></td>
 </tr><tr style="background-color: #fcfccc;">
 <td style="text-align: end; padding-right: 5px;"> Sensor resolution [px] </td><td> 2592 x 1944 </td><td> 3280 x 2464 </td><td> 4608 x 2592 </td><td> 4608 x 2592 </td><td> 4056 x 3040 </td><td>4656 x 3496 </td><td>9152 x 6944 </td>
 </tr><tr>
-<td style="text-align: end; padding-right: 5px;"> Sensor image area [mm] </td><td> 3.76 x 2.74 </td><td> 3.68 x 2.76<br>(4.6 diagonal) </td><td> 6.45 x 3.63<br>(7.4 diagonal) </td><td> 6.45 x 3.63<br>(7.4 diagonal) </td><td> 6.287 x 4.712<br>(7.9 diagonal) </td><td></td><td></td>
+<td style="text-align: end; padding-right: 5px;"> Sensor image area [mm] </td><td> 3.76 x 2.74 </td><td> 3.68 x 2.76<br>(4.6 diagonal) </td><td> 6.45 x 3.63<br>(7.4 diagonal) </td><td> 6.45 x 3.63<br>(7.4 diagonal) </td><td> 6.287 x 4.712<br>(7.9 diagonal) </td><td></td><td>9.25 diagonal </td>
 </tr><tr style="background-color: #fcfccc;">
 <td style="text-align: end; padding-right: 5px;"> Pixel size [&mu;m]</td><td> 1.4 x 1.4 </td><td> 1.12 x 1.12 </td><td> 1.4 x 1.4 </td><td> 1.4 x 1.4 </td><td> 1.55 x 1.55 </td><td> 1.22 x 1.22 </td><td> 0.8 x 0.8 </td>
 </tr><tr>
@@ -81,15 +81,15 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 </tr><tr style="background-color: #fcfccc;">
 <td style="text-align: end; padding-right: 5px;"> Focus </td><td> Fixed </td><td> Adjustable </td><td> Motorized </td><td> Motorized </td><td> Adjustable </td><td> Fixed/Auto </td><td> Auto </td>
 </tr><tr>
-<td style="text-align: end; padding-right: 5px;"> Depth of field </td><td> 1 m to 8 </td><td> 10 cm to 8 </td><td> 10 cm to 8 </td><td> 5 cm to 8 </td><td> N/A </td><td></td><td></td>
+<td style="text-align: end; padding-right: 5px;"> Depth of field </td><td> 1 m to 8 </td><td> 10 cm to 8 </td><td> 10 cm to 8 </td><td> 5 cm to 8 </td><td> N/A </td><td></td><td>8 cm to 8</td>
 </tr><tr style="background-color: #fcfccc;">
-<td style="text-align: end; padding-right: 5px;"> Focal length [mm] </td><td> 3.60 +/- 0.01 </td><td> 3.04 </td><td> 4.74 </td><td> Depends on lens </td><td> Depends on lens </td><td></td><td></td>
+<td style="text-align: end; padding-right: 5px;"> Focal length [mm] </td><td> 3.60 +/- 0.01 </td><td> 3.04 </td><td> 4.74 </td><td> Depends on lens </td><td> Depends on lens </td><td></td><td>5.1</td>
 </tr><tr>
 <td style="text-align: end; padding-right: 5px;"> Horizontal FoV [degrees] </td><td> 53.50 +/- 0.13 </td><td> 62.2 </td><td> 66 </td><td> Depends on lens </td><td> Depends on lens </td><td> 66 </td><td> 72 </td>
 </tr><tr style="background-color: #fcfccc;">
 <td style="text-align: end; padding-right: 5px;"> Vertical FoV [degrees] </td><td> 41.41 +/- 0.11 </td><td> 48.8 </td><td> 41 </td><td> Depends on lens </td><td> Depends on lens </td><td> 49.5 </td><td> 54.6 </td>
 </tr><tr>
-<td style="text-align: end; padding-right: 5px;"> Focal ratio (F-Stop) </td><td> F2.9 </td><td> F2.0 </td><td> F1.8 </td><td> F2.2 </td><td> Depends on lens </td><td></td><td></td>
+<td style="text-align: end; padding-right: 5px;"> Focal ratio (F-Stop) </td><td> F2.9 </td><td> F2.0 </td><td> F1.8 </td><td> F2.2 </td><td> Depends on lens </td><td></td><td>F1.8</td>
 </tr><tr style="background-color: #fcfccc;">
 <td style="text-align: end; padding-right: 5px;"> Maximum exposure time [s] </td><td> 0.97 </td><td> 11.76 </td><td> 112 </td><td> 112 </td><td> 670.74 </td><td></td><td></td>
 </tr><tr>
