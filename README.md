@@ -34,26 +34,42 @@ Requirements are like in the [rpi5-h264-live-stereo-streamer](https://github.com
 
 ### A Standard Stereo Vision Principle
 
-<!---
-![A Standard Stereo Vision Principle drawings](https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/AStandardStereoVisionPrinciple.png?raw=true)
---->
-
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/AStandardStereoVisionPrinciple.png?raw=true" alt="A Standard Stereo Vision Principle drawings" width="100%">
 
 
 ### An example of ePTZ or difital PTZ Principle
 
-<!---
-![An example of ePTZ or difital PTZ Principle](https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ePTZ-example-landscape.webp?raw=true)
---->
+ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoom. There is a significant <a href="https://huddlecamhd.com/eptz-and-ptz/" target="_blank">difference</a> between old PTZ cameras and new ePTZ. Mainly because of its advantages like smaller price and size, this technology is extremely appropriate for robot vision especially in multi-camera cases.
+
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ePTZ-example-landscape.webp?raw=true" alt="An example of ePTZ or difital PTZ Principle" width="100%">
+
+### RPi cameras comparisn table
+
+| Feature | Camera Module v1 | Camera Module v2 | Camera Module 3 | Camera Module 3 Wide | HQ Camera |
+|:------------------|:----------------------:|:----------------------:|:---------------------:|:--------------------------:|:---------------:|
+| Net price | $25 | $25 | $25 | $35 | $50 |
+| Size | Around 25 x 24 x 9 mm | Around 25 x 24 x 9 mm | Around 25 x 24 x 11.5 mm | Around 25 x 24 x 12.4 mm | 38 x 38 x 18.4mm (excluding lens) |
+| Weight | 3g | 3g | 4g | 4g | 30.4g |
+| Still resolution | 5 Megapixels  | 8 Megapixels | 11.9 Megapixels | 11.9 Megapixels | 12.3 Megapixels |
+| Video modes | 1080p30, 720p60 and 640 x 480p60/90 | 1080p47, 1640 x 1232p41 and 640 x 480p206 | 2304 x 1296p56, 2304 x 1296p30 HDR, 1536 x 864p120 | 2304 x 1296p56, 2304 x 1296p30 HDR, 1536 x 864p120 | 2028 x 1080p50, 2028 x 1520p40 and 1332 x 990p120 |
+| Sensor | OmniVision OV5647 | Sony IMX219 | Sony IMX708 | Sony IMX708 | Sony IMX477 |
+| Sensor resolution | 2592 x 1944 pixels | 3280 x 2464 pixels | 4608 x 2592 pixels | 4608 x 2592 pixels | 4056 x 3040 pixels |
+| Sensor image area | 3.76 x 2.74 mm | 3.68 x 2.76 mm (4.6 mm diagonal) | 6.45 x 3.63mm (7.4mm diagonal) | 6.45 x 3.63mm (7.4mm diagonal) | 6.287mm x 4.712 mm (7.9mm diagonal) |
+| Pixel size | 1.4 &mu;m x 1.4 &mu;m | 1.12 &mu;m x 1.12 &mu;m | 1.4 b5&mu;m x 1.4 &mu;m | 1.4 &mu;m x 1.4 &mu;m | 1.55 &mu;m x 1.55 &mu;m |
+| Optical size | 1/4" | 1/4" | 1/2.43" | 1/2.43" | 1/2.3" |
+| Focus | Fixed | Adjustable | Motorized | Motorized | Adjustable |
+| Depth of field | Approx 1 m to 8 | Approx 10 cm to 8 | Approx 10 cm to 8 | Approx 5 cm to 8 | N/A |
+| Focal length | 3.60 mm +/- 0.01 | 3.04 mm | 4.74 mm | | Depends on lens | Depends on lens |
+| Horizontal Field of View (FoV) | 53.50 +/- 0.13 degrees | 62.2 degrees | 66 degrees | Depends on lens | Depends on lens |
+| Vertical Field of View (FoV) | 41.41 +/- 0.11 degrees | 48.8 degrees | 41 degrees | Depends on lens | Depends on lens |
+| Focal ratio (F-Stop) | F2.9 | F2.0 | F1.8 | F2.2 | Depends on lens |
+| Maximum exposure times (seconds) | 0.97 | 11.76 | 112 | 112 | 670.74 |
+| Lens Mount | N/A | N/A | N/A | N/A | C/CS- or M12-mount |
+| NoIR version available? | Yes | Yes | Yes | Yes | No |
 
 
 ### A snapshot of running dual camera streaming server and its web user interfase
 
-<!---
-![Dual camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/15.05.2024_00.12.38_REC.png?raw=true)
---->
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/15.05.2024_00.12.38_REC.png?raw=true" alt="Dual camera streaming snapshot" width="100%">
 
 ### A short video of dual camera streaming server with ePTZ control
@@ -224,9 +240,6 @@ options:
   -f FLIP FLIP, --Flip FLIP FLIP
 ```
 
-<!---
-![Single camera streaming snapshot](https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/12.05.2024_14.10.57_REC.png?raw=true)
---->
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/12.05.2024_14.10.57_REC.png?raw=true" alt="Single camera streaming snapshot" width="100%">
 
 **Notes:**
