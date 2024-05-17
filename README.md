@@ -48,8 +48,8 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 <details>
 
 <table style="overflow-y: hidden;width: 100%;height: 100%;text-align: center; border:1px; border-collapse: collapse;"><thead><tr style="background-color: #f0f0c0;">
-<th style="text-align: end; padding-right: 5px;"> Vendor </th><th colspan="5"> Raspberry Pi </th><th colspan="2"> Arducam </th></tr><tr style="background-color: #f0f0c0;">
-<th style="text-align: end; padding-right: 5px;"> Camera Model </th><th> Module v1 </th><th> Module v2 </th><th> Module 3 </th><th> Module 3 Wide </th><th> HQ </th><th> 16MP IMX519 </th><th>64MP Hawkeye</th>
+<th style="width: 200px;text-align: end; padding-right: 5px;"> Vendor </th><th colspan="5"> Raspberry Pi </th><th colspan="2"  style="width: 25%;"> Arducam </th></tr><tr style="background-color: #f0f0c0;">
+<th style="text-align: end; padding-right: 5px;"> Camera Model </th><th> Module v1 </th><th> Module v2 </th><th> Module 3 </th><th> Module 3 Wide </th><th> HQ </th><th> 16MP<br>IMX519 </th><th>64MP<br>Hawkeye</th>
  </tr></thead><tbody><tr><td style="text-align: end; padding-right: 5px;">Photo</td>
     <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm1-120.png?raw=true" weidth="auto" height="80px" ></td>
     <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm2-60.png?raw=true" weidth="auto" height="60px"  ><br>Normal &amp; NoIR</td>
