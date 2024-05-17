@@ -48,52 +48,54 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 <details>
 
 <table style="overflow-y: hidden;width: 100%;height: 100%;text-align: center; border:1px; border-collapse: collapse;"><thead><tr style="background-color: #f0f0c0;">
-<th> Feature / Camera </th><th> Module v1 </th><th> Module v2 </th><th> Module 3 </th><th> Module 3 Wide </th><th> HQ </th>
- </tr></thead><tbody><tr>
-    <td></td>
+<th style="text-align: end; padding-right: 5px;"> Vendor </th><th colspan="5"> Raspberry Pi </th><th colspan="2"> Arducam </th></tr><tr style="background-color: #f0f0c0;">
+<th style="text-align: end; padding-right: 5px;"> Camera Model </th><th> Module v1 </th><th> Module v2 </th><th> Module 3 </th><th> Module 3 Wide </th><th> HQ </th><th> 16MP IMX519 </th><th>64MP Hawkeye</th>
+ </tr></thead><tbody><tr><td style="text-align: end; padding-right: 5px;">Photo</td>
     <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm1-60.png?raw=true" height = 60px ></td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm2-60.png?raw=true" height = 60px ></td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-110.png?raw=true" height = 60px ></td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-w-110.png?raw=true" height = 60px ></td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/hq-110.png?raw=true" height = 60px ></td>
-   </tr><tr>
-<td style="text-align: end; padding-right: 5px;"> Net price </td><td> $25 </td><td> $25 </td><td> $25 </td><td> $35 </td><td> $50 </td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm2-60.png?raw=true" height = 60px ><br>Normal / NoIR</td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-110.png?raw=true" height = 60px ><br>Normal / NoIR</td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-w-110.png?raw=true" height = 60px ><br>Normal / NoIR</td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/hq-110.png?raw=true" height = 60px ><br>M12 / C/CS-mount</td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac16mp-60.png?raw=true" height = 60px ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac64mp-60.png?raw=true" height = 60px ></td>
 </tr><tr style="background-color: #fcfccc;">
-<td style="text-align: end; padding-right: 5px;"> Size </td><td> 25 x 24 x 9 mm </td><td> 25 x 24 x 9 mm </td><td> 25 x 24 x 11.5 mm </td><td> 25 x 24 x 12.4 mm </td><td> 38 x 38 x 18.4mm<br>(excluding lens) </td>
+<td style="text-align: end; padding-right: 5px;"> Net price [$] </td><td> 25 </td><td> 25 </td><td> 25 </td><td> 35 </td><td> 50 </td><td></td><td></td>
 </tr><tr>
-<td style="text-align: end; padding-right: 5px;"> Weight </td><td> 3g </td><td> 3g </td><td> 4g </td><td> 4g </td><td> 30.4g </td>
+<td style="text-align: end; padding-right: 5px;"> Size [mm] </td><td> 25 x 24 x 9 </td><td> 25 x 24 x 9 </td><td> 25 x 24 x 11.5 </td><td> 25 x 24 x 12.4 </td><td> 38 x 38 x 18.4<br>(excluding lens) </td><td></td><td></td>
 </tr><tr style="background-color: #fcfccc;">
-<td style="text-align: end; padding-right: 5px;"> Still resolution </td><td> 5 Megapixels  </td><td> 8 Megapixels </td><td> 11.9 Megapixels </td><td> 11.9 Megapixels </td><td> 12.3 Megapixels </td>
+<td style="text-align: end; padding-right: 5px;"> Weight [g] </td><td> 3 </td><td> 3 </td><td> 4 </td><td> 4 </td><td> 30.4 </td><td></td><td></td>
 </tr><tr>
-<td style="text-align: end; padding-right: 5px;"> Video modes </td><td> 1080p30,<br>720p60 and<br>640 x 480p60/90 </td><td> 1080p47,<br>1640 x 1232p41 and<br>640 x 480p206 </td><td> 2304 x 1296p56,<br>2304 x 1296p30 HDR,<br>1536 x 864p120 </td><td> 2304 x 1296p56,<br>2304 x 1296p30 HDR,<br>1536 x 864p120 </td><td> 2028 x 1080p50,<br>2028 x 1520p40 and<br>1332 x 990p120 </td>
+<td style="text-align: end; padding-right: 5px;"> Still resolution [MP] </td><td> 5 </td><td> 8 </td><td> 11.9 </td><td> 11.9 </td><td> 12.3 </td><td>16</td><td>64</td>
 </tr><tr style="background-color: #fcfccc;">
-<td style="text-align: end; padding-right: 5px;"> Sensor </td><td> OmniVision OV5647 </td><td> Sony IMX219 </td><td> Sony IMX708 </td><td> Sony IMX708 </td><td> Sony IMX477 </td>
+<td style="text-align: end; padding-right: 5px;"> Video modes </td><td> 1080p30,<br>720p60 and<br>640 x 480p60/90 </td><td> 1080p47,<br>1640 x 1232p41 and<br>640 x 480p206 </td><td> 2304 x 1296p56,<br>2304 x 1296p30 HDR,<br>1536 x 864p120 </td><td> 2304 x 1296p56,<br>2304 x 1296p30 HDR,<br>1536 x 864p120 </td><td> 2028 x 1080p50,<br>2028 x 1520p40 and<br>1332 x 990p120 </td><td></td><td></td>
 </tr><tr>
-<td style="text-align: end; padding-right: 5px;"> Sensor resolution </td><td> 2592 x 1944 pixels </td><td> 3280 x 2464 pixels </td><td> 4608 x 2592 pixels </td><td> 4608 x 2592 pixels </td><td> 4056 x 3040 pixels </td>
+<td style="text-align: end; padding-right: 5px;"> Sensor </td><td> OmniVision OV5647 </td><td> Sony IMX219 </td><td> Sony IMX708 </td><td> Sony IMX708 </td><td> Sony IMX477 </td><td>Sony IMX519</td><td></td>
 </tr><tr style="background-color: #fcfccc;">
-<td style="text-align: end; padding-right: 5px;"> Sensor image area </td><td> 3.76 x 2.74 mm </td><td> 3.68 x 2.76 mm<br>(4.6 mm diagonal) </td><td> 6.45 x 3.63mm<br>(7.4mm diagonal) </td><td> 6.45 x 3.63mm<br>(7.4mm diagonal) </td><td> 6.287mm x 4.712 mm<br>(7.9mm diagonal) </td>
+<td style="text-align: end; padding-right: 5px;"> Sensor resolution [px] </td><td> 2592 x 1944 </td><td> 3280 x 2464 </td><td> 4608 x 2592 </td><td> 4608 x 2592 </td><td> 4056 x 3040 </td><td>4656 x 3496 </td><td>9152 x 6944 </td>
 </tr><tr>
-<td style="text-align: end; padding-right: 5px;"> Pixel size </td><td> 1.4 &mu;m x 1.4 &mu;m </td><td> 1.12 &mu;m x 1.12 &mu;m </td><td> 1.4 b5&mu;m x 1.4 &mu;m </td><td> 1.4 &mu;m x 1.4 &mu;m </td><td> 1.55 &mu;m x 1.55 &mu;m </td>
+<td style="text-align: end; padding-right: 5px;"> Sensor image area [mm] </td><td> 3.76 x 2.74 </td><td> 3.68 x 2.76<br>(4.6 diagonal) </td><td> 6.45 x 3.63<br>(7.4 diagonal) </td><td> 6.45 x 3.63<br>(7.4 diagonal) </td><td> 6.287 x 4.712<br>(7.9 diagonal) </td><td></td><td></td>
 </tr><tr style="background-color: #fcfccc;">
-<td style="text-align: end; padding-right: 5px;"> Optical size </td><td> 1/4" </td><td> 1/4" </td><td> 1/2.43" </td><td> 1/2.43" </td><td> 1/2.3" </td>
+<td style="text-align: end; padding-right: 5px;"> Pixel size [&mu;m]</td><td> 1.4 x 1.4 </td><td> 1.12 x 1.12 </td><td> 1.4 x 1.4 </td><td> 1.4 x 1.4 </td><td> 1.55 x 1.55 </td><td> 1.22 x 1.22 </td><td> 0.8 x 0.8 </td>
 </tr><tr>
-<td style="text-align: end; padding-right: 5px;"> Focus </td><td> Fixed </td><td> Adjustable </td><td> Motorized </td><td> Motorized </td><td> Adjustable </td>
+<td style="text-align: end; padding-right: 5px;"> Optical size </td><td> 1/4" </td><td> 1/4" </td><td> 1/2.43" </td><td> 1/2.43" </td><td> 1/2.3" </td><td> 1/2.53" </td><td> 1/1.7" </td>
 </tr><tr style="background-color: #fcfccc;">
-<td style="text-align: end; padding-right: 5px;"> Depth of field </td><td> Approx 1 m to 8 </td><td> Approx 10 cm to 8 </td><td> Approx 10 cm to 8 </td><td> Approx 5 cm to 8 </td><td> N/A </td>
+<td style="text-align: end; padding-right: 5px;"> Focus </td><td> Fixed </td><td> Adjustable </td><td> Motorized </td><td> Motorized </td><td> Adjustable </td><td> Fixed/Auto </td><td> Auto </td>
 </tr><tr>
-<td style="text-align: end; padding-right: 5px;"> Focal length </td><td> 3.60 mm +/- 0.01 </td><td> 3.04 mm </td><td> 4.74 mm </td><td> Depends on lens </td><td> Depends on lens </td>
+<td style="text-align: end; padding-right: 5px;"> Depth of field </td><td> 1 m to 8 </td><td> 10 cm to 8 </td><td> 10 cm to 8 </td><td> 5 cm to 8 </td><td> N/A </td><td></td><td></td>
 </tr><tr style="background-color: #fcfccc;">
-<td style="text-align: end; padding-right: 5px;"> Horizontal Field of View (FoV) </td><td> 53.50 +/- 0.13 degrees </td><td> 62.2 degrees </td><td> 66 degrees </td><td> Depends on lens </td><td> Depends on lens </td>
+<td style="text-align: end; padding-right: 5px;"> Focal length [mm] </td><td> 3.60 +/- 0.01 </td><td> 3.04 </td><td> 4.74 </td><td> Depends on lens </td><td> Depends on lens </td><td></td><td></td>
 </tr><tr>
-<td style="text-align: end; padding-right: 5px;"> Vertical Field of View (FoV) </td><td> 41.41 +/- 0.11 degrees </td><td> 48.8 degrees </td><td> 41 degrees </td><td> Depends on lens </td><td> Depends on lens </td>
+<td style="text-align: end; padding-right: 5px;"> Horizontal FoV [degrees] </td><td> 53.50 +/- 0.13 </td><td> 62.2 </td><td> 66 </td><td> Depends on lens </td><td> Depends on lens </td><td> 66 </td><td> 72 </td>
 </tr><tr style="background-color: #fcfccc;">
-<td style="text-align: end; padding-right: 5px;"> Focal ratio (F-Stop) </td><td> F2.9 </td><td> F2.0 </td><td> F1.8 </td><td> F2.2 </td><td> Depends on lens </td>
+<td style="text-align: end; padding-right: 5px;"> Vertical FoV [degrees] </td><td> 41.41 +/- 0.11 </td><td> 48.8 </td><td> 41 </td><td> Depends on lens </td><td> Depends on lens </td><td> 49.5 </td><td> 54.6 </td>
 </tr><tr>
-<td style="text-align: end; padding-right: 5px;"> Maximum exposure times [s] </td><td> 0.97 </td><td> 11.76 </td><td> 112 </td><td> 112 </td><td> 670.74 </td>
+<td style="text-align: end; padding-right: 5px;"> Focal ratio (F-Stop) </td><td> F2.9 </td><td> F2.0 </td><td> F1.8 </td><td> F2.2 </td><td> Depends on lens </td><td></td><td></td>
 </tr><tr style="background-color: #fcfccc;">
-<td style="text-align: end; padding-right: 5px;"> Lens Mount </td><td> N/A </td><td> N/A </td><td> N/A </td><td> N/A </td><td> C/CS- or M12-mount </td>
+<td style="text-align: end; padding-right: 5px;"> Maximum exposure time [s] </td><td> 0.97 </td><td> 11.76 </td><td> 112 </td><td> 112 </td><td> 670.74 </td><td></td><td></td>
 </tr><tr>
-<td style="text-align: end; padding-right: 5px;"> NoIR version available? </td><td> Yes </td><td> Yes </td><td> Yes </td><td> Yes </td><td> No </td>
+<td style="text-align: end; padding-right: 5px;"> Lens Mount </td><td> N/A </td><td> N/A </td><td> N/A </td><td> N/A </td><td> C/CS or M12 </td><td></td><td></td>
+</tr><tr style="background-color: #fcfccc;">
+<td style="text-align: end; padding-right: 5px;"> NoIR version available? </td><td> Yes </td><td> Yes </td><td> Yes </td><td> Yes </td><td> No </td><td></td><td></td>
 </tr><tr></tbody></table>
 
 </details>
