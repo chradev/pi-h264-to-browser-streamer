@@ -340,7 +340,15 @@ mainJs    = templatize(getFile('web/main.js'), {'port': serverPort,
 
 import markdown
 # sudo apt install python3-markdown
-readmeHtml = markdown.markdown(getFile('../README.md'), extensions=['fenced_code', 'codehilite'])
+readmeHtml = markdown.markdown(getFile('../README.md'), extensions=['fenced_code', 'codehilite', 'markdown.extensions.tables'])
+#readmeHtml.replace('<head></head>', '<head><title>Readme.md</title><style>table, th, td {border:1px solid black;}</style></head>')
+#print(readmeHtml)
+
+readmeHtml = '<!doctype html><html lang="en"><head>\
+    <title>Readme.md</title><style>\
+    table, th, td {text-align: center; border:1px solid black; border-collapse: collapse;}\
+    table td:nth-child(1) { text-align: end; padding-right: 5px; }\
+</style></head><body>' + readmeHtml + '</body></html>'
 
 # RequestHandler for files access
 class readmeHandler(tornado.web.RequestHandler):

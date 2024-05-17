@@ -45,27 +45,47 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 
 ### RPi cameras comparisn table
 
-| Feature | Camera Module v1 | Camera Module v2 | Camera Module 3 | Camera Module 3 Wide | HQ Camera |
-|:------------------|:----------------------:|:----------------------:|:---------------------:|:--------------------------:|:---------------:|
-| Net price | $25 | $25 | $25 | $35 | $50 |
-| Size | Around 25 x 24 x 9 mm | Around 25 x 24 x 9 mm | Around 25 x 24 x 11.5 mm | Around 25 x 24 x 12.4 mm | 38 x 38 x 18.4mm (excluding lens) |
-| Weight | 3g | 3g | 4g | 4g | 30.4g |
-| Still resolution | 5 Megapixels  | 8 Megapixels | 11.9 Megapixels | 11.9 Megapixels | 12.3 Megapixels |
-| Video modes | 1080p30, 720p60 and 640 x 480p60/90 | 1080p47, 1640 x 1232p41 and 640 x 480p206 | 2304 x 1296p56, 2304 x 1296p30 HDR, 1536 x 864p120 | 2304 x 1296p56, 2304 x 1296p30 HDR, 1536 x 864p120 | 2028 x 1080p50, 2028 x 1520p40 and 1332 x 990p120 |
-| Sensor | OmniVision OV5647 | Sony IMX219 | Sony IMX708 | Sony IMX708 | Sony IMX477 |
-| Sensor resolution | 2592 x 1944 pixels | 3280 x 2464 pixels | 4608 x 2592 pixels | 4608 x 2592 pixels | 4056 x 3040 pixels |
-| Sensor image area | 3.76 x 2.74 mm | 3.68 x 2.76 mm (4.6 mm diagonal) | 6.45 x 3.63mm (7.4mm diagonal) | 6.45 x 3.63mm (7.4mm diagonal) | 6.287mm x 4.712 mm (7.9mm diagonal) |
-| Pixel size | 1.4 &mu;m x 1.4 &mu;m | 1.12 &mu;m x 1.12 &mu;m | 1.4 b5&mu;m x 1.4 &mu;m | 1.4 &mu;m x 1.4 &mu;m | 1.55 &mu;m x 1.55 &mu;m |
-| Optical size | 1/4" | 1/4" | 1/2.43" | 1/2.43" | 1/2.3" |
-| Focus | Fixed | Adjustable | Motorized | Motorized | Adjustable |
-| Depth of field | Approx 1 m to 8 | Approx 10 cm to 8 | Approx 10 cm to 8 | Approx 5 cm to 8 | N/A |
-| Focal length | 3.60 mm +/- 0.01 | 3.04 mm | 4.74 mm | | Depends on lens | Depends on lens |
-| Horizontal Field of View (FoV) | 53.50 +/- 0.13 degrees | 62.2 degrees | 66 degrees | Depends on lens | Depends on lens |
-| Vertical Field of View (FoV) | 41.41 +/- 0.11 degrees | 48.8 degrees | 41 degrees | Depends on lens | Depends on lens |
-| Focal ratio (F-Stop) | F2.9 | F2.0 | F1.8 | F2.2 | Depends on lens |
-| Maximum exposure times (seconds) | 0.97 | 11.76 | 112 | 112 | 670.74 |
-| Lens Mount | N/A | N/A | N/A | N/A | C/CS- or M12-mount |
-| NoIR version available? | Yes | Yes | Yes | Yes | No |
+<table width="100%"><thead><tr bgcolor="#f8f8c0">
+<th> Feature </th><th> Camera Module v1 </th><th> Camera Module v2 </th><th> Camera Module 3 </th><th> Camera Module 3 Wide </th><th> HQ Camera </th>
+ </tr></thead><tbody><tr>
+<td> Net price </td><td> $25 </td><td> $25 </td><td> $25 </td><td> $35 </td><td> $50 </td>
+</tr><tr bgcolor="#fcfcec">
+<td> Size </td><td> 25 x 24 x 9 mm </td><td> 25 x 24 x 9 mm </td><td> 25 x 24 x 11.5 mm </td><td> 25 x 24 x 12.4 mm </td><td> 38 x 38 x 18.4mm<br>(excluding lens) </td>
+</tr><tr>
+<td> Weight </td><td> 3g </td><td> 3g </td><td> 4g </td><td> 4g </td><td> 30.4g </td>
+</tr><tr bgcolor="#fcfcec">
+<td> Still resolution </td><td> 5 Megapixels  </td><td> 8 Megapixels </td><td> 11.9 Megapixels </td><td> 11.9 Megapixels </td><td> 12.3 Megapixels </td>
+</tr><tr>
+<td> Video modes </td><td> 1080p30,<br>720p60 and<br>640 x 480p60/90 </td><td> 1080p47,<br>1640 x 1232p41 and<br>640 x 480p206 </td><td> 2304 x 1296p56,<br>2304 x 1296p30 HDR,<br>1536 x 864p120 </td><td> 2304 x 1296p56,<br>2304 x 1296p30 HDR,<br>1536 x 864p120 </td><td> 2028 x 1080p50,<br>2028 x 1520p40 and<br>1332 x 990p120 </td>
+</tr><tr bgcolor="#fcfcec">
+<td> Sensor </td><td> OmniVision OV5647 </td><td> Sony IMX219 </td><td> Sony IMX708 </td><td> Sony IMX708 </td><td> Sony IMX477 </td>
+</tr><tr>
+<td> Sensor resolution </td><td> 2592 x 1944 pixels </td><td> 3280 x 2464 pixels </td><td> 4608 x 2592 pixels </td><td> 4608 x 2592 pixels </td><td> 4056 x 3040 pixels </td>
+</tr><tr bgcolor="#fcfcec">
+<td> Sensor image area </td><td> 3.76 x 2.74 mm </td><td> 3.68 x 2.76 mm<br>(4.6 mm diagonal) </td><td> 6.45 x 3.63mm<br>(7.4mm diagonal) </td><td> 6.45 x 3.63mm<br>(7.4mm diagonal) </td><td> 6.287mm x 4.712 mm<br>(7.9mm diagonal) </td>
+</tr><tr>
+<td> Pixel size </td><td> 1.4 &mu;m x 1.4 &mu;m </td><td> 1.12 &mu;m x 1.12 &mu;m </td><td> 1.4 b5&mu;m x 1.4 &mu;m </td><td> 1.4 &mu;m x 1.4 &mu;m </td><td> 1.55 &mu;m x 1.55 &mu;m </td>
+</tr><tr bgcolor="#fcfcec">
+<td> Optical size </td><td> 1/4" </td><td> 1/4" </td><td> 1/2.43" </td><td> 1/2.43" </td><td> 1/2.3" </td>
+</tr><tr>
+<td> Focus </td><td> Fixed </td><td> Adjustable </td><td> Motorized </td><td> Motorized </td><td> Adjustable </td>
+</tr><tr bgcolor="#fcfcec">
+<td> Depth of field </td><td> Approx 1 m to 8 </td><td> Approx 10 cm to 8 </td><td> Approx 10 cm to 8 </td><td> Approx 5 cm to 8 </td><td> N/A </td>
+</tr><tr>
+<td> Focal length </td><td> 3.60 mm +/- 0.01 </td><td> 3.04 mm </td><td> 4.74 mm </td><td> Depends on lens </td><td> Depends on lens </td>
+</tr><tr bgcolor="#fcfcec">
+<td> Horizontal Field of View (FoV) </td><td> 53.50 +/- 0.13 degrees </td><td> 62.2 degrees </td><td> 66 degrees </td><td> Depends on lens </td><td> Depends on lens </td>
+</tr><tr>
+<td> Vertical Field of View (FoV) </td><td> 41.41 +/- 0.11 degrees </td><td> 48.8 degrees </td><td> 41 degrees </td><td> Depends on lens </td><td> Depends on lens </td>
+</tr><tr bgcolor="#fcfcec">
+<td> Focal ratio (F-Stop) </td><td> F2.9 </td><td> F2.0 </td><td> F1.8 </td><td> F2.2 </td><td> Depends on lens </td>
+</tr><tr>
+<td> Maximum exposure times [s] </td><td> 0.97 </td><td> 11.76 </td><td> 112 </td><td> 112 </td><td> 670.74 </td>
+</tr><tr bgcolor="#fcfcec">
+<td> Lens Mount </td><td> N/A </td><td> N/A </td><td> N/A </td><td> N/A </td><td> C/CS- or M12-mount </td>
+</tr><tr>
+<td> NoIR version available? </td><td> Yes </td><td> Yes </td><td> Yes </td><td> Yes </td><td> No </td>
+</tr><tr></tbody></table>
 
 
 ### A snapshot of running dual camera streaming server and its web user interfase
