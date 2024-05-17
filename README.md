@@ -45,46 +45,46 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 
 ### RPi cameras comparisn table
 
-<table width="100%"><thead><tr bgcolor="#f8f8c0">
+<table width="100%"><thead><tr style="background-color: #f8f8c0;">
 <th> Feature </th><th> Camera Module v1 </th><th> Camera Module v2 </th><th> Camera Module 3 </th><th> Camera Module 3 Wide </th><th> HQ Camera </th>
  </tr></thead><tbody><tr>
-<td> Net price </td><td> $25 </td><td> $25 </td><td> $25 </td><td> $35 </td><td> $50 </td>
-</tr><tr bgcolor="#fcfcec">
-<td> Size </td><td> 25 x 24 x 9 mm </td><td> 25 x 24 x 9 mm </td><td> 25 x 24 x 11.5 mm </td><td> 25 x 24 x 12.4 mm </td><td> 38 x 38 x 18.4mm<br>(excluding lens) </td>
+<td style="text-align: end; padding-right: 5px;"> Net price </td><td> $25 </td><td> $25 </td><td> $25 </td><td> $35 </td><td> $50 </td>
+</tr><tr style="background-color: #fcfcec;">
+<td style="text-align: end; padding-right: 5px;"> Size </td><td> 25 x 24 x 9 mm </td><td> 25 x 24 x 9 mm </td><td> 25 x 24 x 11.5 mm </td><td> 25 x 24 x 12.4 mm </td><td> 38 x 38 x 18.4mm<br>(excluding lens) </td>
 </tr><tr>
-<td> Weight </td><td> 3g </td><td> 3g </td><td> 4g </td><td> 4g </td><td> 30.4g </td>
-</tr><tr bgcolor="#fcfcec">
-<td> Still resolution </td><td> 5 Megapixels  </td><td> 8 Megapixels </td><td> 11.9 Megapixels </td><td> 11.9 Megapixels </td><td> 12.3 Megapixels </td>
+<td style="text-align: end; padding-right: 5px;"> Weight </td><td> 3g </td><td> 3g </td><td> 4g </td><td> 4g </td><td> 30.4g </td>
+</tr><tr style="background-color: #fcfcec;">
+<td style="text-align: end; padding-right: 5px;"> Still resolution </td><td> 5 Megapixels  </td><td> 8 Megapixels </td><td> 11.9 Megapixels </td><td> 11.9 Megapixels </td><td> 12.3 Megapixels </td>
 </tr><tr>
-<td> Video modes </td><td> 1080p30,<br>720p60 and<br>640 x 480p60/90 </td><td> 1080p47,<br>1640 x 1232p41 and<br>640 x 480p206 </td><td> 2304 x 1296p56,<br>2304 x 1296p30 HDR,<br>1536 x 864p120 </td><td> 2304 x 1296p56,<br>2304 x 1296p30 HDR,<br>1536 x 864p120 </td><td> 2028 x 1080p50,<br>2028 x 1520p40 and<br>1332 x 990p120 </td>
-</tr><tr bgcolor="#fcfcec">
-<td> Sensor </td><td> OmniVision OV5647 </td><td> Sony IMX219 </td><td> Sony IMX708 </td><td> Sony IMX708 </td><td> Sony IMX477 </td>
+<td style="text-align: end; padding-right: 5px;"> Video modes </td><td> 1080p30,<br>720p60 and<br>640 x 480p60/90 </td><td> 1080p47,<br>1640 x 1232p41 and<br>640 x 480p206 </td><td> 2304 x 1296p56,<br>2304 x 1296p30 HDR,<br>1536 x 864p120 </td><td> 2304 x 1296p56,<br>2304 x 1296p30 HDR,<br>1536 x 864p120 </td><td> 2028 x 1080p50,<br>2028 x 1520p40 and<br>1332 x 990p120 </td>
+</tr><tr style="background-color: #fcfcec;">
+<td style="text-align: end; padding-right: 5px;"> Sensor </td><td> OmniVision OV5647 </td><td> Sony IMX219 </td><td> Sony IMX708 </td><td> Sony IMX708 </td><td> Sony IMX477 </td>
 </tr><tr>
-<td> Sensor resolution </td><td> 2592 x 1944 pixels </td><td> 3280 x 2464 pixels </td><td> 4608 x 2592 pixels </td><td> 4608 x 2592 pixels </td><td> 4056 x 3040 pixels </td>
-</tr><tr bgcolor="#fcfcec">
-<td> Sensor image area </td><td> 3.76 x 2.74 mm </td><td> 3.68 x 2.76 mm<br>(4.6 mm diagonal) </td><td> 6.45 x 3.63mm<br>(7.4mm diagonal) </td><td> 6.45 x 3.63mm<br>(7.4mm diagonal) </td><td> 6.287mm x 4.712 mm<br>(7.9mm diagonal) </td>
+<td style="text-align: end; padding-right: 5px;"> Sensor resolution </td><td> 2592 x 1944 pixels </td><td> 3280 x 2464 pixels </td><td> 4608 x 2592 pixels </td><td> 4608 x 2592 pixels </td><td> 4056 x 3040 pixels </td>
+</tr><tr style="background-color: #fcfcec;">
+<td style="text-align: end; padding-right: 5px;"> Sensor image area </td><td> 3.76 x 2.74 mm </td><td> 3.68 x 2.76 mm<br>(4.6 mm diagonal) </td><td> 6.45 x 3.63mm<br>(7.4mm diagonal) </td><td> 6.45 x 3.63mm<br>(7.4mm diagonal) </td><td> 6.287mm x 4.712 mm<br>(7.9mm diagonal) </td>
 </tr><tr>
-<td> Pixel size </td><td> 1.4 &mu;m x 1.4 &mu;m </td><td> 1.12 &mu;m x 1.12 &mu;m </td><td> 1.4 b5&mu;m x 1.4 &mu;m </td><td> 1.4 &mu;m x 1.4 &mu;m </td><td> 1.55 &mu;m x 1.55 &mu;m </td>
-</tr><tr bgcolor="#fcfcec">
-<td> Optical size </td><td> 1/4" </td><td> 1/4" </td><td> 1/2.43" </td><td> 1/2.43" </td><td> 1/2.3" </td>
+<td style="text-align: end; padding-right: 5px;"> Pixel size </td><td> 1.4 &mu;m x 1.4 &mu;m </td><td> 1.12 &mu;m x 1.12 &mu;m </td><td> 1.4 b5&mu;m x 1.4 &mu;m </td><td> 1.4 &mu;m x 1.4 &mu;m </td><td> 1.55 &mu;m x 1.55 &mu;m </td>
+</tr><tr style="background-color: #fcfcec;">
+<td style="text-align: end; padding-right: 5px;"> Optical size </td><td> 1/4" </td><td> 1/4" </td><td> 1/2.43" </td><td> 1/2.43" </td><td> 1/2.3" </td>
 </tr><tr>
-<td> Focus </td><td> Fixed </td><td> Adjustable </td><td> Motorized </td><td> Motorized </td><td> Adjustable </td>
-</tr><tr bgcolor="#fcfcec">
-<td> Depth of field </td><td> Approx 1 m to 8 </td><td> Approx 10 cm to 8 </td><td> Approx 10 cm to 8 </td><td> Approx 5 cm to 8 </td><td> N/A </td>
+<td style="text-align: end; padding-right: 5px;"> Focus </td><td> Fixed </td><td> Adjustable </td><td> Motorized </td><td> Motorized </td><td> Adjustable </td>
+</tr><tr style="background-color: #fcfcec;">
+<td style="text-align: end; padding-right: 5px;"> Depth of field </td><td> Approx 1 m to 8 </td><td> Approx 10 cm to 8 </td><td> Approx 10 cm to 8 </td><td> Approx 5 cm to 8 </td><td> N/A </td>
 </tr><tr>
-<td> Focal length </td><td> 3.60 mm +/- 0.01 </td><td> 3.04 mm </td><td> 4.74 mm </td><td> Depends on lens </td><td> Depends on lens </td>
-</tr><tr bgcolor="#fcfcec">
-<td> Horizontal Field of View (FoV) </td><td> 53.50 +/- 0.13 degrees </td><td> 62.2 degrees </td><td> 66 degrees </td><td> Depends on lens </td><td> Depends on lens </td>
+<td style="text-align: end; padding-right: 5px;"> Focal length </td><td> 3.60 mm +/- 0.01 </td><td> 3.04 mm </td><td> 4.74 mm </td><td> Depends on lens </td><td> Depends on lens </td>
+</tr><tr style="background-color: #fcfcec;">
+<td style="text-align: end; padding-right: 5px;"> Horizontal Field of View (FoV) </td><td> 53.50 +/- 0.13 degrees </td><td> 62.2 degrees </td><td> 66 degrees </td><td> Depends on lens </td><td> Depends on lens </td>
 </tr><tr>
-<td> Vertical Field of View (FoV) </td><td> 41.41 +/- 0.11 degrees </td><td> 48.8 degrees </td><td> 41 degrees </td><td> Depends on lens </td><td> Depends on lens </td>
-</tr><tr bgcolor="#fcfcec">
-<td> Focal ratio (F-Stop) </td><td> F2.9 </td><td> F2.0 </td><td> F1.8 </td><td> F2.2 </td><td> Depends on lens </td>
+<td style="text-align: end; padding-right: 5px;"> Vertical Field of View (FoV) </td><td> 41.41 +/- 0.11 degrees </td><td> 48.8 degrees </td><td> 41 degrees </td><td> Depends on lens </td><td> Depends on lens </td>
+</tr><tr style="background-color: #fcfcec;">
+<td style="text-align: end; padding-right: 5px;"> Focal ratio (F-Stop) </td><td> F2.9 </td><td> F2.0 </td><td> F1.8 </td><td> F2.2 </td><td> Depends on lens </td>
 </tr><tr>
-<td> Maximum exposure times [s] </td><td> 0.97 </td><td> 11.76 </td><td> 112 </td><td> 112 </td><td> 670.74 </td>
-</tr><tr bgcolor="#fcfcec">
-<td> Lens Mount </td><td> N/A </td><td> N/A </td><td> N/A </td><td> N/A </td><td> C/CS- or M12-mount </td>
+<td style="text-align: end; padding-right: 5px;"> Maximum exposure times [s] </td><td> 0.97 </td><td> 11.76 </td><td> 112 </td><td> 112 </td><td> 670.74 </td>
+</tr><tr style="background-color: #fcfcec;">
+<td style="text-align: end; padding-right: 5px;"> Lens Mount </td><td> N/A </td><td> N/A </td><td> N/A </td><td> N/A </td><td> C/CS- or M12-mount </td>
 </tr><tr>
-<td> NoIR version available? </td><td> Yes </td><td> Yes </td><td> Yes </td><td> Yes </td><td> No </td>
+<td style="text-align: end; padding-right: 5px;"> NoIR version available? </td><td> Yes </td><td> Yes </td><td> Yes </td><td> Yes </td><td> No </td>
 </tr><tr></tbody></table>
 
 
