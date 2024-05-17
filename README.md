@@ -62,7 +62,7 @@ https://github.com/chradev/pi-h264-to-browser-streamer/assets/11261306/cbac77e0-
 
 **Notes:**
 
- * in video you can only see usage of ePTZ control for both cameras simultaneously
+ * in above video clip you can only see usage of ePTZ control for both cameras simultaneously
  * in addition each camera can be PT controled separately and can be used for tuning
  * individual PT parameters for both cameras can be set as defaults
  * ePTZ parameters of the cameras will be reset to defaults at browser refresh
@@ -92,7 +92,7 @@ https://github.com/chradev/pi-h264-to-browser-streamer/assets/11261306/cbac77e0-
     * **added second ```WebSocket``` handler ```ptzHandler``` for ePTZ camera control**
  * using of ```offsetX``` and ```offsetY``` variables calculated by independent process 
     * **solved in single streamer case from browser via ```WebSocket``` connection**
-    * **in dual streamer case will be divided into a separate WS interface**
+    * **in dual streamer case will <del>be</del> is divided into a separate WS interface**
 
 ### Advanced changes for double camera streaming with ePTZ control
 
@@ -105,7 +105,11 @@ Dual camera streaming is based on the basic modifications in server application 
  * added server support for ePTZ control for both cameras separately and simultaneously
  * added server support for changing of default ePTZ values for tuning of cameras position
 
-### Changes in file and directory structure
+### Changes to be done (TBD)
+
+ * saving default ePTZ values in a file
+
+### Changes in the file and directory structure
 
 Original files are kept in ```src``` folder
 
