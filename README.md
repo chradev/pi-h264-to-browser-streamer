@@ -50,20 +50,19 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 <table style="overflow-y: hidden;width: 100%;height: 100%;text-align: center; border:1px; border-collapse: collapse;">
 <thead>
 <tr style="background-color: #f0f0c0;">
-    <th style="width: 12.5%;text-align: end; padding-right: 5px;"> Vendor </th><th colspan="5" style="width: 62.5%;"> Raspberry Pi </th><th colspan="2" style="width: 25%;"> Arducam </th></tr>
+    <th style="text-align: end; padding-right: 5px;" > Vendor </th><th colspan="5" > Raspberry Pi </th><th colspan="2" > Arducam </th></tr>
 <tr style="background-color: #f0f0c0;">
-    <th style="width: 12.5%;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Camera&nbsp;/&nbsp;Model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
-    <th style="width: 12.5%;"> Module v1 </th><th style="width: 12.5%;"> Module v2 </th><th style="width: 12.5%;"> Module 3 </th><th style="width: 12.5%;"> Module 3 Wide </th>
-    <th style="width: 12.5%;"> HQ </th><th style="width: 12.5%;"> 16MP IMX519 </th style="width: 12.5%;"><th>64MP Hawkeye</th></tr>
+    <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Camera&nbsp;/&nbsp;Model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
+    <th> Module v1 </th><th> Module v2 </th><th> Module 3 </th><th> Module 3 Wide </th><th> HQ </th><th> 16MP IMX519 </th><th>64MP Hawkeye</th></tr>
 </thead><tbody>
-<tr><td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/rpi_5.png?raw=true" width="170px" height="auto" ></td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm1-120.png?raw=true" width="100px" height="auto" ></td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm2-60.png?raw=true" width="150px" height="auto"  ><br>Normal &amp; NoIR</td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-110.png?raw=true" width="150px" height="auto"  ><br>Normal &amp; NoIR</td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-w-110.png?raw=true" width="150px" height="auto"  ><br>Normal &amp; NoIR</td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/hq-110.png?raw=true" width="150px" height="auto"  ><br>M12 &amp; C/CS</td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac16mp-110.png?raw=true" width="100px" height="auto"  ></td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac64mp-120.png?raw=true" width="100px" height="auto"  ></td></tr>
+<tr><td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/rpi_5.png?raw=true" width="auto" height="120px" ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm1-120.png?raw=true" width="auto" height="120px" ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm2-60.png?raw=true" width="auto" height="100px" ><br>Normal &amp; NoIR</td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-110.png?raw=true" width="auto" height="100px" ><br>Normal &amp; NoIR</td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-w-110.png?raw=true" width="auto" height="100px" ><br>Normal &amp; NoIR</td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/hq-110.png?raw=true" width="auto" height="100px"  ><br>M12 &amp; C/CS</td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac16mp-110.png?raw=true" width="auto" height="120px"  ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac64mp-120.png?raw=true" width="auto" height="120px"  ></td></tr>
 <tr style="background-color: #fcfccc;">
     <td style="text-align: end; padding-right: 5px;"> Net price [$] </td><td> 25 </td><td> 25 </td><td> 25 </td><td> 35 </td><td> 50 </td><td>25</td><td>60</td></tr>
 <tr>
