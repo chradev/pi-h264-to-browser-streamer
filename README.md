@@ -55,7 +55,7 @@ Hi
     <th style="text-align: end; padding-right: 5px;" > Vendor </th><th colspan="5" > Raspberry Pi </th><th colspan="3" > Arducam </th></tr>
 <tr style="background-color: #f0f0c0;">
     <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Camera&nbsp;/&nbsp;Model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
-    <th> Module v1 </th><th> Module v2 </th><th> Module 3 </th><th> Module 3 Wide </th><th> HQ </th><th> 16MP IMX519 </th><th> 16MP Wide </th><th>64MP Hawkeye</th></tr>
+    <th> Module v1 </th><th> Module v2 </th><th> Module 3 </th><th> Module 3 Wide </th><th> HQ </th><th> 16MP IMX519 </th><th> &nbsp;&nbsp;&nbsp;16MP&nbsp;Wide&nbsp;&nbsp;&nbsp; </th><th>64MP Hawkeye</th></tr>
 </thead><tbody>
 <tr><td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/rpi_5.png?raw=true" width="auto" height="120px" ></td>
     <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm1-120.png?raw=true" width="auto" height="120px" ></td>
