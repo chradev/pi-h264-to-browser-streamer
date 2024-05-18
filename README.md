@@ -52,9 +52,9 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 <tr style="background-color: #f0f0c0;">
     <th style="width: 12.5%;text-align: end; padding-right: 5px;"> Vendor </th><th colspan="5" style="width: 62.5%;"> Raspberry Pi </th><th colspan="2" style="width: 25%;"> Arducam </th></tr>
 <tr style="background-color: #f0f0c0;">
-    <th style="text-align: end; padding-right: 5px; width: 12.5%;"> Camera Model </th><th style="width: 12.5%;"> Module v1 </th><th style="width: 12.5%;"> Module v2 </th><th style="width: 12.5%;"> Module 3 </th><th style="width: 12.5%;"> Module 3 Wide </th><th style="width: 12.5%;"> HQ </th><th style="width: 12.5%;"> 16MP<br>IMX519 </th style="width: 12.5%;"><th>64MP<br>Hawkeye</th></tr>
+    <th style="width: 12.5%;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Camera&nbsp;/&nbsp;Model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th><th style="width: 12.5%;"> Module v1 </th><th style="width: 12.5%;"> Module v2 </th><th style="width: 12.5%;"> Module 3 </th><th style="width: 12.5%;"> Module 3 Wide </th><th style="width: 12.5%;"> HQ </th><th style="width: 12.5%;"> 16MP IMX519 </th style="width: 12.5%;"><th>64MP Hawkeye</th></tr>
 </thead><tbody>
-<tr><td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/RPI_5.png?raw=true" width="170px" height="auto" ></td>
+<tr><td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/rpi_5.png?raw=true" width="170px" height="auto" ></td>
     <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm1-120.png?raw=true" width="100px" height="auto" ></td>
     <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm2-60.png?raw=true" width="150px" height="auto"  ><br>Normal &amp; NoIR</td>
     <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-110.png?raw=true" width="150px" height="auto"  ><br>Normal &amp; NoIR</td>
