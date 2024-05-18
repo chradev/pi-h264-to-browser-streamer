@@ -52,7 +52,9 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 <tr style="background-color: #f0f0c0;">
     <th style="width: 12.5%;text-align: end; padding-right: 5px;"> Vendor </th><th colspan="5" style="width: 62.5%;"> Raspberry Pi </th><th colspan="2" style="width: 25%;"> Arducam </th></tr>
 <tr style="background-color: #f0f0c0;">
-    <th style="width: 12.5%;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Camera&nbsp;/&nbsp;Model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th><th style="width: 12.5%;"> Module v1 </th><th style="width: 12.5%;"> Module v2 </th><th style="width: 12.5%;"> Module 3 </th><th style="width: 12.5%;"> Module 3 Wide </th><th style="width: 12.5%;"> HQ </th><th style="width: 12.5%;"> 16MP IMX519 </th style="width: 12.5%;"><th>64MP Hawkeye</th></tr>
+    <th style="width: 12.5%;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Camera&nbsp;/&nbsp;Model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
+    <th style="width: 12.5%;"> Module v1 </th><th style="width: 12.5%;"> Module v2 </th><th style="width: 12.5%;"> Module 3 </th><th style="width: 12.5%;"> Module 3 Wide </th>
+    <th style="width: 12.5%;"> HQ </th><th style="width: 12.5%;"> 16MP IMX519 </th style="width: 12.5%;"><th>64MP Hawkeye</th></tr>
 </thead><tbody>
 <tr><td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/rpi_5.png?raw=true" width="170px" height="auto" ></td>
     <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm1-120.png?raw=true" width="100px" height="auto" ></td>
@@ -73,7 +75,7 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 <tr style="background-color: #fcfccc;">
     <td style="text-align: end; padding-right: 5px;"> Video modes<br>[px x px @ fps] </td><td> 1080@30,<br>720@60, 640x480@60/90 </td><td> 1640x1232@41, 1080@47, 640x480@206 </td><td> 2304x1296@30/HDR, 2304x1296@56, 1536x864@120 </td><td> 2304x1296@30/HDR, 2304x1296@56, 1536x864@120 </td><td> 2028x1520@40, 2028x1080@50, 1332x990@120 </td><td>4656x3496@10, 3840x2160@21, 1920x1080@60, 1280x720@120</td><td>9152x6944@2.7, 4624x3472@10, 3840x2160@20, 2312x1736@30, 1920x1080@60, 1280x720@120 </td></tr>
 <tr>
-    <td style="text-align: end; padding-right: 5px;"> Sensor </td><td> OmniVision OV5647 </td><td> Sony IMX219 </td><td> Sony IMX708 </td><td> Sony IMX708 </td><td> Sony IMX477 </td><td>Sony IMX519</td><td></td></tr>
+    <td style="text-align: end; padding-right: 5px;"> Sensor </td><td> OmniVision&nbsp;OV5647 </td><td> Sony IMX219 </td><td> Sony IMX708 </td><td> Sony IMX708 </td><td> Sony IMX477 </td><td>Sony IMX519</td><td></td></tr>
 <tr style="background-color: #fcfccc;">
     <td style="text-align: end; padding-right: 5px;"> Sensor resolution [px] </td><td> 2592 x 1944 </td><td> 3280 x 2464 </td><td> 4608 x 2592 </td><td> 4608 x 2592 </td><td> 4056 x 3040 </td><td>4656 x 3496 </td><td>9152 x 6944 </td></tr>
 <tr>
