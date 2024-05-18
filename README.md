@@ -90,11 +90,11 @@ Hi
 <tr style="background-color: #fcfccc;">
     <td style="text-align: end; padding-right: 5px;"> Focus </td><td> Fixed </td><td> Adjustable </td><td> Motorized </td><td> Motorized </td><td> Adjustable </td><td> Fixed/Auto </td><td> Manual Focus </td><td> Auto </td></tr>
 <tr>
-    <td style="text-align: end; padding-right: 5px;"> Depth of field </td><td> 1 m to &infin; </td><td> 10 cm to &infin; </td><td> 10 cm to &infin; </td><td> 5 cm to &infin; </td><td> N/A </td><td>10 cm to &infin;</td><td></td><td>8 cm to &infin;</td></tr>
+    <td style="text-align: end; padding-right: 5px;"> Depth of field </td><td> 1 m to &infin; </td><td> 10 cm to &infin; </td><td> 10 cm to &infin; </td><td> 5 cm to &infin; </td><td> N/A </td><td>10 cm to &infin;</td><td>10 cm to &infin;</td><td>8 cm to &infin;</td></tr>
 <tr style="background-color: #fcfccc;">
     <td style="text-align: end; padding-right: 5px;"> Focal length [mm] </td><td> 3.60 &plusmn; 0.01 </td><td> 3.04 </td><td> 4.74 </td><td> Depends on lens </td><td> Depends on lens </td><td>4.28</td><td>2.87&plusmn;5%</td><td>5.1</td></tr>
 <tr>
-    <td style="text-align: end; padding-right: 5px;"> Horizontal FoV [degrees] </td><td> 53.50 &plusmn; 0.13 </td><td> 62.2 </td><td> 66 </td><td> Depends on lens </td><td> Depends on lens </td><td> 65 </td><td>110</td><td> 72 </td></tr>
+    <td style="text-align: end; padding-right: 5px;"> Horizontal FoV [degrees] </td><td> 53.50 &plusmn; 0.13 </td><td> 62.2 </td><td> 66 </td><td> Depends on lens </td><td> Depends on lens </td><td> 65 </td><td>120</td><td> 72 </td></tr>
 <tr style="background-color: #fcfccc;">
     <td style="text-align: end; padding-right: 5px;"> Vertical FoV [degrees] </td><td> 41.41 &plusmn; 0.11 </td><td> 48.8 </td><td> 41 </td><td> Depends on lens </td><td> Depends on lens </td><td> 51 </td><td>95</td><td> 54.6 </td></tr>
 <tr>
@@ -104,7 +104,7 @@ Hi
 <tr>
     <td style="text-align: end; padding-right: 5px;"> Lens Mount </td><td> N/A </td><td> N/A </td><td> N/A </td><td> N/A </td><td> C/CS or M12 </td><td> N/A </td><td> M12*0.5mm </td><td>N/A</td></tr>
 <tr style="background-color: #fcfccc;">
-    <td style="text-align: end; padding-right: 5px;"> NoIR version available? </td><td> Yes </td><td> Yes </td><td> Yes </td><td> Yes </td><td> No </td><td>Yes</td><td></td>No<td>No</td></tr>
+    <td style="text-align: end; padding-right: 5px;"> NoIR version available? </td><td> Yes </td><td> Yes </td><td> Yes </td><td> Yes </td><td> No </td><td>Yes</td><td>No</td><td>No</td></tr>
 <tr>
     <td style="text-align: end; padding-right: 5px;"> Other options </td>
     <td></td>
