@@ -50,18 +50,18 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 <table style="overflow-y: hidden;width: 100%;height: 100%;text-align: center; border:1px; border-collapse: collapse;">
 <thead>
 <tr style="background-color: #f0f0c0;">
-    <th style="width: 200px;text-align: end; padding-right: 5px;"> Vendor </th><th colspan="5"> Raspberry Pi </th><th colspan="2"  style="width: 25%;"> Arducam </th></tr>
+    <th style="width: 12.5%;text-align: end; padding-right: 5px;"> Vendor </th><th colspan="5" style="width: 62.5%;"> Raspberry Pi </th><th colspan="2" style="width: 25%;"> Arducam </th></tr>
 <tr style="background-color: #f0f0c0;">
-    <th style="text-align: end; padding-right: 5px;"> Camera Model </th><th> Module v1 </th><th> Module v2 </th><th> Module 3 </th><th> Module 3 Wide </th><th> HQ </th><th> 16MP<br>IMX519 </th><th>64MP<br>Hawkeye</th></tr>
+    <th style="text-align: end; padding-right: 5px; width: 12.5%;"> Camera Model </th><th style="width: 12.5%;"> Module v1 </th><th style="width: 12.5%;"> Module v2 </th><th style="width: 12.5%;"> Module 3 </th><th style="width: 12.5%;"> Module 3 Wide </th><th style="width: 12.5%;"> HQ </th><th style="width: 12.5%;"> 16MP<br>IMX519 </th style="width: 12.5%;"><th>64MP<br>Hawkeye</th></tr>
 </thead><tbody>
-<tr><td style="text-align: end; padding-right: 5px;">Photo</td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm1-120.png?raw=true" weidth="auto" height="80px" ></td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm2-60.png?raw=true" weidth="auto" height="60px"  ><br>Normal &amp; NoIR</td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-110.png?raw=true" weidth="auto" height="60px"  ><br>Normal &amp; NoIR</td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-w-110.png?raw=true" weidth="auto" height="60px"  ><br>Normal &amp; NoIR</td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/hq-110.png?raw=true" weidth="auto" height="60px"  ><br>M12 &amp; C/CS</td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac16mp-110.png?raw=true" weidth="auto" height="80px"  ></td>
-    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac64mp-120.png?raw=true" weidth="auto" height="80px"  ></td></tr>
+<tr><td><img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/rpi_5.png?raw=true" width="170px" height="auto" ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm1-120.png?raw=true" width="100px" height="auto" ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm2-60.png?raw=true" width="150px" height="auto"  ><br>Normal &amp; NoIR</td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-110.png?raw=true" width="150px" height="auto"  ><br>Normal &amp; NoIR</td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/cm3-w-110.png?raw=true" width="150px" height="auto"  ><br>Normal &amp; NoIR</td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/hq-110.png?raw=true" width="150px" height="auto"  ><br>M12 &amp; C/CS</td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac16mp-110.png?raw=true" width="100px" height="auto"  ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ac64mp-120.png?raw=true" width="100px" height="auto"  ></td></tr>
 <tr style="background-color: #fcfccc;">
     <td style="text-align: end; padding-right: 5px;"> Net price [$] </td><td> 25 </td><td> 25 </td><td> 25 </td><td> 35 </td><td> 50 </td><td>25</td><td>60</td></tr>
 <tr>
@@ -71,7 +71,7 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 <tr>
     <td style="text-align: end; padding-right: 5px;"> Still resolution [MP] </td><td> 5 </td><td> 8 </td><td> 11.9 </td><td> 11.9 </td><td> 12.3 </td><td>16</td><td>64</td></tr>
 <tr style="background-color: #fcfccc;">
-    <td style="text-align: end; padding-right: 5px;"> Video modes </td><td> 1080p30,<br>720p60 and<br>640 x 480p60/90 </td><td> 1080p47,<br>1640 x 1232p41 and<br>640 x 480p206 </td><td> 2304 x 1296p56,<br>2304 x 1296p30 HDR,<br>1536 x 864p120 </td><td> 2304 x 1296p56,<br>2304 x 1296p30 HDR,<br>1536 x 864p120 </td><td> 2028 x 1080p50,<br>2028 x 1520p40 and<br>1332 x 990p120 </td><td>4656x3496@10fps, 3840x2160@21fps, 1920x1080@60fps, 1280x720@120fps</td><td>1280x720@120fps, 1920x1080@60fps, 2312x1736@30fps, 3840x2160@20fps, 4624x3472@10fps, 9152x6944@2.7fps</td></tr>
+    <td style="text-align: end; padding-right: 5px;"> Video modes<br>[px x px @ fps] </td><td> 1080@30,<br>720@60, 640x480@60/90 </td><td> 1640x1232@41, 1080@47, 640x480@206 </td><td> 2304x1296@30/HDR, 2304x1296@56, 1536x864@120 </td><td> 2304x1296@30/HDR, 2304x1296@56, 1536x864@120 </td><td> 2028x1520@40, 2028x1080@50, 1332x990@120 </td><td>4656x3496@10, 3840x2160@21, 1920x1080@60, 1280x720@120</td><td>9152x6944@2.7, 4624x3472@10, 3840x2160@20, 2312x1736@30, 1920x1080@60, 1280x720@120 </td></tr>
 <tr>
     <td style="text-align: end; padding-right: 5px;"> Sensor </td><td> OmniVision OV5647 </td><td> Sony IMX219 </td><td> Sony IMX708 </td><td> Sony IMX708 </td><td> Sony IMX477 </td><td>Sony IMX519</td><td></td></tr>
 <tr style="background-color: #fcfccc;">
