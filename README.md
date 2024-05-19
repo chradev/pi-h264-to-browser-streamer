@@ -121,7 +121,7 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 
 ### A snapshot of running dual camera streaming server and its web user interfase
 
-<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/15.05.2024_00.12.38_REC.png?raw=true" alt="Dual camera streaming snapshot" width="100%">
+<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/19.05.2024_15.11.42_REC.png?raw=true" alt="Dual camera streaming snapshot" width="100%">
 
 ### A short video of dual camera streaming server with ePTZ control
 
