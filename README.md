@@ -46,8 +46,6 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 ### RPi cameras comparison table
 
 <details>
-Hi
-</details>
 
 <table style="overflow-y: hidden;width: 100%;height: 100%;text-align: center; border:1px; border-collapse: collapse;">
 <thead>
@@ -117,6 +115,7 @@ Hi
     <td>ePTZ up to 10x<br>up to 4 cameras via UC-512 Camarray HAT<br>2-lane CSI-2</td></tr>
 </tbody></table>
 
+</details>
 
 ### A snapshot of running dual camera streaming server and its web user interfase
 
