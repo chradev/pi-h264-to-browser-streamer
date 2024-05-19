@@ -36,9 +36,9 @@ Requirements are like in the [rpi5-h264-live-stereo-streamer](https://github.com
 
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/AStandardStereoVisionPrinciple.png?raw=true" alt="A Standard Stereo Vision Principle drawings" width="100%">
 
-### Stereo geometry calculation
+### Stereo geometry calculation for 0.35m minimal depth and 10cm base line
 
-<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/StereoCalculator.png?raw=true" alt="Stereo geometry calculation" width="100%">
+<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/StereoCalculator-bl10cm.png?raw=true" alt="Stereo geometry calculation" width="100%">
 
 
 ### An example of ePTZ or difital PTZ Principle
