@@ -39,6 +39,7 @@ Requirements are like in the [rpi5-h264-live-stereo-streamer](https://github.com
 ### Stereo geometry calculation
 
 Thanks to: [Nerian - the Allied Vision **Stereo Baseline Calculator**](https://en.nerian.alliedvision.com/support/calculator/) the calculation is done for:
+
  * 16MP IMX519 Arducam camera with sensor resolution of 4656 x 3496 px
  * Focused distance of 1m, minimum depth of 35cm and base line of 10cm
  * Disparity range of 1024px and expected disparity error of 1px
