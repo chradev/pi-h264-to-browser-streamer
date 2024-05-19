@@ -292,12 +292,12 @@ def set_ptz_data(data, skip):
         if skip:
             return
 
+#        print(data)
+
         enableTexts0   = data[0]['e']['txt']
         enableTexts1   = data[1]['e']['txt']
         enableLines0   = data[0]['e']['lin']
         enableLines1   = data[1]['e']['lin']
-
-#        print(data)
 
         global framehFlip0
         global framevFlip0

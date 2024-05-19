@@ -36,6 +36,10 @@ Requirements are like in the [rpi5-h264-live-stereo-streamer](https://github.com
 
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/AStandardStereoVisionPrinciple.png?raw=true" alt="A Standard Stereo Vision Principle drawings" width="100%">
 
+### Stereo geometry calculation
+
+<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/StereoCalculator?raw=true" alt="Stereo geometry calculation" width="100%">
+
 
 ### An example of ePTZ or difital PTZ Principle
 
@@ -44,8 +48,6 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ePTZ-example-landscape.webp?raw=true" alt="An example of ePTZ or difital PTZ Principle" width="100%">
 
 ### RPi cameras comparison table
-
-<details>
 
 <table style="overflow-y: hidden;width: 100%;height: 100%;text-align: center; border:1px; border-collapse: collapse;">
 <thead>
@@ -114,8 +116,6 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
     <td>ePTZ up to 5x<br>up to 4 cameras via UC-512 Camarray HAT<br>2-lane CSI-2</td>
     <td>ePTZ up to 10x<br>up to 4 cameras via UC-512 Camarray HAT<br>2-lane CSI-2</td></tr>
 </tbody></table>
-
-</details>
 
 ### A snapshot of running dual camera streaming server and its web user interfase
 
