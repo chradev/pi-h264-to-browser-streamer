@@ -21,13 +21,17 @@ frameOffsetX0  = 1020 # 1080
 frameOffsetY0  = 880  #740
 frameOffsetX1  = 1740 #1750
 frameOffsetY1  = 430  #360
-framehFlip     = 1
-framevFlip     = 1
 enableView     = False
 enableTexts0   = True
 enableTexts1   = True
 enableLines0   = True
 enableLines1   = True
+framehFlip0    = 1
+framevFlip0    = 1
+framePause0    = 0
+framehFlip1    = 1
+framevFlip1    = 1
+framePause1    = 0
 
 # Get host IP address
 from subprocess import check_output
@@ -45,9 +49,9 @@ frameOffsetY1m  = full_camera_res[1]
 
 from libcamera import Transform
 picam20.configure(picam20.create_video_configuration(main={"size": (frameWidth, 
-      frameHeight)}, transform=Transform(hflip=framehFlip, vflip=framevFlip) ))
+      frameHeight)}, transform=Transform(hflip=framehFlip0, vflip=framevFlip0) ))
 picam21.configure(picam21.create_video_configuration(main={"size": (frameWidth, 
-      frameHeight)}, transform=Transform(hflip=framehFlip, vflip=framevFlip) ))
+      frameHeight)}, transform=Transform(hflip=framehFlip1, vflip=framevFlip1) ))
 
 # use sudo apt install python3-opencv
 import cv2
@@ -101,8 +105,8 @@ class StreamingOutput(Output):
     def __init__(self, stream):
         super().__init__()
         self.stream = stream
-        print("[%s] Starting chain for: Stream %r (ready for streaming)" % 
-              (time.strftime("%Y-%m-%d %X"), self.stream))
+#        print("[%s] Starting chain for: Stream %r (ready for streaming)" % 
+#              (time.strftime("%Y-%m-%d %X"), self.stream))
         self.loop = None
         self.buffer = io.BytesIO()
         super(StreamingOutput, self).__init__(stream)
@@ -179,10 +183,15 @@ import json
 def ptz_send_data():
     return json.dumps([
                 { 'cam': 0,
+                  'f': {
+                      'hor': framehFlip0,
+                      'ver': framevFlip0,
+                      'pau': 0
+                  },
                   'e': {
                       'txt': enableTexts0,
                       'lin': enableLines0,
-                      'def': False,
+                      'def': False
                   },
                   'x': {
                     'min': int(frameWidth / 2),
@@ -196,10 +205,15 @@ def ptz_send_data():
                   }
                 }, 
                 { 'cam': 1,
+                  'f': {
+                      'hor': framehFlip1,
+                      'ver': framevFlip1,
+                      'pau': 0
+                  },
                   'e': {
                       'txt': enableTexts1,
                       'lin': enableLines1,
-                      'def': False,
+                      'def': False
                   },
                   'x': {
                     'min': int(frameWidth / 2),
@@ -231,17 +245,95 @@ def ptz_send_data():
                 }
                 ])
 
-def set_ptz_data(data):
+class Streamer():
+    camera = -1
+    running = False
+    def __init__(self, camera):
+        super().__init__()
+        self.camera = camera
+        print("[%s] Starting chain for: Camera %r (ready for streaming)" % 
+              (time.strftime("%Y-%m-%d %X"), self.camera))
+        self.loop = None
+        self.output = StreamingOutput(stream=self.camera)
+        self.encoder = H264Encoder(repeat=True, framerate=frameRate, qp=23)
+        self.encoder.output = self.output
+    
+    def setLoop(self, loop):
+        self.output.setLoop(loop)
+
+    def isRunning(self):
+        return running
+
+    def start(self):
+        if self.camera == 0:
+            picam20.start_recording(self.encoder, self.output)
+            running = True
+        elif self.camera > 0:
+            picam21.start_recording(self.encoder, self.output)
+            running = True
+
+    def stop(self):
+        if self.camera == 0:
+            picam20.stop_recording()
+            running = False
+        elif self.camera > 0:
+            picam21.stop_recording()
+            running = False
+        
+streamer0 = Streamer(camera=0)
+streamer1 = Streamer(camera=1)
+
+def set_ptz_data(data, skip):
         global enableTexts0
         global enableTexts1
         global enableLines0
         global enableLines1
+
+        if skip:
+            return
+
         enableTexts0   = data[0]['e']['txt']
         enableTexts1   = data[1]['e']['txt']
         enableLines0   = data[0]['e']['lin']
         enableLines1   = data[1]['e']['lin']
 
-#        print(data[2])
+#        print(data)
+
+        global framehFlip0
+        global framevFlip0
+        global framePause0
+        global framehFlip1
+        global framevFlip1
+        global framePause1
+        changeFlip = not framehFlip0   == data[0]['f']['hor'] or\
+                     not framevFlip0   == data[0]['f']['ver'] or\
+                     not framePause0   == data[0]['f']['pau'] or\
+                     not framehFlip1   == data[1]['f']['hor'] or\
+                     not framevFlip1   == data[1]['f']['ver'] or\
+                     not framePause1   == data[1]['f']['pau']
+
+        framehFlip0 = data[0]['f']['hor']
+        framevFlip0 = data[0]['f']['ver']
+        framePause0 = data[0]['f']['pau']
+        framehFlip1 = data[1]['f']['hor']
+        framevFlip1 = data[1]['f']['ver']
+        framePause1 = data[1]['f']['pau']
+
+        global streamer0
+        global streamer1
+        if changeFlip:
+            if streamer0.isRunning: 
+                streamer0.stop()
+            if streamer1.isRunning: 
+                streamer1.stop()
+            if framePause0 or framePause1:
+                return
+            picam20.configure(picam20.create_video_configuration(main={"size": (frameWidth, 
+                  frameHeight)}, transform=Transform(hflip=framehFlip0, vflip=framevFlip0) ))
+            picam21.configure(picam21.create_video_configuration(main={"size": (frameWidth, 
+                  frameHeight)}, transform=Transform(hflip=framehFlip1, vflip=framevFlip1) ))
+            streamer0.start()
+            streamer1.start()
 
         if data[0]['e']['def'] or data[1]['e']['def']:
             global frameOffsetX0 # = 1080
@@ -276,21 +368,33 @@ class ptzHandler(tornado.websocket.WebSocketHandler):
         global enableTexts1
         global enableLines0
         global enableLines1
+        global framehFlip0
+        global framevFlip0
+        global framePause0
+        global framehFlip1
+        global framevFlip1
+        global framePause1
         self.remoteIP = str(self.request.remote_ip)
         print("[%s] Starting a service: CamPTZ - (%s)" % 
               (time.strftime("%Y-%m-%d %X"), self.remoteIP))
         self.connections.append(self)
         # Reset camera offset and size properties
-        set_ptz_data(json.loads(getFile("data.json")))
+        set_ptz_data(json.loads(getFile("data.json")), False)
+        enableTexts0   = True
+        enableTexts1   = True
+        enableLines0   = True
+        enableLines1   = True
+#        framehFlip0    = 1
+#        framevFlip0    = 1
+#        framePause0    = 0
+#        framehFlip1    = 1
+#        framevFlip1    = 1
+#        framePause1    = 0
         scalerCrop = (frameOffsetX0, frameOffsetY0, frameWidth, frameHeight)
         picam20.set_controls({"ScalerCrop": scalerCrop})
         scalerCrop = (frameOffsetX1, frameOffsetY1, frameWidth, frameHeight)
         picam21.set_controls({"ScalerCrop": scalerCrop})
         # Send initial data
-        enableTexts0   = True
-        enableTexts1   = True
-        enableLines0   = True
-        enableLines1   = True
         message = ptz_send_data()
         self.broadcast(message)
 
@@ -301,7 +405,7 @@ class ptzHandler(tornado.websocket.WebSocketHandler):
 
     def on_message(self, message):
         data = json.loads(message)
-        set_ptz_data(data)
+        set_ptz_data(data, False)
         with open('data.json', 'w') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
         self.broadcast(message)
@@ -344,16 +448,11 @@ mainJs    = templatize(getFile('web/main.js'), {'port': serverPort,
               'fps': frameRate, 'width': frameWidth, 'height': frameHeight})
 
 # Load defaults from the file
-set_ptz_data(json.loads(getFile("data.json")))
+set_ptz_data(json.loads(getFile("data.json")), True)
 
 import markdown
 # sudo apt install python3-markdown
 readmeHtml = markdown.markdown(getFile('../README.md'), extensions=['fenced_code', 'codehilite', 'markdown.extensions.tables'])
-#readmeHtml.replace('<head></head>', '<head><title>Readme.md</title><style>table, th, td {border:1px solid black;}</style></head>')
-#print(readmeHtml)
-
-#    table, th, td {text-align: center; border:1px solid black; border-collapse: collapse;}\
-
 readmeHtml = '<!doctype html><html lang="en"><head><title>Readme.md</title><style>table, th, td {text-align: center; border:1px solid black; border-collapse: collapse;}</style></head><body>' + readmeHtml + '</body></html>'
 
 # RequestHandler for files access
@@ -385,30 +484,25 @@ print(('[%s] Starting: Dual camera streaming server & web interface on RPi 5'
                 '\n\t\t\t\t-> capturing at framerate: %r fps, size: %r/%r px'
             '\n\t\t\t\t-> streaming h264 video frame by frame over WebSocket'
                          '\n\t\t\t\t=> run browser at address: http://%s:%r/') % 
-    (time.strftime("%Y-%m-%d %X"), frameOffsetX0m, frameOffsetY0m, framehFlip, 
-     framevFlip, frameOffsetX0m - frameWidth, frameOffsetY0m - frameHeight, 
+    (time.strftime("%Y-%m-%d %X"), frameOffsetX0m, frameOffsetY0m, framehFlip0, 
+     framevFlip0, frameOffsetX0m - frameWidth, frameOffsetY0m - frameHeight, 
      frameRate, frameWidth, frameHeight, hostIPAddr, serverPort))
 
 try:
     # streamer pipe set up and cameras start up
-    output0 = StreamingOutput(stream=0)
-    output1 = StreamingOutput(stream=1)
-    encoder0 = H264Encoder(repeat=True, framerate=frameRate, qp=23)
-    encoder1 = H264Encoder(repeat=True, framerate=frameRate, qp=23)
-    encoder0.output = output0
-    encoder1.output = output1
-    picam20.start_recording(encoder0, output0)
-    picam21.start_recording(encoder1, output1)
+    streamer0.start()
+    streamer1.start()
 
     # web application set up and main loop start
     application = tornado.web.Application(requestHandlers)
     application.listen(serverPort)
     loop = tornado.ioloop.IOLoop.current()
-    output0.setLoop(loop)
-    output1.setLoop(loop)
+    streamer0.setLoop(loop)
+    streamer1.setLoop(loop)
     loop.start()
 except KeyboardInterrupt:
-    picam20.stop_recording()
-    picam21.stop_recording()
+    streamer0.stop()
+    streamer1.stop()
     loop.stop()
+
 

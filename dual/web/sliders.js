@@ -21,11 +21,26 @@ const xinput1 = document.querySelector("#xoffset1");
 const yvalue1 = document.querySelector("#yvalue1");
 const yinput1 = document.querySelector("#yoffset1");
 
+const hflip0 = document.querySelector("#hflip0");
+const vflip0 = document.querySelector("#vflip0");
+const pause0 = document.querySelector("#pause0");
+const hflip1 = document.querySelector("#hflip1");
+const vflip1 = document.querySelector("#vflip1");
+const pause1 = document.querySelector("#pause1");
+
 function init_sliders(port, width) {
   ptz = new WebSocket("ws://" + document.location.hostname + ":" + port + "/ptz/");
   ptz.addEventListener('message',function(event){
     const data = JSON.parse(event.data);
-  //      console.log(data[0].e);
+//    console.log(data);
+
+    hflip0.checked = data[0].f.hor;
+    vflip0.checked = data[0].f.ver;
+    pause0.checked = data[0].f.pau;
+
+    hflip1.checked = data[1].f.hor;
+    vflip1.checked = data[1].f.ver;
+    pause1.checked = data[1].f.pau;
 
     etxt0.checked = data[0].e.txt;
     elin0.checked = data[0].e.lin;
@@ -120,10 +135,15 @@ function init_sliders(port, width) {
 function ptz_send() {
   var data = [
                 { 'cam': 0,
+                  'f': {
+                      'hor': hflip0.checked ? 1 : 0,
+                      'ver': vflip0.checked ? 1 : 0,
+                      'pau': pause0.checked ? 1 : 0
+                  },
                   'e': {
                       'txt': etxt0.checked,
                       'lin': elin0.checked,
-                      'def': edef0.checked,
+                      'def': edef0.checked
                   },
                   'x': {
                     'min': parseInt(xinput0.min),
@@ -137,10 +157,15 @@ function ptz_send() {
                   }
                 }, 
                 { 'cam': 1,
+                  'f': {
+                      'hor': hflip1.checked ? 1 : 0,
+                      'ver': vflip1.checked ? 1 : 0,
+                      'pau': pause1.checked ? 1 : 0
+                  },
                   'e': {
                       'txt': etxt1.checked,
                       'lin': elin1.checked,
-                      'def': edef1.checked,
+                      'def': edef1.checked
                   },
                   'x': {
                     'min': parseInt(xinput1.min),
@@ -171,7 +196,7 @@ function ptz_send() {
                 }
               }
   ];
-//      console.log(JSON.stringify(data));
+//  console.log(JSON.stringify(data));
   return JSON.stringify(data);
 };
 function handleCbClick(cb) {
