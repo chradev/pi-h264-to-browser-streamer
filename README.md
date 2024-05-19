@@ -115,14 +115,14 @@ ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoo
     <td style="text-align: end; padding-right: 5px;"> NoIR version available? </td><td> Yes </td><td> Yes </td><td> Yes </td><td> Yes </td><td> No </td><td>Yes</td><td>No</td><td>No</td></tr>
 <tr>
     <td style="text-align: end; padding-right: 5px;"> Other options </td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td>ePTZ up to 5x<br>up to 4 cameras via UC-512 Camarray HAT<br>2-lane CSI-2</td>
-    <td>ePTZ up to 5x<br>up to 4 cameras via UC-512 Camarray HAT<br>2-lane CSI-2</td>
-    <td>ePTZ up to 10x<br>up to 4 cameras via UC-512 Camarray HAT<br>2-lane CSI-2</td></tr>
+    <td>ePTZ up to 2.7x.</td>
+    <td>ePTZ up to 3.4x.</td>
+    <td>ePTZ up to 3.5x.</td>
+    <td>ePTZ up to 3.5x.</td>
+    <td>ePTZ up to 4.2x.</td>
+    <td>ePTZ up to 4.8x;<br>up to 4 cameras via UC-512 Camarray HAT;<br>2-lane CSI-2.</td>
+    <td>ePTZ up to 4.8x;<br>up to 4 cameras via UC-512 Camarray HAT;<br>2-lane CSI-2.</td>
+    <td>ePTZ up to 9.6x;<br>up to 4 cameras via UC-512 Camarray HAT;<br>2-lane CSI-2.</td></tr>
 </tbody></table>
 
 ### A snapshot of running dual camera streaming server and its web user interfase
