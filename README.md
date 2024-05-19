@@ -43,7 +43,7 @@ Thanks to: [Nerian - the Allied Vision **Stereo Baseline Calculator**](https://e
  * Focused distance of 1m, minimum depth of 35cm and base line of 10cm
  * Disparity range of 1024px and expected disparity error of 1px
 
-The results are very good especially for the minimum depth of 35cm and depth error of 0.7 mm at 1 m depth (less than 0.1%)
+The results are very good especially for the minimum depth of 35cm and depth error of 0.28 cm at 1 m depth (less than 0.3%)
 
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/StereoCalculator-bl10cm.png?raw=true" alt="Stereo geometry calculation" width="100%">
 
