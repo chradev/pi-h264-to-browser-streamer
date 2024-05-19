@@ -36,7 +36,9 @@ Requirements are like in the [rpi5-h264-live-stereo-streamer](https://github.com
 
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/AStandardStereoVisionPrinciple.png?raw=true" alt="A Standard Stereo Vision Principle drawings" width="100%">
 
-### Stereo geometry calculation for 0.35m minimal depth and 10cm base line
+### Stereo geometry calculation
+
+The calculation is done for 35cm minimal depth and 10cm base line and thanks to: [Nerian - the Allied vision **Stereo Baseline Calculator**](https://en.nerian.alliedvision.com/support/calculator/)
 
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/StereoCalculator-bl10cm.png?raw=true" alt="Stereo geometry calculation" width="100%">
 
