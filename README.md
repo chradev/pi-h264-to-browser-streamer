@@ -19,11 +19,12 @@ The success with dual RPi camera h264 video streamer impact on my robot project:
  * cameras can be used are ESP32-Cam, RPi's Model 2 / 3 (wide), Arducam's 16MP (wide) / 64MP;
  * robots can be equipped with single or dual display with SPI or HDMI interface;
  * displays can be used are 3.2" / 5" / 7" in size with or without touchscreen;
- * SBCs used can be RPi 5 / 4, RPi Zero 2 (w), NanoPi NEO Core-LTS, RPi Pico, ESP-32(-S);
+ * SBCs used can be RPi 5 / 4, RPi Zero 2 (w), NanoPi NEO Core-LTS, RPi Pico, ESP-32(-S3);
  * transmission will be based on PIO-Driven Stepper Motor Driver by V. Hunter Adams;
+ * integration platform will be ROS2 in Linux boxes and micro-ROS for RPi Pico and ESP32;
  * the software staff will be used is Linux, Espressif IDF, RPi Pico SDK, Arduino, C/C++, JS, Python.
 
-<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ImpactOnMyRobotProject.png?raw=true" alt="Impact on my robot project" width="100%">
+<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ImpactOnMyRobotProject-small.png?raw=true" alt="Impact on my robot project" width="100%">
 
 ### Motivation to use and extend choosen projects
 
