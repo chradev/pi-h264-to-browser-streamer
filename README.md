@@ -13,7 +13,7 @@ The project is intended to become a base for a stereo vision of a robot. The ePT
 
 ### How success with dual RPi camera h264 video streamer affects my robot project
 
-<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/20.05.2024_12.06.44_REC_mod.png?raw=true" alt="Impact on my robot projec" width="100%">
+<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ImpactOnMyRobotProject.png?raw=true" alt="Impact on my robot project" width="100%">
 
 ### Motivation to use and extend choosen projects
 
