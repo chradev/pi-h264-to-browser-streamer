@@ -11,6 +11,10 @@ The project is intended to become a base for a stereo vision of a robot. The ePT
         * [Tornado](https://www.tornadoweb.org/en/stable/) handles serving out the html and js assets via http, and the h264 stream via websockets.
         * [jMuxer](https://github.com/samirkumardas/jmuxer) handles muxing the h264 stream (in browser) and playing it via Media Source extensions. 
 
+### How success with dual RPi camera h264 video streamer affects my robot project
+
+<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/20.05.2024_12.06.44_REC_mod.png?raw=true" alt="Impact on my robot projec" width="100%">
+
 ### Motivation to use and extend choosen projects
 
 The main goal is to implement h.264 video streaming from dual RPi cameras to a bowser with near-real-time latency. In addition to it following opportunities are possible
@@ -207,18 +211,41 @@ Server log at startup:
 
 ```
 .../dual $ python server.py
-...
-[2024-05-14 03:26:07] Starting: Dual camera streaming server & web interface on RPi 5
+[88:30:44.614638443] [23604]  INFO Camera camera_manager.cpp:284 libcamera v0.2.0+120-eb00c13d
+[88:30:44.629432640] [23611]  INFO RPI pisp.cpp:695 libpisp version v1.0.5 999da5acb4f4 17-04-2024 (14:29:29)
+[88:30:44.646264053] [23611]  INFO RPI pisp.cpp:1154 Registered camera /base/axi/pcie@120000/rp1/i2c@88000/imx219@10 
+                              to CFE device /dev/media0 and ISP device /dev/media3 using PiSP variant BCM2712_C0
+[88:30:44.646354609] [23611]  INFO RPI pisp.cpp:695 libpisp version v1.0.5 999da5acb4f4 17-04-2024 (14:29:29)
+[88:30:44.655104938] [23611]  INFO RPI pisp.cpp:1154 Registered camera /base/axi/pcie@120000/rp1/i2c@80000/imx219@10 
+                              to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_C0
+[88:30:44.656759744] [23604]  INFO Camera camera_manager.cpp:284 libcamera v0.2.0+120-eb00c13d
+[88:30:44.667538862] [23616]  INFO RPI pisp.cpp:695 libpisp version v1.0.5 999da5acb4f4 17-04-2024 (14:29:29)
+[88:30:44.678089405] [23616]  INFO RPI pisp.cpp:1154 Registered camera /base/axi/pcie@120000/rp1/i2c@88000/imx219@10 
+                              to CFE device /dev/media0 and ISP device /dev/media3 using PiSP variant BCM2712_C0
+[88:30:44.678179221] [23616]  INFO RPI pisp.cpp:695 libpisp version v1.0.5 999da5acb4f4 17-04-2024 (14:29:29)
+[88:30:44.687418126] [23616]  INFO RPI pisp.cpp:1154 Registered camera /base/axi/pcie@120000/rp1/i2c@80000/imx219@10 
+                              to CFE device /dev/media2 and ISP device /dev/media4 using PiSP variant BCM2712_C0
+[88:30:44.690942740] [23604]  WARN V4L2 v4l2_pixelformat.cpp:344 Unsupported V4L2 pixel format RPBP
+[88:30:44.691482354] [23604]  INFO Camera camera.cpp:1183 configuring streams: 
+                              (0) 1000x1000-XBGR8888 (1) 1640x1232-RGGB_PISP_COMP1
+[88:30:44.691600169] [23616]  INFO RPI pisp.cpp:1450 Sensor: /base/axi/pcie@120000/rp1/i2c@88000/imx219@10 
+                              - Selected sensor format: 1640x1232-SRGGB10_1X10 - Selected CFE format: 1640x1232-PC1R
+[88:30:44.704837746] [23604]  WARN V4L2 v4l2_pixelformat.cpp:344 Unsupported V4L2 pixel format RPBP
+[88:30:44.705551399] [23604]  INFO Camera camera.cpp:1183 configuring streams: 
+                              (0) 1000x1000-XBGR8888 (1) 1640x1232-RGGB_PISP_COMP1
+[88:30:44.705704548] [23616]  INFO RPI pisp.cpp:1450 Sensor: /base/axi/pcie@120000/rp1/i2c@80000/imx219@10 
+                              - Selected sensor format: 1640x1232-SRGGB10_1X10 - Selected CFE format: 1640x1232-PC1R
+[2024-05-20 08:52:00] Starting chain for: Camera 0 (ready for streaming)
+[2024-05-20 08:52:00] Starting chain for: Camera 1 (ready for streaming)
+[2024-05-20 08:52:01] Starting: Dual camera streaming server & web interface on RPi 5
                                 -> with two 8MP RPi cameras v.2 at size: 3280/2464 px
                                 -> starting up at flip: 1/1, offset: 0-2280/0-1464 px
                                 -> capturing at framerate: 30 fps, size: 1000/1000 px
                                 -> streaming h264 video frame by frame over WebSocket
                                 => run browser at address: http://192.168.1.111:8000/
-[2024-05-14 03:26:07] Starting chain for: Stream 0 (ready for streaming)
-[2024-05-14 03:26:07] Starting chain for: Stream 1 (ready for streaming)
-[2024-05-14 03:26:10] Starting a service: Camera 0 (192.168.1.178)
-[2024-05-14 03:26:10] Starting a service: Camera 1 (192.168.1.178)
-[2024-05-14 03:26:10] Starting a service: CamPTZ - (192.168.1.178)
+[2024-05-20 08:52:12] Starting a service: Camera 0 (192.168.1.178)
+[2024-05-20 08:52:12] Starting a service: Camera 1 (192.168.1.178)
+[2024-05-20 08:52:12] Starting a service: CamPTZ - (192.168.1.178)
 ```
 
 </details>
