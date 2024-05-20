@@ -23,12 +23,30 @@ The success with dual RPi camera h264 video streamer impact on my robot project:
  * transmission will be based on PIO-Driven Stepper Motor Driver by V. Hunter Adams;
  * the software staff will be used is Linux, Espressif IDF, RPi Pico SDK, Arduino, C/C++, JS, Python.
 
-<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/DualVideoStramer.png?raw=true" height=400 width="auto">
-<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ePTZ-example-landscape.webp?raw=true" height=400 width="auto"><br>
-<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/RobotVariants.png?raw=true" height=455 width="auto">
-<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/MisterSquarePants-5fps.webp?raw=true" height=455 width="auto">
-<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/TwoMiniones.jpg?raw=true" height=455 width="auto">
-<img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/zAlien-DanailKartashoc.png?raw=true" height=455 width="auto">
+<table style="overflow-y: hidden; align: left; border:0px; border-collapse: collapse;">
+  <tr><td style="align: left;">
+    <td style="margin: 0 auto; height=400px">
+      <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/DualVideoStramer.png?raw=true" height=400>
+    </td>
+    <td style="margin: 0 auto; height=400px">
+      <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ePTZ-example-landscape.webp?raw=true" height=400">
+    </td>
+  </tr></table>
+<table style="overflow-y: hidden; text-align: left; border:0px; border-collapse: collapse;">
+  <tr>
+    <td style="margin: 0 auto; height=400px">
+      <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/RobotVariants.png?raw=true" height=455 width="auto">
+    </td>
+    <td style="margin: 0 auto; height=400px">
+      <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/MisterSquarePants-1fps.webp?raw=true" height=455 width="auto">
+    </td>
+    <td style="margin: 0 auto; height=400px">
+      <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/TwoMiniones.jpg?raw=true" height=455 width="auto">
+    </td>
+    <td style="margin: 0 auto; height=400px">
+      <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/zAlien-DanailKartashoc.png?raw=true" height=455 width="auto">
+    </td>
+  </tr></table>
 
 <!--
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ImpactOnMyRobotProject.png?raw=true" alt="Impact on my robot project" width="100%">
