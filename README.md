@@ -15,7 +15,7 @@ The project is intended to become a base for a stereo vision of a robot. The ePT
 
 The success with dual RPi camera h264 video streamer impact on my robot project:
 
- * robots can be equipped with single or dual cameras for stereo or panorama vision with ePTS;
+ * robots can be equipped with single or dual cameras for stereo, panorama or 360 degree vision with ePTS;
  * cameras can be used are ESP32-Cam, RPi's Model 2 / 3 (wide), Arducam's 16MP (wide) / 64MP;
  * robots can be equipped with single or dual display with SPI or HDMI interface;
  * displays can be used are 3.2" / 5" / 7" in size with or without touchscreen;
@@ -25,6 +25,17 @@ The success with dual RPi camera h264 video streamer impact on my robot project:
  * the software staff will be used is Linux, Espressif IDF, RPi Pico SDK, Arduino, C/C++, JS, Python.
 
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/ImpactOnMyRobotProject-small.png?raw=true" alt="Impact on my robot project" width="100%">
+
+The next step is to improve the fixture of the cameras for testing the stereo and panorama vision quality. With this thought in mind, work on the overall robot design concept was started. In this process, the leading idea was to reach maximum results with minimal design effort and flexibility in usage. In the very beginning, some ideas were drawn by hand, but later on, a special web application was developed for testing all possible component combinations. As a result, the main hardware design was limited to two main parts: the robot head and body. As a hardware carrier, one or two boards able to support almost all planned component combinations will be designed. Handmade drawings and the animated result of the application are shown in the next figure.
+
+
+<table style="overflow-y: hidden; width: 100%; height: 100%; text-align: center; border:1px; border-collapse: collapse;">
+<tr><td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/NewDesignIdeas.png?raw=true" width="auto" height="480px" ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/HandmadeDiagram.png?raw=true" width="auto" height="480px" ></td>
+    <td> <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/DesignConfigurations.webp?raw=true" width="auto" height="480px" ></td>
+</tr></table>
+
+
 
 ### Motivation to use and extend choosen projects
 

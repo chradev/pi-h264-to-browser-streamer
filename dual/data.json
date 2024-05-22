@@ -9,7 +9,7 @@
     "e": {
       "txt": true,
       "lin": true,
-      "def": true
+      "def": false
     },
     "x": {
       "min": 500,
