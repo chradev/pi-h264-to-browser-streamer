@@ -453,6 +453,13 @@ set_ptz_data(json.loads(getFile("data.json")), True)
 import markdown
 # sudo apt install python3-markdown
 readmeHtml = markdown.markdown(getFile('../README.md'), extensions=['fenced_code', 'codehilite', 'markdown.extensions.tables'])
+
+for item in readmeHtml.split("\n"):
+    if "https://github.com/chradev/pi-h264-to-browser-streamer/assets/" in item:
+        strToChange = '<video autoplay loop muted src=' + item[3:-4] + '></video>'
+        readmeHtml = readmeHtml.replace(item, strToChange)
+#        print (strToChange)
+
 readmeHtml = '<!doctype html><html lang="en"><head><title>Readme.md</title><style>table, th, td {text-align: center; border:1px solid black; border-collapse: collapse;}</style></head><body>' + readmeHtml + '</body></html>'
 
 # RequestHandler for files access
