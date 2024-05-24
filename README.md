@@ -383,3 +383,4 @@ For installation instructions, [check out our blogpost](https://kroket.io/blog/p
 ### Credits
 
 [nikola-j](https://github.com/nikola-j) made the picamera2 support in [this comment](https://github.com/dans98/pi-h264-to-browser/discussions/12#discussioncomment-7901632).
+
