@@ -24,7 +24,7 @@ parser.add_argument("-X", "--Xoffset",       type=int, default=1030) #680)
 parser.add_argument("-Y", "--Yoffset",       type=int, default=900) #692)
 parser.add_argument("-W", "--Width",         type=int, default=1000) #1920)
 parser.add_argument("-H", "--Height",        type=int, default=1000) #1080)
-parser.add_argument("-f", "--Flip", nargs=2, type=int, default=(1, 1))
+parser.add_argument("-f", "--Flip", nargs=2, type=int, default=(0, 1))
 args = parser.parse_args()
 print('Arguments', args)
 

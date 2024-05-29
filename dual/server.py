@@ -57,6 +57,7 @@ picam21.configure(picam21.create_video_configuration(main={"size": (frameWidth,
 import cv2
 import time
 from picamera2 import MappedArray
+from math import sin, cos, radians, pi, degrees
 
 # Define and attach camera2.pre_callback to put date & time into the video frame
 colour = (0, 255, 0)
@@ -73,6 +74,10 @@ def apply_timestamp0(request):
         if enableLines0 is True:
             cv2.line(m.array, (0, int(frameHeight/2)), (frameWidth, int(frameHeight/2)), [0, 255, 0], 2)
             cv2.line(m.array, (int(frameWidth/2), 0), (int(frameWidth/2), frameHeight), [0, 255, 0], 2)
+            # draw line like a clock seconary hand
+            secs = int((time.time() * 100) % 6000) / 100.0 # int(time.time()) % 60 #  
+            teta = secs * 2 * pi / 60
+            cv2.line(m.array, (int(frameWidth/2), int(frameHeight/2)), (int(frameWidth/2 + frameWidth * sin(teta) / 2), int(frameHeight/2 - frameHeight * cos(teta) / 2)), [255, 0, 0], 2)
 
 def apply_timestamp1(request):
     timestamp = time.strftime("%Y-%m-%d %X") + " - Camera: 1"
