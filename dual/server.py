@@ -22,6 +22,8 @@ frameOffsetY0  = 880  #740
 frameOffsetX1  = 1740 #1750
 frameOffsetY1  = 430  #360
 enableView     = False
+enableSecs0    = True
+enableSecs1    = False
 enableTexts0   = True
 enableTexts1   = True
 enableLines0   = True
@@ -75,9 +77,10 @@ def apply_timestamp0(request):
             cv2.line(m.array, (0, int(frameHeight/2)), (frameWidth, int(frameHeight/2)), [0, 255, 0], 2)
             cv2.line(m.array, (int(frameWidth/2), 0), (int(frameWidth/2), frameHeight), [0, 255, 0], 2)
             # draw line like a clock seconary hand
-            secs = int((time.time() * 100) % 6000) / 100.0 # int(time.time()) % 60 #  
-            teta = secs * 2 * pi / 60
-            cv2.line(m.array, (int(frameWidth/2), int(frameHeight/2)), (int(frameWidth/2 + frameWidth * sin(teta) / 2), int(frameHeight/2 - frameHeight * cos(teta) / 2)), [255, 0, 0], 2)
+            if enableSecs0 is True:
+                secs = int((time.time() * 100) % 6000) / 100.0 # int(time.time()) % 60 #  
+                teta = secs * 2 * pi / 60
+                cv2.line(m.array, (int(frameWidth/2), int(frameHeight/2)), (int(frameWidth/2 + frameWidth * sin(teta) / 2), int(frameHeight/2 - frameHeight * cos(teta) / 2)), [255, 0, 0], 2)
 
 def apply_timestamp1(request):
     timestamp = time.strftime("%Y-%m-%d %X") + " - Camera: 1"
@@ -87,6 +90,11 @@ def apply_timestamp1(request):
         if enableLines1 is True:
             cv2.line(m.array, (0, int(frameHeight/2)), (frameWidth, int(frameHeight/2)), [0, 255, 0], 2)
             cv2.line(m.array, (int(frameWidth/2), 0), (int(frameWidth/2), frameHeight), [0, 255, 0], 2)
+            # draw line like a clock seconary hand
+            if enableSecs1 is True:
+                secs = int((time.time() * 100) % 6000) / 100.0 # int(time.time()) % 60 #  
+                teta = secs * 2 * pi / 60
+                cv2.line(m.array, (int(frameWidth/2), int(frameHeight/2)), (int(frameWidth/2 + frameWidth * sin(teta) / 2), int(frameHeight/2 - frameHeight * cos(teta) / 2)), [255, 0, 0], 2)
 
 picam20.pre_callback = apply_timestamp0
 picam21.pre_callback = apply_timestamp1

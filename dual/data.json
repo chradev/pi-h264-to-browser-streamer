@@ -9,11 +9,11 @@
     "e": {
       "txt": true,
       "lin": true,
-      "def": false
+      "def": true
     },
     "x": {
       "min": 500,
-      "val": 1390,
+      "val": 1380,
       "max": 2780
     },
     "y": {
@@ -32,7 +32,7 @@
     "e": {
       "txt": true,
       "lin": true,
-      "def": true
+      "def": false
     },
     "x": {
       "min": 500,
@@ -41,7 +41,7 @@
     },
     "y": {
       "min": 500,
-      "val": 510,
+      "val": 500,
       "max": 1964
     }
   },
