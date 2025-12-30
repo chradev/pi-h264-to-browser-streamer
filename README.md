@@ -15,7 +15,7 @@ The project is intended to become a base for a stereo vision of a robot. The ePT
 
 The success with dual RPi camera h264 video streamer impact on my robot project:
 
- * robots can be equipped with single or dual cameras for stereo, panorama or 360 degree vision with ePTS;
+ * robots can be equipped with single or dual cameras for stereo, panorama or 360 degree vision with ePTZ;
  * cameras can be used are ESP32-Cam, RPi's Model 2 / 3 (wide), Arducam's 16MP (wide) / 64MP;
  * robots can be equipped with single or dual display with SPI or HDMI interface;
  * displays can be used are 3.2" / 5" / 7" in size with or without touchscreen;
