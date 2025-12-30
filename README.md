@@ -72,7 +72,7 @@ The result is very good especially for the minimal depth of 35 cm and error of:
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/StereoCalculator-bl10cm.png?raw=true" alt="Stereo geometry calculation" width="100%">
 
 
-### An example of ePTZ or difital PTZ Principle
+### An example of ePTZ or digital PTZ Principle
 
 ePTZ is a new digital technology, which stands for electronic pan, tilt, and zoom. There is a significant <a href="https://huddlecamhd.com/eptz-and-ptz/" target="_blank">difference</a> between old PTZ cameras and new ePTZ. Mainly because of its advantages like smaller price and size, this technology is extremely appropriate for robot vision especially in multi-camera cases.
 
