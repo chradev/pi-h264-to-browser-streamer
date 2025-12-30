@@ -223,10 +223,9 @@ Dual camera streaming is based on the basic modifications in server application 
 
 Server log at startup:
 
-<details>
+<details><pre>
 
-```
-.../dual $ python server.py
+ .../dual $ python server.py
 [88:30:44.614638443] [23604]  INFO Camera camera_manager.cpp:284 libcamera v0.2.0+120-eb00c13d
 [88:30:44.629432640] [23611]  INFO RPI pisp.cpp:695 libpisp version v1.0.5 999da5acb4f4 17-04-2024 (14:29:29)
 [88:30:44.646264053] [23611]  INFO RPI pisp.cpp:1154 Registered camera /base/axi/pcie@120000/rp1/i2c@88000/imx219@10 
@@ -262,15 +261,13 @@ Server log at startup:
 [2024-05-20 08:52:12] Starting a service: Camera 0 (192.168.1.178)
 [2024-05-20 08:52:12] Starting a service: Camera 1 (192.168.1.178)
 [2024-05-20 08:52:12] Starting a service: CamPTZ - (192.168.1.178)
-```
 
-</details>
+</pre></details>
 
 Server performance reported by ```htop```
 
-<details>
+<details><pre>
 
-```
     0[|||||||||||||||||                       34.5%] Tasks: 91, 122 thr, 120 kthr; 3 running
     1[||||||||||||||||||||||||||              55.0%] Load average: 2.38 2.31 2.18
     2[||||||||||||||||||                      38.6%] Uptime: 1 day, 09:25:13
@@ -285,9 +282,8 @@ Server performance reported by ```htop```
    9531 chr         20   0 1839M  290M  135M S  45.2  7.2  7:36.82 python server.py
    9522 chr         20   0 1839M  290M  135M S  23.3  7.2  5:20.35 python server.py
    9533 chr         20   0 1839M  290M  135M S   5.3  7.2  1:07.46 python server.py
-```
 
-</details>
+</pre></details>
 
 
 ### Streaming from a single camera with ePTZ control
@@ -323,22 +319,19 @@ Streaming from a single camera is based on the original application and web inte
 
 **Default parameters:**
 
-<details>
+<details><pre>
 
-```
 Arguments Namespace(preView=False, cameraNumb=0, serverPort=8000, frameRate=30, Xoffset=950, Yoffset=350, Width=1000, Height=1000, Flip=(1, 1))
 Camera 0 at flip(1/1), size(1000.1000), offset(950/350) -> h264 video stream at 30fps -> frame by frame over WebSocket -> http://192.168.1.111:8000/
 ...
 Camera ScalerCrop properties: ((0, 0, 128, 128), (0, 0, 3280, 2464), (408, 0, 2464, 2464))
-```
 
-</details>
+</pre></details>
 
 **Available options:**
 
-<details>
+<details><pre>
 
-```
 python3 server.py -h
 usage: server.py [-h] [-v] [-n CAMERANUMB] [-p SERVERPORT] [-r FRAMERATE]
                     [-X XOFFSET] [-Y YOFFSET] [-W WIDTH] [-H HEIGHT] [-f FLIP FLIP]
@@ -354,8 +347,8 @@ options:
   -W WIDTH, --Width WIDTH
   -H HEIGHT, --Height HEIGHT
   -f FLIP FLIP, --Flip FLIP FLIP
-```
-</details>
+
+</pre></details>
 
 <img src="https://github.com/chradev/pi-h264-to-browser-streamer/blob/main/assets/12.05.2024_14.10.57_REC.png?raw=true" alt="Single camera streaming snapshot" width="100%">
 
